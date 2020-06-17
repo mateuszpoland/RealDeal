@@ -1,0 +1,4 @@
+##### TEST ####
+
+As a User, I want to be able to place an Offer(Property)
+As a User, I want to be able to introduce Seller

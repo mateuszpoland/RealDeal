@@ -1,0 +1,4 @@
+In the infrastructure directory, there go
+implementations of communication interfaces between microservices(bounded contexts) from 
+Shared/Infrastructure/Interfaces
+These are injectable to other Bounded contexts via DI

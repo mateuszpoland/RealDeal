@@ -1,27 +1,47 @@
 version: '3'
 
 services:
+  ui:
+    container_name: ui
+    stdin_open: true
+    build: ./client
+    ports:
+      - '3000:3000'
+
   db:
     image: postgres
-    ports:
-      - "5432:5432"
-  django:
+    container_name: db
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  api:
     build: ./api
-    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+    container_name: api
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./api:/app/api
+      - ./api:/api
     ports:
       - "8000:8000"
     depends_on:
-      - db
-  frontend:
-    build: ./frontend
-    command: ["npm", "start"]
+      - db    
+
+  mongo:
+    image: mongo
+    restart: always
+    command: --serviceExecutor adaptive
+    container_name: mongo
+    env_file:
+        - .env
+    environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: password
+        MONGO_INITDB_DATABASE: realdeal_read
     volumes:
-      - ./frontend:/app/frontend
-      - node-modules:/app/frontend/node_modules
+      - storage:/data/db
     ports:
-      - "3000:3000"
+      - '27017:27017'
 
 volumes:
-  node-modules:
+  storage:

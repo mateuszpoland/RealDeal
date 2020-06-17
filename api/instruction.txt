@@ -1,0 +1,22 @@
+#execute migrations within project
+
+docker-compose run api python manage.py makemigrations
+docker-compose run api python manage.py migrate
+docker-compose run api python manage.py migrate sessions # alternative to migrate only sessions
+
+#create superuser for django admin panel:
+
+docker-compose run api python manage.py createsuperuser
+
+#run mongo:
+
+#run postgresql:
+login:
+docker-compose exec db bash
+psql -d postgres -U postgres -W # it will ask for password for 'postgres' database
+
+# list all tables in database:
+
+\dt
+
+commands: https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546
