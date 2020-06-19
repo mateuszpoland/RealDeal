@@ -7,6 +7,8 @@ services:
     build: ./client
     ports:
       - '3000:3000'
+    networks: 
+      - 'realdeal_network'
 
   db:
     image: postgres
@@ -15,6 +17,16 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+    networks: 
+      - 'realdeal_network'
+  
+  rabbitmq:
+    image: bitnami/rabbitmq:latest
+    container_name: rabbit
+    environment: 
+      - RABBITMQ_PASSWORD=password
+    networks: 
+      - 'realdeal_network'
 
   api:
     build: ./api
@@ -25,7 +37,9 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db    
+      - db
+    networks: 
+      - 'realdeal_network'    
 
   mongo:
     image: mongo
@@ -42,6 +56,11 @@ services:
       - storage:/data/db
     ports:
       - '27017:27017'
+    networks: 
+      - 'realdeal_network'
 
 volumes:
   storage:
+networks: 
+  realdeal_network:
+    driver: bridge

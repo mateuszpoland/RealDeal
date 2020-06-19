@@ -13,10 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+#from ...api.realdeal.Shared.Infrastructure.Routes.Property.urls import urlpatterns
 from django.urls import path, include
+from django.contrib import admin
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('realdeal/', include('realdeal.urls'))    
+    #realdeal API will be under this path - root
+    #path('', include('realdeal.urls'))
+    #path('', include('...api.realdeal.Shared.Infrastructure.Routes.Property.urls')) 
+    path('', include('realdeal.Shared.Infrastructure.Routes.Property.urls'))   
 ]
