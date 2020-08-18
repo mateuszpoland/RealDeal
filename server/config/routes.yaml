@@ -1,0 +1,16 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+## SalesManagement Routing
+
+salesManagement.getAllOffers:
+  methods: ['GET']
+  path: offers/all
+  controller: SalesManagement.OfferController:getAllOffersAction
+
+salesManagement.addOffer:
+  methods: ['PUT']
+  path: offers/add
+  controller: SalesManagement.OfferController:addOfferAction  
+

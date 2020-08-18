@@ -1,0 +1,67 @@
+parameters:
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: false      # Automatically injects dependencies in your services.
+        autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
+        public: false
+
+    RealDeal\:
+        resource: '../src/'
+        exclude:
+            - '../src/DependencyInjection/'
+            - '../src/Entity/'
+            - '../src/Kernel.php'
+            - '../src/Tests/'
+
+    RealDeal\Controller\:
+        resource: '../src/Controller/'
+        tags: ['controller.service_arguments']
+
+    
+    ### Common ###
+    commandBus:
+        class: RealDeal\Shared\Infrastructure\CommandBus
+        arguments: []
+        calls:
+            - [map, ['RealDeal\SalesManagement\Application\Command\CreateOfferCommand', 'RealDeal\SalesManagement\Application\Handler\CreateOfferHandler']]
+    
+    ### SalesManagement ###
+    ## repositories
+    SalesManagement.Offer.OfferRepository:
+        class: RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository
+        arguments:
+            - '@doctrine.orm.entity_manager' 
+
+    SalesManagement.Client.ClientRepository:
+        class: RealDeal\SalesManagement\Application\Repository\Client\ClientRepository
+        arguments:
+            - '@doctrine.orm.entity_manager'
+    
+    #command handlers
+    SalesManagement.CommandHandler.CreateNewOffer:
+        class: RealDeal\SalesManagement\Application\CommandHandler\CreateNewOfferHandler
+        arguments:
+            - '@doctrine.orm.entity_manager'  
+            - '@SalesManagement.Offer.OfferFactory'  
+    
+    #event handlers
+            
+    ## controllers
+    SalesManagement.OfferController:
+        class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
+        arguments:
+            - '@commandBus'
+        public: true
+        tags: ['controller.service_arguments']
+    
+    # domain services
+    #factories
+    SalesManagement.Offer.OfferFactory:
+        class: RealDeal\SalesManagement\Application\DomainService\Offer\OfferFactory
+
+
+            
+        
+

@@ -1,0 +1,5 @@
+imports:
+  - php
+filter:
+  excluded_paths:
+    - Tests/*

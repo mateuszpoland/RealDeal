@@ -4,6 +4,8 @@ services:
   ui:
     container_name: ui
     stdin_open: true
+    volumes:
+      - './client:/app:rw'
     build: ./client
     ports:
       - '3000:3000'
@@ -11,15 +13,46 @@ services:
       - 'realdeal_network'
 
   db:
-    image: postgres
-    container_name: db
+    image: mysql:5.7
+    restart: on-failure
     environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    networks: 
-      - 'realdeal_network'
+        MYSQL_ROOT_PASSWORD: 'passwd'
+        MYSQL_USER: 'root'
+        MYSQL_PASSWORD: 'passwd'
+        MYSQL_DATABASE: 'real_deal'
+    volumes:
+      - 'mysqldata:/var/lib/mysql'
+    ports:
+    - 3306:3306
+    networks:
+      - realdeal_network
+    
+  nginx:
+    image: nginx:1.15.3-alpine
+    restart: on-failure
+    volumes:
+      - './server:/usr/src/app'
+      - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+    ports:
+      - 8080:80
+    depends_on:
+      - php
+    networks:
+      - realdeal_network
   
+  php:
+    container_name: php
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+    restart: on-failure
+    volumes:
+      - './server:/usr/src/app'
+    env_file:
+      - .env
+    networks:
+      - realdeal_network
+      
   rabbitmq:
     image: bitnami/rabbitmq:latest
     container_name: rabbit
@@ -28,39 +61,34 @@ services:
     networks: 
       - 'realdeal_network'
 
-  api:
-    build: ./api
-    container_name: api
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - ./api:/api
-    ports:
-      - "8000:8000"
-    depends_on:
-      - db
-    networks: 
-      - 'realdeal_network'    
-
-  mongo:
-    image: mongo
-    restart: always
-    command: --serviceExecutor adaptive
-    container_name: mongo
-    env_file:
-        - .env
-    environment:
-        MONGO_INITDB_ROOT_USERNAME: root
-        MONGO_INITDB_ROOT_PASSWORD: password
-        MONGO_INITDB_DATABASE: realdeal_read
-    volumes:
-      - storage:/data/db
-    ports:
-      - '27017:27017'
-    networks: 
-      - 'realdeal_network'
+  elasticsearch:
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
+      container_name: elasticsearch
+      volumes:
+        - esdata:/usr/share/elasticsearch/data
+      environment:
+        - cluster.name=es-cluster
+        - bootstrap.memory_lock=true
+        - "ES_JAVA_OPTS--Xms4g-Xmx4g"
+        - discovery.type=single-node
+      ulimits:
+        nproc: 3000
+        nofile: 65536
+        memlock:
+          soft: -1
+          hard: -1
+      ports:
+        - '9200:9200'
+      networks:
+        - realdeal_network
 
 volumes:
   storage:
-networks: 
+    driver: local
+  mysqldata:
+    driver: local
+  esdata:
+    driver: local  
+
+networks:
   realdeal_network:
-    driver: bridge
