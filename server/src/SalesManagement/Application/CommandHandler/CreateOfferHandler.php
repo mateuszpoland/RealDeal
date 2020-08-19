@@ -6,9 +6,8 @@ namespace RealDeal\SalesManagement\Application\CommandHandler;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
-use RealDeal\SalesManagement\Application\DomainService\Offer\OfferFactory;
-use RealDeal\SalesManagement\Domain\Offer\Offer;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class CreateOfferHandler
 {
@@ -21,7 +20,7 @@ class CreateOfferHandler
     public function __construct(
         OfferFactory $offerFactory,
         EntityManagerInterface $entityManager,
-        EventDispatcher $eventDispatcher
+        EventDispatcherInterface $eventDispatcher
     )
     {
         $this->offerFactory = $offerFactory;
@@ -39,7 +38,7 @@ class CreateOfferHandler
         );
         $this->em->persist($offer);
         $this->em->flush();
-
+        
         // raise event - synchronize read model in elasticsearch
         //$event = new OfferCreatedEvent();
         //$this->eventDispatcher->dispatch();

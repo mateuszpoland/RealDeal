@@ -1,8 +1,0 @@
-/vendor/
-/Tests/app/cache/
-/Tests/app/logs/
-/Tests/app/build/
-/var/cache/test
-/phpunit.xml
-/composer.lock
-/coverage.clover

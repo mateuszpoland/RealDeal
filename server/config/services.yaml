@@ -25,7 +25,7 @@ services:
         class: RealDeal\Shared\Infrastructure\CommandBus
         arguments: []
         calls:
-            - [map, ['RealDeal\SalesManagement\Application\Command\CreateOfferCommand', 'RealDeal\SalesManagement\Application\Handler\CreateOfferHandler']]
+            - [map, ['RealDeal\SalesManagement\Application\Command\CreateOfferCommand', '@SalesManagement.CommandHandler.CreateNewOffer']]
     
     ### SalesManagement ###
     ## repositories
@@ -41,10 +41,11 @@ services:
     
     #command handlers
     SalesManagement.CommandHandler.CreateNewOffer:
-        class: RealDeal\SalesManagement\Application\CommandHandler\CreateNewOfferHandler
-        arguments:
-            - '@doctrine.orm.entity_manager'  
-            - '@SalesManagement.Offer.OfferFactory'  
+        class: RealDeal\SalesManagement\Application\CommandHandler\CreateOfferHandler
+        arguments: 
+            - '@SalesManagement.Offer.OfferFactory'
+            - '@doctrine.orm.entity_manager' 
+            - '@event_dispatcher'  
     
     #event handlers
             
@@ -59,7 +60,7 @@ services:
     # domain services
     #factories
     SalesManagement.Offer.OfferFactory:
-        class: RealDeal\SalesManagement\Application\DomainService\Offer\OfferFactory
+        class: RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory
 
 
             

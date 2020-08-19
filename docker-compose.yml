@@ -9,23 +9,20 @@ services:
     build: ./client
     ports:
       - '3000:3000'
-    networks: 
-      - 'realdeal_network'
 
   db:
+    container_name: myqsl
     image: mysql:5.7
     restart: on-failure
     environment:
-        MYSQL_ROOT_PASSWORD: 'passwd'
-        MYSQL_USER: 'root'
-        MYSQL_PASSWORD: 'passwd'
-        MYSQL_DATABASE: 'real_deal'
+        MYSQL_ROOT_PASSWORD: passwd
+        MYSQL_USER: root
+        MYSQL_PASSWORD: passwd
+        MYSQL_DATABASE: real_deal
     volumes:
       - 'mysqldata:/var/lib/mysql'
     ports:
     - 3306:3306
-    networks:
-      - realdeal_network
     
   nginx:
     image: nginx:1.15.3-alpine
@@ -37,8 +34,6 @@ services:
       - 8080:80
     depends_on:
       - php
-    networks:
-      - realdeal_network
   
   php:
     container_name: php
@@ -50,16 +45,12 @@ services:
       - './server:/usr/src/app'
     env_file:
       - .env
-    networks:
-      - realdeal_network
       
   rabbitmq:
     image: bitnami/rabbitmq:latest
     container_name: rabbit
     environment: 
       - RABBITMQ_PASSWORD=password
-    networks: 
-      - 'realdeal_network'
 
   elasticsearch:
       image: docker.elastic.co/elasticsearch/elasticsearch:7.2.0
@@ -79,8 +70,6 @@ services:
           hard: -1
       ports:
         - '9200:9200'
-      networks:
-        - realdeal_network
 
 volumes:
   storage:
@@ -89,6 +78,3 @@ volumes:
     driver: local
   esdata:
     driver: local  
-
-networks:
-  realdeal_network:

@@ -10,7 +10,7 @@ salesManagement.getAllOffers:
   controller: SalesManagement.OfferController:getAllOffersAction
 
 salesManagement.addOffer:
-  methods: ['PUT']
+  methods: ['POST']
   path: offers/add
   controller: SalesManagement.OfferController:addOfferAction  
 

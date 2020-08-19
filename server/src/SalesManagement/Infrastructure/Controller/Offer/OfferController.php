@@ -24,6 +24,7 @@ class OfferController
     public function addOfferAction(Request $request)
     {
         $data = json_decode($request->getContent(), true);
+        $violations = [];
         // validation
         try {
             $command = new CreateOfferCommand(
@@ -32,14 +33,12 @@ class OfferController
                 $data['footage']
             );
             $this->commandBus->handle($command);
-            return new JsonResponse(['name' => $command->getName()], Response::HTTP_CREATED);
             // catch various levels of exception and return detailed response codes
-        } catch(InvalidArgumentException $exception) {
-            
-        } catch (Exception $exception) {
-            
+            return new JsonResponse(['name' => $command->getName()], Response::HTTP_CREATED);
+        } catch(Exception $exception) {
+            $violations[] = $exception->getMessage();
+            return new JsonResponse(json_encode($violations), Response::HTTP_BAD_REQUEST);
         }
-    
     }
 
     public function getAllOffersAction()

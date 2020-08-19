@@ -1,16 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace RealDeal\SalesManagement\Application\DomainService\Offer;
-
-use RealDeal\Shared\Application\AggregateRootFactoryInterface;
-use RealDeal\Shared\Domain\AggregateRootInteface;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+namespace RealDeal\SalesManagement\Application\DomainService\Offer\Factory;
 use RealDeal\SalesManagement\Domain\Offer\Offer;
 
-class OfferFactory implements AggregateRootFactoryInterface
+class OfferFactory
 {
-    public function create(): AggregateRootInteface
+    public function create(): Offer
     {
         return new Offer();
     }

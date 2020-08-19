@@ -4,13 +4,14 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer;
 
 use RealDeal\SalesManagement\Domain\Client\Client;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 use RealDeal\SalesManagement\Domain\Advertising\Advertising;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\Index;
 use ONGR\ElasticsearchDSL\Query\Compound\FunctionScoreQuery;
-use RealDeal\Shared\Domain\AggreagateRoot;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Validator\Constraints as Assert;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentiier;
 
 
 /**
@@ -18,10 +19,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Domain\Repository\Offer\OfferRepository")
  * @ORM\Table(name="offers", indexes={@ORM\Index(name="name_idx", columns={"name"})})
  */
-class Offer extends AggreagateRoot implements OfferState
+class Offer implements OfferState
 {
     /**
-     * change strategy generator to CUSTOM
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="UUID")
      * @ORM\Column(type="integer")
@@ -47,9 +47,9 @@ class Offer extends AggreagateRoot implements OfferState
 
     /**
      * @var Price
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
-    private $totalPrice;
+    public $totalPrice;
 
     /**
      * @var Footage
@@ -152,11 +152,6 @@ class Offer extends AggreagateRoot implements OfferState
 
     // @todo - consider adding dynamic, persisted list of interested buyers - or generate them dynamically and store in different scope/table
 
-    public function __construct()
-    { 
-        parent::__construct();
-    }
-
     public function publishNewOffer(
         string $name,
         float $totalPrice,
@@ -164,7 +159,8 @@ class Offer extends AggreagateRoot implements OfferState
     )
     {
         $this->name = $name;
-        $this->totalPrice = $totalPrice;
+        $this->identifier = new UniqueOfferIdentiier();
+        $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
     }
 
