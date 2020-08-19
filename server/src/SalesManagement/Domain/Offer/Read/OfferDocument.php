@@ -6,7 +6,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\Read;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="offers", default=true)
+ * @ES\Index(alias="offer", default=true)
  */
 class OfferDocument
 {
@@ -15,12 +15,12 @@ class OfferDocument
      */
     private $id;
     /**
-     * @ES\Property(name="property_name", analyzer="simple_analyzer")
+     * @ES\Property(type="text", name="property_name", analyzer="simple_analyzer")
      */
     private $name;
     
      /**
-     * @ES\Property(name="property_name")
+     * @ES\Property(type="float", name="property_name")
      */
     private $totalPrice;
 

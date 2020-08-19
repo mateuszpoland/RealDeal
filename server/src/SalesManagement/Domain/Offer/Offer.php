@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping\Index;
 use ONGR\ElasticsearchDSL\Query\Compound\FunctionScoreQuery;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Validator\Constraints as Assert;
-use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentiier;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
 
 
 /**
@@ -159,7 +159,7 @@ class Offer implements OfferState
     )
     {
         $this->name = $name;
-        $this->identifier = new UniqueOfferIdentiier();
+        $this->identifier = new UniqueOfferIdentifier();
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
     }

@@ -8,6 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
 use RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
 
 class CreateOfferHandler
 {
@@ -17,12 +18,16 @@ class CreateOfferHandler
 
     private $offerFactory;
 
+    private $container;
+
     public function __construct(
         OfferFactory $offerFactory,
         EntityManagerInterface $entityManager,
-        EventDispatcherInterface $eventDispatcher
+        EventDispatcherInterface $eventDispatcher,
+        $container
     )
     {
+        $this->container = $container;
         $this->offerFactory = $offerFactory;
         $this->em = $entityManager;
         $this->eventDispatcher = $eventDispatcher;
@@ -39,10 +44,12 @@ class CreateOfferHandler
         $this->em->persist($offer);
         $this->em->flush();
         
-        // raise event - synchronize read model in elasticsearch
-        //$event = new OfferCreatedEvent();
-        //$this->eventDispatcher->dispatch();
-        #this is an asynchronous task, so I can use register_shutdown_function combined with fastcgi_finish_request
-        
+        $readOfferModel = new OfferDocument();
+        $readOfferModel->setName($command->getName());
+        $readOfferModel->setTotalPrice($command->getTotalPrice());
+
+        $manager = $this->container->get(OfferDocument::class);
+        $manager->persist($readOfferModel);
+        $manager->commit();
     }
 }

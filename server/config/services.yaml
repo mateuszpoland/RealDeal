@@ -46,6 +46,7 @@ services:
             - '@SalesManagement.Offer.OfferFactory'
             - '@doctrine.orm.entity_manager' 
             - '@event_dispatcher'  
+            - '@service_container'
     
     #event handlers
             

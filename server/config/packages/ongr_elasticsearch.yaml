@@ -13,7 +13,7 @@ ongr_elasticsearch:
                     - lowercase
                     - simple_filter    
     indexes:
-        RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument:
-            hosts: [elasticsearch:9200]               
-
+        RealDeal\SalesManagement\Domain\Offer\Read\Offer:
+            hosts: [elasticsearch:9200]           
+        
     

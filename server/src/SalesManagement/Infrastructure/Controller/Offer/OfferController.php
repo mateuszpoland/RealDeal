@@ -16,6 +16,7 @@ class OfferController
 
     public function __construct(
         CommandBus $commandBus
+
     )
     {
         $this->commandBus = $commandBus;
