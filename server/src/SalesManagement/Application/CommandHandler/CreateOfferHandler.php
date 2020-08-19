@@ -42,5 +42,7 @@ class CreateOfferHandler
         // raise event - synchronize read model in elasticsearch
         //$event = new OfferCreatedEvent();
         //$this->eventDispatcher->dispatch();
+        #this is an asynchronous task, so I can use register_shutdown_function combined with fastcgi_finish_request
+        
     }
 }

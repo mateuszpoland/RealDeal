@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
-class UniqueOfferIdentiier
+class UniqueOfferIdentifier
 {
     public function __toString(): string
     {

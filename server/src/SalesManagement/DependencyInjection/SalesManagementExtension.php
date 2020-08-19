@@ -14,7 +14,8 @@ class SalesManagementExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator('/usr/src/app/src/SalesManagement/Infrastructure/Resources/config')
+            //new FileLocator('/usr/src/app/src/SalesManagement/Infrastructure/Resources/config')
+            new FileLocator('src/SalesManagement/Infrastructure/Resources/config')
         );
         $loader->load('services.yml');
     }

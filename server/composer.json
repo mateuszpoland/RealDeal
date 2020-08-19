@@ -29,7 +29,8 @@
         "symfony/serializer": "5.1.*",
         "symfony/twig-bundle": "5.1.*",
         "symfony/validator": "5.1.*",
-        "symfony/yaml": "5.1.*"
+        "symfony/yaml": "5.1.*",
+        "ongr/elasticsearch-bundle": "~6.0"
     },
     "require-dev": {
     },
@@ -47,7 +48,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "RealDeal\\Tests\\": "tests/"
         }
     },
     "replace": {

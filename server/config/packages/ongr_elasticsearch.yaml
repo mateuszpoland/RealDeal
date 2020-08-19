@@ -1,0 +1,19 @@
+ongr_elasticsearch:
+    analysis:
+        filter:
+            simple_filter: 
+                type: edge_ngram 
+                min_gram: 1
+                max_gram: 20
+        analyzer:
+            simple_analyzer: 
+                type: custom
+                tokenizer: standard
+                filter:
+                    - lowercase
+                    - simple_filter    
+    indexes:
+        RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument:
+            hosts: [elasticsearch:9200]               
+
+    

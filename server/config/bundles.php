@@ -10,5 +10,5 @@ return [
     ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle::class => ['all' => true],
     Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle::class => ['all' => true],
     RealDeal\SalesManagement\SalesManagementBundle::class => ['all' => true],
-   // ONGR\ElasticsearchBundle\ONGRElasticsearchBundle::class => ['all' => true]
+    ONGR\ElasticsearchBundle\ONGRElasticsearchBundle::class => ['all' => true],
 ];

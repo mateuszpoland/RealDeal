@@ -7,7 +7,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use RealDeal\SalesManagement\Domain\Advertising\Advertising;
 
-class OfferRepository implements ServiceEntityRepositoryInterface
+class AdvertisingRepository implements ServiceEntityRepositoryInterface
 {
     /** @var EntityManagerInterface */
     private $em;
