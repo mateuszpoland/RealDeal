@@ -19,14 +19,6 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
-    
-    ### Common ###
-    commandBus:
-        class: RealDeal\Shared\Infrastructure\CommandBus
-        arguments: []
-        calls:
-            - [map, ['RealDeal\SalesManagement\Application\Command\CreateOfferCommand', '@SalesManagement.CommandHandler.CreateNewOffer']]
-    
     ### SalesManagement ###
     ## repositories
     SalesManagement.Offer.OfferRepository:
@@ -44,17 +36,29 @@ services:
         class: RealDeal\SalesManagement\Application\CommandHandler\CreateOfferHandler
         arguments: 
             - '@SalesManagement.Offer.OfferFactory'
-            - '@doctrine.orm.entity_manager' 
-            - '@event_dispatcher'  
+            - '@SalesManagement.Offer.OfferRepository' 
+            - '@messenger.bus.default'
             - '@service_container'
+        tags:
+            - 
+                name: messenger.message_handler
+                handles: RealDeal\SalesManagement\Application\Command\CreateOfferCommand
     
     #event handlers
-            
+    SalesManagement.EventHandler.OfferCreated:
+        class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
+        arguments:
+            - '@service_container'
+        tags:
+            -   
+                name: messenger.message_handler
+                handles: RealDeal\SalesManagement\Application\Event\Offer\OfferCreated
+                       
     ## controllers
     SalesManagement.OfferController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
         arguments:
-            - '@commandBus'
+            - '@messenger.bus.default'
         public: true
         tags: ['controller.service_arguments']
     

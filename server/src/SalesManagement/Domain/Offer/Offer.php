@@ -150,7 +150,10 @@ class Offer implements OfferState
      */
     private $state = self::STATE_NEW;
 
-    // @todo - consider adding dynamic, persisted list of interested buyers - or generate them dynamically and store in different scope/table
+    public function getId(): int
+    {
+        return $this->id;
+    }
 
     public function publishNewOffer(
         string $name,

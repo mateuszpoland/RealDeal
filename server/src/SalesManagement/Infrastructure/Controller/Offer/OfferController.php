@@ -5,18 +5,17 @@ namespace RealDeal\SalesManagement\Infrastructure\Controller\Offer;
 use Exception;
 use InvalidArgumentException;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
-use RealDeal\Shared\Infrastructure\CommandBus;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Messenger\MessageBusInterface;
 
 class OfferController
 {
     private $commandBus;
 
     public function __construct(
-        CommandBus $commandBus
-
+        MessageBusInterface $commandBus
     )
     {
         $this->commandBus = $commandBus;
@@ -33,7 +32,7 @@ class OfferController
                 $data['totalPrice'],
                 $data['footage']
             );
-            $this->commandBus->handle($command);
+            $this->commandBus->dispatch($command);
             // catch various levels of exception and return detailed response codes
             return new JsonResponse(['name' => $command->getName()], Response::HTTP_CREATED);
         } catch(Exception $exception) {

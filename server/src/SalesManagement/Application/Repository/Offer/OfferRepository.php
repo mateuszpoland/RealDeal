@@ -21,4 +21,16 @@ class OfferRepository implements ServiceEntityRepositoryInterface
     {
        throw new Exception('Not implemented yet');
     }
+
+    public function save(Offer $offer): void
+    {
+       $this->em->persist($offer);
+       $this->em->flush(); 
+    }
+
+    public function delete(Offer $offer): void
+    {
+       $this->em->remove($offer);
+       $this->em->flush(); 
+    }
 }

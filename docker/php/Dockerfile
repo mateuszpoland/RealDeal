@@ -8,7 +8,10 @@ RUN pecl install apcu \
 
 RUN apt-get update && \
 apt-get install -y \
-zlib1g-dev
+zlib1g-dev \
+php-amqp # this was added
+
+RUN echo "extension=amqp.so" > /etc/php/7.2/cli/php.ini
 
 RUN docker-php-ext-install zip
 RUN docker-php-ext-enable apcu
