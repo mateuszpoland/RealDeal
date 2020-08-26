@@ -8,13 +8,12 @@ const App = () => {
   const [offers, setOffers] = useState<Offer[]>([]);
   // fetch Offers
   useEffect(() => {
+    const loadOffers = async() => {
+      const offersSet = await fetchOffers();
+      setOffers(offersSet);
+    }
     loadOffers();
-  });
-
-  const loadOffers = async() => {
-    const offersSet = await fetchOffers();
-    setOffers(offersSet);
-  }
+  }, []); // activate hook only on component mount
 
   return (
     <React.Fragment>

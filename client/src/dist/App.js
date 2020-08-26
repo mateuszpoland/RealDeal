@@ -43,20 +43,20 @@ var App = function () {
     var _a = react_1.useState([]), offers = _a[0], setOffers = _a[1];
     // fetch Offers
     react_1.useEffect(function () {
+        var loadOffers = function () { return __awaiter(void 0, void 0, void 0, function () {
+            var offersSet;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, Fetcher_1.fetchOffers()];
+                    case 1:
+                        offersSet = _a.sent();
+                        setOffers(offersSet);
+                        return [2 /*return*/];
+                }
+            });
+        }); };
         loadOffers();
-    });
-    var loadOffers = function () { return __awaiter(void 0, void 0, void 0, function () {
-        var offersSet;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, Fetcher_1.fetchOffers()];
-                case 1:
-                    offersSet = _a.sent();
-                    setOffers(offersSet);
-                    return [2 /*return*/];
-            }
-        });
-    }); };
+    }, []); // activate hook only on component mount
     return (react_1["default"].createElement(react_1["default"].Fragment, null,
         react_1["default"].createElement("h2", null, "Widok ofert"),
         react_1["default"].createElement("ul", null, offers.map(function (offer) { return (react_1["default"].createElement("li", { key: offer.doc_id, "data-id": offer.id },
