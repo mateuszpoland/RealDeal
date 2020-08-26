@@ -9,7 +9,7 @@ abstract class ElasticQuery
 {
     private $container;
 
-    public function __construct(Container $container)
+    public function setContainer($container)
     {
         $this->container = $container;
     }

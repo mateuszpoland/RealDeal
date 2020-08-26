@@ -3,14 +3,29 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\Query;
 
-use RealDeal\Shared\Application\Query\ElasticQuery;
+use Elasticsearch\ClientBuilder;
+use ONGR\ElasticsearchDSL\Query\MatchAllQuery;
+use ONGR\ElasticsearchDSL\Search;
 use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
 
-class GetAllOffersQuery extends ElasticQuery
+class GetAllOffersQuery 
 {
+    private $container;
+
+    public function __construct($container)
+    {
+        $this->container = $container;
+    }
     public function execute()
     {
-       $index = $this->container->get(OfferDocument::class); 
-       return $index->findBy([], ['property_total_price' => 'ASC'], 10, 0);
+        $indexService = $this->container->get(OfferDocument::class); 
+        $client = $indexService->getClient();
+        $search = new Search();
+        $search->addQuery(new MatchAllQuery());
+        $params = [
+            'index' => 'offers',
+            'body' => $search->toArray()
+        ];
+        return $client->search($params);
     }
 }

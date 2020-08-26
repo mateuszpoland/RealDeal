@@ -3,8 +3,9 @@
 namespace RealDeal\SalesManagement\Infrastructure\Controller\Offer;
 
 use Exception;
-use InvalidArgumentException;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
+use RealDeal\SalesManagement\Application\Query\GetAllOffersQuery;
+use RealDeal\Shared\Infrastructure\ApiResponseBuilder;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,11 +15,19 @@ class OfferController
 {
     private $commandBus;
 
+    private $getAllOffersQuery;
+
+    private $responseBuilder;
+
     public function __construct(
-        MessageBusInterface $commandBus
+        MessageBusInterface $commandBus,
+        ApiResponseBuilder $responseBuilder,
+        GetAllOffersQuery $getAllOffersQuery
     )
     {
         $this->commandBus = $commandBus;
+        $this->getAllOffersQuery = $getAllOffersQuery;
+        $this->responseBuilder = $responseBuilder;
     }
 
     public function addOfferAction(Request $request)
@@ -41,8 +50,8 @@ class OfferController
         }
     }
 
-    public function getAllOffersAction()
+    public function getAllOffersAction(): JsonResponse
     {
-        
+        return $this->responseBuilder->buildElasticResponse($this->getAllOffersQuery->execute());
     }
 }

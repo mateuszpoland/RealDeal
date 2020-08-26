@@ -6,7 +6,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\Read;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="offer", default=true)
+ * @ES\Index(alias="offers", default=true)
  *
  */
 class OfferDocument

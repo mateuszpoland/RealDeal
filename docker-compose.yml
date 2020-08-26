@@ -13,6 +13,8 @@ services:
   db:
     container_name: myqsl
     image: mysql:5.7
+    networks:
+        - realdeal
     restart: on-failure
     environment:
         MYSQL_ROOT_PASSWORD: passwd
@@ -27,6 +29,8 @@ services:
   nginx:
     image: nginx:1.15.3-alpine
     restart: on-failure
+    networks:
+        - realdeal
     volumes:
       - './server:/usr/src/app'
       - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
@@ -38,6 +42,8 @@ services:
   php:
     container_name: php
     user: 1000:1000
+    networks:
+        - realdeal
     build:
       context: .
       dockerfile: docker/php/Dockerfile
@@ -50,17 +56,20 @@ services:
   rabbitmq:
     image: bitnami/rabbitmq:latest
     container_name: rabbit
+    networks:
+        - realdeal
     environment: 
       - RABBITMQ_PASSWORD=password
 
   elasticsearch:
       image: docker.elastic.co/elasticsearch/elasticsearch:6.8.9
       container_name: elasticsearch
+      networks:
+        - realdeal
       volumes:
         - esdata:/usr/share/elasticsearch/data
       environment:
         - cluster.name=realdeal_cluster
-       # - include_type_name=true
         - bootstrap.memory_lock=true
         - "ES_JAVA_OPTS--Xms4g-Xmx4g"
         - discovery.type=single-node
@@ -72,6 +81,9 @@ services:
           hard: -1
       ports:
         - '9200:9200'
+
+networks:
+  realdeal:
 
 volumes:
   storage:

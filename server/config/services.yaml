@@ -19,7 +19,20 @@ services:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
 
+    ### Shared ###
+
+    RealDeal.Api.ResponseBuilder:
+        class: RealDeal\Shared\Infrastructure\ApiResponseBuilder
+
+    ## queries ##
+    RealDeal.Query.Elastic:
+        class: RealDeal\Shared\Application\Query\ElasticQuery
+        abstract: true
+        calls:
+            - [setContainer, ['@service_container']]
+        
     ### SalesManagement ###
+
     ## repositories
     SalesManagement.Offer.OfferRepository:
         class: RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository
@@ -30,7 +43,13 @@ services:
         class: RealDeal\SalesManagement\Application\Repository\Client\ClientRepository
         arguments:
             - '@doctrine.orm.entity_manager'
-    
+
+    ## queries ##
+    SalesManagement.Query.GetAllOffersQuery:
+        class: RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
+        arguments: 
+            - '@service_container'
+
     #command handlers
     SalesManagement.CommandHandler.CreateNewOffer:
         class: RealDeal\SalesManagement\Application\CommandHandler\CreateOfferHandler
@@ -49,16 +68,19 @@ services:
         class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
         arguments:
             - '@service_container'
+            - RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
         tags:
             -   
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Event\Offer\OfferCreated
-                       
+
     ## controllers
     SalesManagement.OfferController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
         arguments:
             - '@messenger.bus.default'
+            - '@RealDeal.Api.ResponseBuilder'
+            - '@SalesManagement.Query.GetAllOffersQuery'
         public: true
         tags: ['controller.service_arguments']
     
