@@ -5,3 +5,13 @@ export type Offer = {
     property_total_price: number
 }
 
+export type OfferRequestData = {
+    doc_id: string,
+}
+
+export type OfferListData = {
+    doc_id: string,
+    property_name: string,
+    property_totalPrice: number
+}
+

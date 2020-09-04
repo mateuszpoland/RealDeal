@@ -5,6 +5,7 @@ namespace RealDeal\SalesManagement\Infrastructure\Controller\Offer;
 use Exception;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
 use RealDeal\SalesManagement\Application\Query\GetAllOffersQuery;
+use RealDeal\SalesManagement\Application\Query\GetSingleOfferQuery;
 use RealDeal\Shared\Infrastructure\ApiResponseBuilder;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -53,5 +54,11 @@ class OfferController
     public function getAllOffersAction(): JsonResponse
     {
         return $this->responseBuilder->buildElasticResponse($this->getAllOffersQuery->execute());
+    }
+
+    public function getSingleOfferAction(string $docId): JsonResponse
+    {
+        $query = $this->getSingleOferQuery->byDocumentId($docId);
+        return $this->responseBuilder->buildElasticResponse($query->execute());
     }
 }

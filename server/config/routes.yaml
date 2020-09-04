@@ -14,3 +14,7 @@ salesManagement.addOffer:
   path: offers/add
   controller: SalesManagement.OfferController:addOfferAction  
 
+salesManagement.getSingleOffer:
+  methods: ['GET']
+  path: offers/{id}
+  controller: SalesManagement.OfferController:getSingleOfferAction

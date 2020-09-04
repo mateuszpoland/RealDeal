@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add react-router-dom
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add @types/query-string
 
 PATH: 
   /home/mateuszpoland/Downloads/google-cloud-sdk-290.0.0-linux-x86_64/google-cloud-sdk/bin:/home/mateuszpoland/anaconda3/bin:/home/mateuszpoland/anaconda3/condabin:/home/mateuszpoland/.local/bin:/home/mateuszpoland/scripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/home/mateuszpoland/Desktop/RealDeal/client/node_modules/@babel/compat-data/node_modules/locate-path'
+  Error: EACCES: permission denied, mkdir '/home/mateuszpoland/Desktop/RealDeal/client/node_modules/@babel/compat-data/node_modules/browserslist'
 
 npm manifest: 
   {
