@@ -14,21 +14,20 @@ const App: React.FC = () => {
    <Router>
     <div>
         <nav>
-            <Switch>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/offers">Oferty</Link>
-                    </li>
-                </ul>
-            </Switch>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/offers">Oferty</Link>
+                </li>
+            </ul>
          </nav>
-
-        <Route path="/" exact component={Index} />
-        <Route path='/offers' component={ListOfferView} />
-
+        <Switch>
+            <Route path="/" exact component={Index} />
+            <Route path='/offers' exact component={ListOfferView} />
+            <Route path="/offers/:id" exact component={OfferView} />
+        </Switch>
     </div>
    </Router>
   );

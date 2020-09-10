@@ -65,42 +65,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RealDeal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RealDeal.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/fake_data/FakeOffers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/fake_data/FakeOffers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/packages/doctrine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200804093001.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200819074019.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200819083808.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200825160037.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -265,7 +232,7 @@
       <workItem from="1599587426045" duration="4654000" />
       <workItem from="1599657301781" duration="9744000" />
       <workItem from="1599745631402" duration="3613000" />
-      <workItem from="1599757100310" duration="1298000" />
+      <workItem from="1599757100310" duration="2680000" />
     </task>
     <servers />
   </component>

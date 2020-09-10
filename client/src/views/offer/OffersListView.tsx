@@ -39,7 +39,7 @@ export const ListOfferView = () => {
         );
     } else {
         return(
-            <Router>
+
 
                 <React.Fragment>
                     <h2>Widok ofert</h2>
@@ -54,10 +54,7 @@ export const ListOfferView = () => {
                         ))}
                     </ul>
                 </React.Fragment>
-                <Switch>
-                    <Route path="/offers/:id" exact component={OfferView} />
-                </Switch>
-            </Router>
+
         );
     }
 
