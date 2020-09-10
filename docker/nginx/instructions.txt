@@ -1,0 +1,47 @@
+Teraz aplikacja jest zbindowana do adresu http://realdeal.ea -> 127.0.0.1
+
+w tym celu wyedytowane zostay pliki dla lokalnego uzytkownika (mkowalewski)
+
+sudo nano /etc/hosts
+
+#Added by me to resolve test hosts
+127.0.0.1 	realdeal.ea
+
+Jak i plik dnsmasq.conf
+/usr/local/etc/dnsmasq.conf
+
+addresss=/realdeal.ea/127.0.0.1
+
+W opcjach systemu (mac os)zostaly tez zmienione adresy serwerow DNS, z ktorych pierwszy jest loopback:
+
+127.0.0.1
+8.8.4.4
+8.8.8.8
+
+Generowanie certyfikatu SSL przez Certbota:
+Do momentu wygenerowania wlasnej domeny, odpuszczam generowanie certyfikatu.
+
+Tutoriale:
+https://miki725.com/docker/crypto/2017/01/29/docker+nginx+letsencrypt.html
+https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
+https://www.humankode.com/ssl/how-to-set-up-free-ssl-certificates-from-lets-encrypt-using-docker-and-nginx
+https://dev.to/adamkdean/automatic-ssl-with-let-s-encrypt-nginx-4nfk
+
+Jak dzialaja ACME-challenge w Lets Encrypt:
+This is the most common challenge type today.
+Let’s Encrypt gives a token to your ACME client, and your ACME client puts a file on your web server at http://<YOUR_DOMAIN>/.well-known/acme-challenge/<TOKEN>. That file contains the token, plus a thumbprint of your account key. Once your ACME client tells Let’s Encrypt that the file is ready, Let’s Encrypt tries retrieving it (potentially multiple times from multiple vantage points). If our validation checks get the right responses from your web server, the validation is considered successful and you can go on to issue your certificate. If the validation checks fail, you’ll have to try again with a new certificate.
+
+Pozniej, po wygenerowaniu certyfikatu, tutaj, Kevin Dunglas omawia wlaczanie HTTP 2:
+ https://symfonycasts.com/screencast/london2019/boost-your-symfony-apps-with-http-2-and-http-3
+
+##### this sort of works, but does not want to generate certificate for realdeal.ea
+sudo docker run -it --rm \
+-v certs:/etc/letsencrypt \
+-v certs-data:/data/letsencrypt \
+certbot/certbot \
+certonly --webroot \
+--register-unsafely-without-email --agree-tos \
+--webroot-path=/data/letsencrypt \
+--staging \
+-d realdeal.pl
+

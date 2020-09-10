@@ -54,7 +54,8 @@ class CreateOfferHandler implements MessageHandlerInterface
         $event = new OfferCreated(
             $offer->getId(),
             $command->getName(),
-            $command->getTotalPrice()
+            $command->getTotalPrice(),
+            $command->getClientId()
         );
 
         $this->commandBus->dispatch($event);

@@ -9,7 +9,7 @@ export interface FakeOffer {
 
 export const fakeOffers: FakeOffer[] = [
     {
-        doc_id: '3vN8JnQBUtAUXlXmZziP',
+        doc_id: 'dYzhZHQBpt8tQvMb_59G',
         property_name: 'ul. Jana z Kolna 99',
         total_price: 1300000.5,
         client: 'Bartosz Bazylewicz',

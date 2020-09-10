@@ -1,67 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:server" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:composer" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:server" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:symfony" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:client" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Application/Serializers/Offer/OfferSerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Application/Serializers/User/UserSerializer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Application/Views/Offer/OfferView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Application/Views/User/UserView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Domain/Client/Client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Domain/Offer/Offer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Domain/Offer/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/SalesManagement/Domain/ValueObject/Price.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/instruction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api/instruction.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Properties/Domain/Property.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Properties/Domain/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Properties/Infrastructure/overview.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Routes/Property/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Routes/Property/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Serializers/OfferSerializer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Serializers/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Views/Property/PropertyView.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Views/Property/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/user_stories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/realdeal_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/realdeal_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/api/realdeal_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/RealDeal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RealDeal.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/fake_data/FakeOffers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/fake_data/FakeOffers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/css/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/packages/doctrine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/packages/doctrine.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200804093001.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200819074019.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200819083808.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200825160037.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/server/composer.json</pharConfigPath>
+    <execution />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,50 +118,109 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>realdeal</find>
-      <find>flatNu</find>
-      <find>foo</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/api/SalesManagement/Application/Views</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/api/realdeal/OfferManagement/Domain/Model/Offer.py" />
-        <option value="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Views/Property/PropertyView.py" />
-        <option value="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Serializers/OfferSerializer.py" />
-        <option value="$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Views/Property/OfferView.py" />
-        <option value="$PROJECT_DIR$/api/realdeal/OfferManagement/Domain/Model/Seller.py" />
-        <option value="$PROJECT_DIR$/api/realdeal_project/settings.py" />
-        <option value="$PROJECT_DIR$/api/ContractManagement/models.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Domain/Offer/__init__.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/models.py" />
-        <option value="$PROJECT_DIR$/api/instruction.txt" />
-        <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Domain/ValueObject/Price.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Application/Serializers/Offer/OfferSerializer.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Domain/Client/Client.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Domain/Offer/Offer.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Application/Views/Offer/OfferView.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Application/Serializers/User/UserSerializer.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/Application/Views/User/UserView.py" />
-        <option value="$PROJECT_DIR$/api/SalesManagement/views.py" />
-        <option value="$PROJECT_DIR$/api/__init__.py" />
-        <option value="$PROJECT_DIR$/__init__.py" />
-        <option value="$PROJECT_DIR$/api/realdeal_project/urls.py" />
-      </list>
-    </option>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/server/vendor/composer" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/flex" />
+      <path value="$PROJECT_DIR$/server/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/server/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/server/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/server/vendor/guzzlehttp/ringphp" />
+      <path value="$PROJECT_DIR$/server/vendor/guzzlehttp/streams" />
+      <path value="$PROJECT_DIR$/server/vendor/nelmio/cors-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/ocramius/proxy-manager" />
+      <path value="$PROJECT_DIR$/server/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/webimpress/safe-writer" />
+      <path value="$PROJECT_DIR$/server/vendor/api-platform/core" />
+      <path value="$PROJECT_DIR$/server/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/server/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/server/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/server/vendor/ongr/elasticsearch-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/ongr/elasticsearch-dsl" />
+      <path value="$PROJECT_DIR$/server/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/server/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/server/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/doctrine-migrations-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/sql-formatter" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/server/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/server/vendor/laminas/laminas-code" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/server/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/server/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/server/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/property-info" />
+      <path value="$PROJECT_DIR$/server/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/server/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/property-access" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/expression-language" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/doctrine-bridge" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/messenger" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/doctrine-messenger" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/security-csrf" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/asset" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/stopwatch" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/twig-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/server/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/server/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/dotenv" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/security-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/twig-bridge" />
+      <path value="$PROJECT_DIR$/server/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/redis-messenger" />
+      <path value="$PROJECT_DIR$/server/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/security-http" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/amqp-messenger" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/security-guard" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/web-link" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/server/vendor/elasticsearch/elasticsearch" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/server/vendor/gedmo/doctrine-extensions" />
+    </include_path>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -122,47 +229,22 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="130" />
-    <option name="width" value="1279" />
-    <option name="height" value="701" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="RealDeal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RealDeal" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+  <component name="ProjectId" id="1h48Bs7KnsyyKTPceGr2ojsxaWr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Projects/Python/opencv" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/client/node_modules/typescript/lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -173,229 +255,51 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1595449854075</updated>
+      <workItem from="1599258872732" duration="11363000" />
+      <workItem from="1599416108627" duration="21000" />
+      <workItem from="1599416215666" duration="2342000" />
+      <workItem from="1599496477141" duration="7549000" />
+      <workItem from="1599541551411" duration="112000" />
+      <workItem from="1599585786924" duration="43000" />
+      <workItem from="1599586023657" duration="819000" />
+      <workItem from="1599587426045" duration="4654000" />
+      <workItem from="1599657301781" duration="9744000" />
+      <workItem from="1599745631402" duration="3613000" />
+      <workItem from="1599757100310" duration="1298000" />
     </task>
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27134877" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.27666667" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="PyCrunch Timeline" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="right" id="PyCrunch" order="5" />
-    </layout>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Serializers/OfferSerializer.py" />
-    <entry file="file://$PROJECT_DIR$/api/realdeal/Shared/Infrastructure/Views/Property/OfferView.py" />
-    <entry file="file:///usr/lib/python3/dist-packages/pymacaroons/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python3/dist-packages/pymacaroons/serializers/json_serializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-615">
-          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/realdeal/OfferManagement/Domain/Model/Seller.py" />
-    <entry file="file://$PROJECT_DIR$/api/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/realdeal/OfferManagement/Domain/Model/Offer.py" />
-    <entry file="file://$PROJECT_DIR$/api/realdeal/models.py" />
-    <entry file="file://$PROJECT_DIR$/api/realdeal_project/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/ContractManagement/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/ContractManagement/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="61" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="61" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/realdeal_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Domain/Offer/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Domain/ValueObject/Price.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Application/Serializers/Offer/OfferSerializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="52" selection-start-line="6" selection-start-column="52" selection-end-line="6" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Application/Views/User/UserView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Application/Views/Offer/OfferView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Application/Serializers/User/UserSerializer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Domain/Offer/Offer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/Domain/Client/Client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/SalesManagement/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="89" selection-start-line="2" selection-start-column="89" selection-end-line="2" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/realdeal_project/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/instruction.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="2" selection-start-line="6" selection-end-line="6" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1599747206348">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="496" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1599506200532" />
+    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.808@0.23.1440.808" timestamp="1599747206348" />
+    <state x="100" y="113" width="1240" height="629" key="DiffContextDialog" timestamp="1599748032743">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599662903393" />
+    <state x="100" y="113" width="1240" height="629" key="DiffContextDialog/0.23.1440.808@0.23.1440.808" timestamp="1599748032743" />
+    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup" timestamp="1599748979060">
+      <screen x="0" y="23" width="1440" height="808" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
+    <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1599586270848" />
+    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1599748979060" />
   </component>
 </project>

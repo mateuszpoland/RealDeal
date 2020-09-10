@@ -14,20 +14,28 @@ use Symfony\Component\Messenger\MessageBusInterface;
 
 class OfferController
 {
+    /** @var MessageBusInterface  */
     private $commandBus;
 
+    /** @var GetAllOffersQuery  */
     private $getAllOffersQuery;
 
+    /** @var GetSingleOfferQuery */
+    private $getSingleOffer;
+
+    /** @var ApiResponseBuilder  */
     private $responseBuilder;
 
     public function __construct(
         MessageBusInterface $commandBus,
         ApiResponseBuilder $responseBuilder,
-        GetAllOffersQuery $getAllOffersQuery
+        GetAllOffersQuery $getAllOffersQuery,
+        GetSingleOfferQuery $getSingleOfferQuery
     )
     {
         $this->commandBus = $commandBus;
         $this->getAllOffersQuery = $getAllOffersQuery;
+        $this->getSingleOffer = $getSingleOfferQuery;
         $this->responseBuilder = $responseBuilder;
     }
 
@@ -40,7 +48,8 @@ class OfferController
             $command = new CreateOfferCommand(
                 $data['name'],
                 $data['totalPrice'],
-                $data['footage']
+                $data['footage'],
+                $data['clientId']
             );
             $this->commandBus->dispatch($command);
             // catch various levels of exception and return detailed response codes
@@ -56,9 +65,10 @@ class OfferController
         return $this->responseBuilder->buildElasticResponse($this->getAllOffersQuery->execute());
     }
 
-    public function getSingleOfferAction(string $docId): JsonResponse
+    public function getSingleOfferAction(string $id): JsonResponse
     {
-        $query = $this->getSingleOferQuery->byDocumentId($docId);
+        //$fieldsToDisplay = $this->getConfigForUser->getFieldsToDisplay(); // @todo - make this a query or separate serivce - get config for what to display for user based on his role or what has been set for him by admin
+        $query = $this->getSingleOffer->byDocumentId($id);
         return $this->responseBuilder->buildElasticResponse($query->execute());
     }
 }

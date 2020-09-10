@@ -20,8 +20,6 @@ For example, to install a Javascript dependency and save that information to `pa
 If you want to be on a shell for one of the Docker services, you can do something like:
 `docker-compose run --rm frontend bash`
 
-
-
 Things I want to add:
 - config for circle to deploy on `master` (wondering if i can get default branch name) and tagged releases
 - React Router

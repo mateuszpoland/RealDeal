@@ -10,23 +10,28 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 class CreateOfferCommand implements CommandInterface
 {
     /** @var string */
-    private $name;
+    private string $name;
 
     /** @var float */
-    private $totalPrice;
+    private float $totalPrice;
 
     /** @var float */
-    private $footage;
+    private float $footage;
+
+    /** @var int */
+    private int $clientId;
 
     public function __construct(
         string $name,
         float $totalPrice,
-        float $footage
+        float $footage,
+        int $clientId
     )
     {
         $this->name = $name;
         $this->totalPrice = $totalPrice;
         $this->footage = $footage;
+        $this->clientId = $clientId;
     }
 
     public function __toString(): string
@@ -47,5 +52,10 @@ class CreateOfferCommand implements CommandInterface
     public function getFootage(): float
     {
         return $this->footage;
+    }
+
+    public function getClientId(): int
+    {
+        return $this->clientId;
     }
 }

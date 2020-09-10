@@ -16,9 +16,9 @@ doctrine:
                 type: annotation
                 dir: '%kernel.project_dir%/src/SalesManagement/Domain/'
                 prefix: 'RealDeal\SalesManagement'
-            ContractManagement:
-                is_bundle: false
-                type: annotation
-                dir: '%kernel.project_dir%/src/ContractManagement/Domain/'
-                prefix: 'RealDeal\ContractManagement'
+            #ContractManagement:
+            #    is_bundle: false
+            #    type: annotation
+            #    dir: '%kernel.project_dir%/src/ContractManagement/Domain/'
+            #    prefix: 'RealDeal\ContractManagement'
 

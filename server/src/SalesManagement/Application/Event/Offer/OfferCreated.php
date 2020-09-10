@@ -3,29 +3,28 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\Event\Offer;
 
-use RealDeal\SalesManagement\Domain\Offer\Offer;
-
 class OfferCreated
 {
-    /** @var int */
-    private $offerId;
+    private int $offerId;
 
-    /** @var string */
-    private $offerName;
+    private string $offerName;
 
-    /** @var float */
-    private $offerTotalPrice;   
+    private float $offerTotalPrice;
+
+    private int $clientId;
 
     public function __construct
     (
         int $offerId,
         string $offerName,
-        float $offerTotalPrice
+        float $offerTotalPrice,
+        int $clientId
     )
     {   
         $this->offerId = $offerId;
         $this->offerName = $offerName;
         $this->offerTotalPrice = $offerTotalPrice;
+        $this->clientId = $clientId;
     }
 
     public function getOfferId(): int
@@ -41,5 +40,10 @@ class OfferCreated
     public function getOfferTotalPrice(): float
     {
         return $this->offerTotalPrice;
+    }
+
+    public function getClientId(): int
+    {
+        return $this->clientId;
     }
 }

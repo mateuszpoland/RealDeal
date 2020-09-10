@@ -11,15 +11,15 @@ use ONGR\ElasticsearchDSL\Query\TermLevel\IdsQuery;
 use ONGR\ElasticsearchDSL\Query\TermLevel\TermQuery;
 use ONGR\ElasticsearchDSL\Search;
 use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
+use Symfony\Component\DependencyInjection\Container;
 
 class GetSingleOfferQuery
 {
-    private $container;
+    private Container $container;
 
-    /** @var string|null */
-    private $offerId;
+    private string $offerId;
 
-    public function __construct($container)
+    public function __construct(Container $container)
     {
         $this->container = $container;
     }

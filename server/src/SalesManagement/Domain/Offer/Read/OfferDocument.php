@@ -30,6 +30,25 @@ class OfferDocument
      */
     private $totalPrice;
 
+    /**
+     * @ES\Property(type="integer", name="client_id")
+     */
+    private $clientId;
+
+
+    public function getClientId()
+    {
+        return $this->clientId;
+    }
+
+    /**
+     * @param mixed $clientId
+     */
+    public function setClientId($clientId): void
+    {
+        $this->clientId = $clientId;
+    }
+
     public function getId(): ?string
     {
         return $this->id;

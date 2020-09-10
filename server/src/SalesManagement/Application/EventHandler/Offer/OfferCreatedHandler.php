@@ -23,6 +23,7 @@ class OfferCreatedHandler implements MessageHandlerInterface
         $readOfferModel->setPersistedId($event->getOfferId());
         $readOfferModel->setName($event->getOfferName());
         $readOfferModel->setTotalPrice($event->getOfferTotalPrice());
+        $readOfferModel->setClientId($event->getClientId());
 
         $manager = $this->container->get(OfferDocument::class);
 

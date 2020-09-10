@@ -28,16 +28,26 @@ services:
     
   nginx:
     image: nginx:1.15.3-alpine
+    container_name: nginx
     restart: on-failure
     networks:
         - realdeal
     volumes:
       - './server:/usr/src/app'
       - './docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro'
+      - certs:/etc/letsencrypt # certificates
+      - certs_data:/data/letsencrypt #certificate data
     ports:
-      - 8080:80
+      - 80:80
+      - 443:443
     depends_on:
       - php
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - './docker/nginx/certbot/conf:/etc/letsencrypt'
   
   php:
     container_name: php
@@ -52,7 +62,17 @@ services:
       - './server:/usr/src/app'
     env_file:
       - .env
-      
+
+  blackfire:
+    image: blackfire/blackfire
+    ports:
+      - 8707:8707
+    environment:
+      BLACKFIRE_SERVER_ID: ~
+      BLACKFIRE_SERVER_TOKEN: ~
+      BLACKFIRE_CLIENT_ID: ~
+      BLACKFIRE_CLIENT_TOKEN: ~
+
   rabbitmq:
     image: bitnami/rabbitmq:latest
     container_name: rabbit
@@ -84,6 +104,7 @@ services:
 
 networks:
   realdeal:
+    driver: bridge # configure bridge network
 
 volumes:
   storage:
@@ -91,4 +112,8 @@ volumes:
   mysqldata:
     driver: local
   esdata:
-    driver: local  
+    driver: local
+  certs:
+    driver: local
+  certs_data:
+    driver: local
