@@ -3,38 +3,34 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\CommandHandler;
 
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\EntityManagerInterface;
 use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
 use RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory;
 use RealDeal\SalesManagement\Application\Event\Offer\OfferCreated;
+use RealDeal\SalesManagement\Application\Repository\Client\ClientRepository;
 use RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
+use RealDeal\SalesManagement\Domain\Client\Client;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class CreateOfferHandler implements MessageHandlerInterface
 {
-    private $offerRepository;
-
-    /** @var OfferFactory */
-    private $offerFactory;
-
-    /** @var Container */
-    private $container;
-
-    /** @var MessageBusInterface */
-    private $commandBus;
+    private OfferRepository $offerRepository;
+    private ClientRepository $clientRepository;
+    private OfferFactory $offerFactory;
+    private Container $container;
+    private MessageBusInterface $commandBus;
 
     public function __construct(
         OfferFactory $offerFactory,
         OfferRepository $offerRepository,
+        ClientRepository $clientRepository,
         MessageBusInterface $commandBus,
         $container
     )
     {
         $this->container = $container;
+        $this->clientRepository = $clientRepository;
         $this->offerFactory = $offerFactory;
         $this->offerRepository = $offerRepository;
         $this->commandBus = $commandBus;
@@ -43,14 +39,20 @@ class CreateOfferHandler implements MessageHandlerInterface
     public function __invoke(CreateOfferCommand $command)
     {
         $offer = $this->offerFactory->create();
+        $client = $this->getClientFromRepository($command->getClientId());
+        if(!$client) {
+            throw new \InvalidArgumentException('Client of id: ' . $command->getClientId() . ' does not exist.');
+        }
+
         $offer->publishNewOffer(
             $command->getName(),
             $command->getTotalPrice(),
-            $command->getFootage()
+            $command->getFootage(),
+            $client
         );
 
         $this->offerRepository->save($offer);
-        // create event and create separate event handler for this
+
         $event = new OfferCreated(
             $offer->getId(),
             $command->getName(),
@@ -59,5 +61,10 @@ class CreateOfferHandler implements MessageHandlerInterface
         );
 
         $this->commandBus->dispatch($event);
+    }
+
+    private function getClientFromRepository(int $clientId): ?Client
+    {
+        return $this->clientRepository->findById($clientId);
     }
 }

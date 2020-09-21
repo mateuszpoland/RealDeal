@@ -7,7 +7,6 @@ use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
  * @ES\Index(alias="offers", default=true)
- *
  */
 class OfferDocument
 {

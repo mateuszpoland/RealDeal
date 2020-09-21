@@ -14,6 +14,8 @@ ongr_elasticsearch:
                     - simple_filter    
     indexes:
         RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument:
-            hosts: [elasticsearch:9200]           
+            hosts: [elasticsearch:9200]
+        RealDeal\SalesManagement\Domain\Client\Read\ClientDocument:
+            hosts: [elasticsearch:9200]
         
     

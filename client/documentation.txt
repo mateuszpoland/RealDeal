@@ -1,0 +1,12 @@
+1. 09.09.2020 - we start building navigation menu
+from tutorial: https://www.youtube.com/watch?v=97A3uRS7_YA
+
+react templates:
+
+https://colorlib.com/wp/react-admin-dashboard-templates/
+
+Tutaj mam templatke z aktywnymi snippetami kodu z Material UI
+http://preview.themeforest.net/item/boss-ultimate-react-redux-material-admin-template/full_screen_preview/22286397?clickid=0e%3AXnPSi4xyOUzQwUx0Mo3EHUkiXmRypiyj1yM0&iradid=275988&iradtype=ONLINE_TRACKING_LINK&irgwc=1&irmptype=mediapartner&irpid=369282&mp_value1=&utm_campaign=af_impact_radius_369282&utm_medium=affiliate&utm_source=impact_radius
+
+// tutaj tez jest live demo
+https://demo.dashboardpack.com/architectui-react-pro/#/components/modals

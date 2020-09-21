@@ -3,20 +3,15 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
-use RealDeal\SalesManagement\Domain\Advertising\Advertising;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\Index;
-use ONGR\ElasticsearchDSL\Query\Compound\FunctionScoreQuery;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\Validator\Constraints as Assert;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
-
 
 /**
  * Class Offer
- * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Domain\Repository\Offer\OfferRepository")
+ * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository")
  * @ORM\Table(name="offers", indexes={@ORM\Index(name="name_idx", columns={"name"})})
  */
 class Offer implements OfferState
@@ -138,47 +133,85 @@ class Offer implements OfferState
      * reference to the Seller - may be 
      * current client or new one.
      * 
-     * @ORM\ManyToOne(targetEntity="RealDeal\SalesManagement\Domain\Client\Client")
-     * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="RealDeal\SalesManagement\Domain\Client\Client", inversedBy="ownedProperties", cascade={"persist"})
+     * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
      */
     private $client;
 
     /**
-     * In what available state the offer is 
-     * @var [type]
+     * @ORM\ManyToMany(targetEntity="RealDeal\SalesManagement\Domain\Client\Client", inversedBy="prospectiveProperties")
+     * @ORM\JoinTable(name="prospective_clients",
+     *     joinColumns={@ORM\JoinColumn(name="offer_id", referencedColumnName="id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="client_id", referencedColumnName="id")})
+     */
+    private $prospectiveClients;
+
+    /**
+     * In what available state the offer is
      * @ORM\Column(type="string")
      */
     private $state = self::STATE_NEW;
+
+    public function __construct()
+    {
+        $this->prospectiveClients = new ArrayCollection();
+    }
 
     public function getId(): int
     {
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+
+
     public function publishNewOffer(
         string $name,
         float $totalPrice,
-        float $footage
-    )
+        float $footage,
+        Client $client
+    ): void
     {
         $this->name = $name;
         $this->identifier = new UniqueOfferIdentifier();
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
+        $this->client = $client;
+        $client->addOwnedProperty($this);
     }
 
-    public function createAdForOffer()
+    public function changePropertyOwner(Client $client): self
     {
-
+        $this->client = $client;
+        // here we should first check if this operation is permittable, consider going back to aggregate root with repositories
+        return $this;
     }
 
-    public function changeOfferName(string $name): void
+    public function getPropertyOwner(): ?Client
     {
-
+        return $this->client;
     }
 
-    public function changeTotalPrice(): void
+    public function addProspectiveClient(Client $client): void
     {
+        $client->addProspectiveProperty($this);
+        $this->prospectiveClients->add($client);
+        $client->addProspectiveProperty($this);
+    }
 
+    public function removeProspectiveClient(Client $client): void
+    {
+        if($this->prospectiveClients->contains($client)) {
+            $client->removeProspectiveProperty($this);
+            $this->prospectiveClients->remove($client);
+            $client->removeProspectiveProperty($this);
+        }
     }
 }

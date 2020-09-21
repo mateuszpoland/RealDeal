@@ -21,8 +21,26 @@ services:
 
     ### Shared ###
 
+    realdeal.encoder.json:
+        class: Symfony\Component\Serializer\Encoder\JsonEncoder
+
+    realdeal.encoder.xml:
+        class: Symfony\Component\Serializer\Encoder\XmlEncoder
+
+    realdeal.serializer:
+        class: Symfony\Component\Serializer\Serializer
+        arguments:
+            -
+                - '@realdeal.salesmanagement.normalizer.client'
+                - '@serializer.normalizer.object'
+            -
+                - '@realdeal.encoder.json'
+                - '@realdeal.encoder.xml'
+
     RealDeal.Api.ResponseBuilder:
         class: RealDeal\Shared\Infrastructure\ApiResponseBuilder
+        arguments:
+            - '@realdeal.serializer'
 
     ## queries ##
     RealDeal.Query.Elastic:
@@ -54,18 +72,34 @@ services:
         arguments:
             - '@service_container'
 
+    SalesManagement.Query.GetSingleClientQuery:
+        class: RealDeal\SalesManagement\Application\Query\Client\GetSingleClientQuery
+        arguments:
+            - '@SalesManagement.Client.ClientRepository'
+
     #command handlers
     SalesManagement.CommandHandler.CreateNewOffer:
         class: RealDeal\SalesManagement\Application\CommandHandler\CreateOfferHandler
         arguments: 
             - '@SalesManagement.Offer.OfferFactory'
-            - '@SalesManagement.Offer.OfferRepository' 
+            - '@SalesManagement.Offer.OfferRepository'
+            - '@SalesManagement.Client.ClientRepository'
             - '@messenger.bus.default'
             - '@service_container'
         tags:
             - 
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Command\CreateOfferCommand
+
+    SalesManagement.CommandHandler.CreateNewClient:
+        class: RealDeal\SalesManagement\Application\CommandHandler\Client\CreateClientCommandHandler
+        arguments:
+            - '@messenger.bus.default'
+            - '@service_container'
+            - '@SalesManagement.Client.ClientRepository'
+        tags:
+            - name: messenger.message_handler
+              handles: RealDeal\SalesManagement\Application\Command\Client\CreateClientCommand
     
     #event handlers
     SalesManagement.EventHandler.OfferCreated:
@@ -88,7 +122,23 @@ services:
             - '@SalesManagement.Query.GetSingleOfferQuery'
         public: true
         tags: ['controller.service_arguments']
-    
+
+    SalesManagement.ClientController:
+        class: RealDeal\SalesManagement\Infrastructure\Controller\Client\ClientController
+        arguments:
+            - '@messenger.bus.default'
+            - '@RealDeal.Api.ResponseBuilder'
+            - '@SalesManagement.Query.GetSingleClientQuery'
+        public: true
+        tags: ['controller.service_arguments']
+
+    ## normalizers
+
+    realdeal.salesmanagement.normalizer.client:
+        class: RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Client\ClientNormalizer
+        arguments:
+            - '@router.default'
+
     # domain services
     #factories
     SalesManagement.Offer.OfferFactory:

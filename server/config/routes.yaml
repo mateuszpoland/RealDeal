@@ -4,17 +4,36 @@
 
 ## SalesManagement Routing
 
+##### Offers Routes
+
 salesManagement.getAllOffers:
   methods: ['GET']
   path: offers/all
-  controller: SalesManagement.OfferController:getAllOffersAction
+  controller: SalesManagement.OfferController::getAllOffersAction
 
 salesManagement.addOffer:
   methods: ['POST']
   path: offers/add
-  controller: SalesManagement.OfferController:addOfferAction  
+  controller: SalesManagement.OfferController::addOfferAction
 
 salesManagement.getSingleOffer:
   methods: ['GET']
   path: offers/{id}
-  controller: SalesManagement.OfferController:getSingleOfferAction
+  controller: SalesManagement.OfferController::getSingleOfferAction
+
+##### Client routes
+
+salesManagement.addClient:
+  methods: ['POST']
+  path: clients/add
+  controller: SalesManagement.ClientController::addClientAction
+
+salesManagement.addProspectiveProperties:
+  methods: ['POST']
+  path: clients/{id}/prospectiveProperties/add
+  controller: SalesManagement.ClientController::addProspectivePropertyToClientAction
+
+salesManagement.getClient:
+  methods: ['GET']
+  path: clients/{id}
+  controller: SalesManagement.ClientController::getClientAction

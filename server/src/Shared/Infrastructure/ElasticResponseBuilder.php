@@ -3,6 +3,10 @@ declare(strict_types=1);
 
 namespace RealDeal\Shared\Infrastructure;
 
+/**
+ * @todo - make this abstract, extendable class and let specialized classes display information based on configured fields
+ * Class ElasticResponseBuilder
+ */
 class ElasticResponseBuilder
 {
     public function prepareResponse(array $rawResponse, array $displayFields = []): array

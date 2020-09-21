@@ -3,9 +3,7 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\Command;
 
-use ProxyManager\Generator\Util\UniqueIdentifierGenerator;
 use RealDeal\Shared\Application\CommandInterface;
-use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 
 class CreateOfferCommand implements CommandInterface
 {

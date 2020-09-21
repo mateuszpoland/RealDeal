@@ -3,6 +3,7 @@
 namespace RealDeal\SalesManagement\Application\Repository\Offer;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use RealDeal\SalesManagement\Domain\Offer\Offer;
@@ -20,6 +21,19 @@ class OfferRepository implements ServiceEntityRepositoryInterface
     public function findById(): Offer
     {
        throw new Exception('Not implemented yet');
+    }
+
+    public function findAllByIds(array $ids): ArrayCollection
+    {
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('o')
+            ->from('RealDeal\SalesManagement\Domain\Offer\Offer', 'o')
+            ->where(
+                $qb->expr()->in('o.id', ':ids')
+            );
+        $qb->setParameter('ids', $ids);
+
+        return $qb->getQuery()->getResult();
     }
 
     public function save(Offer $offer): void
