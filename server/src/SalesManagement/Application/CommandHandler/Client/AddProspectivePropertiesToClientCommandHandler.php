@@ -30,8 +30,7 @@ class AddProspectivePropertiesToClientCommandHandler implements MessageHandlerIn
             throw new \Exception('Client with this id does not exist');
         }
 
-        $properties  = $this->offerRepository->findAllByIds($command->getPropertiesIds())
-            ->toArray();
+        $properties  = $this->offerRepository->findAllByIds($command->getPropertiesIds());
         array_walk($properties, function($property) use ($client) {
             $client->addProspectiveProperty($property);
         });

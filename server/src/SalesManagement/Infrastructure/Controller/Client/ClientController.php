@@ -48,10 +48,10 @@ class ClientController
         }
     }
 
-    public function addProspectivePropertyToClientAction(Request $request): JsonResponse
+    public function addProspectivePropertyToClientAction(Request $request, int $clientId): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
-        $clientId = $data['client_id'];
+       // $clientId = $data['client_id'];
         $properties = $data['properties'] ?? [];
         try{
             $command = new AddProspectivePropertiesToClientCommand($clientId, $properties);
@@ -60,6 +60,11 @@ class ClientController
         }catch (\Exception $exception) {
             return new JsonResponse($exception->getMessage(), Response::HTTP_BAD_REQUEST);
         }
+    }
+
+    public function removeProspectivePropertyFromClientAction(): JsonResponse
+    {
+        return new JsonResponse('not yet implemented', Response::HTTP_NO_CONTENT);
     }
 
     public function getClientAction(int $id): Response

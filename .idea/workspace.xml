@@ -68,49 +68,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/views/client/ClientsListView.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Client/AddProspectivePropertiesToClientCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Client/CreateClientCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/AddProspectivePropertiesToClientCommandHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/CreateClientCommandHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/Client/GetSingleClientQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Read/ClientDocument.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Read/EmbeddedPropertyObject.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Serializer/Normalizer/Client/ClientNormalizer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Serializer/Normalizer/Offer/OfferNormalizer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RealDeal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RealDeal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/client/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/packages/api_platform.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/packages/framework.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/packages/framework.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/packages/ongr_elasticsearch.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/packages/ongr_elasticsearch.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/packages/twig.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/documentation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/routes/api_platform.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20200905131820.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Client/ClientRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Client/ClientRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/AddProspectivePropertiesToClientCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/AddProspectivePropertiesToClientCommandHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Offer/OfferRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Offer/OfferRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ApiResponseBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -287,7 +253,7 @@
       <workItem from="1600263230085" duration="7582000" />
       <workItem from="1600351710784" duration="4284000" />
       <workItem from="1600435223904" duration="11356000" />
-      <workItem from="1600698632385" duration="8842000" />
+      <workItem from="1600698632385" duration="10355000" />
     </task>
     <servers />
   </component>
@@ -348,12 +314,12 @@
     <state x="422" y="163" width="601" height="522" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1600710303185" />
     <state x="422" y="164" width="601" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1600199999267" />
     <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1600282461854" />
-    <state x="385" y="198" width="670" height="604" key="search.everywhere.popup" timestamp="1600714451424">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup" timestamp="1600717916587">
+      <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
-    <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1600714451424" />
-    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1600368733729" />
+    <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1600716873545" />
+    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1600717916587" />
     <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1600624708010" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1600623161796" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1600699963489" />

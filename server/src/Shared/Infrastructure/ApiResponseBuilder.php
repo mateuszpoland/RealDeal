@@ -5,8 +5,6 @@ namespace RealDeal\Shared\Infrastructure;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 
 class ApiResponseBuilder

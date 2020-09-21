@@ -100,6 +100,15 @@ services:
         tags:
             - name: messenger.message_handler
               handles: RealDeal\SalesManagement\Application\Command\Client\CreateClientCommand
+
+    SalesManagement.CommandHandler.AddProspectivePropertyToClient:
+        class: RealDeal\SalesManagement\Application\CommandHandler\Client\AddProspectivePropertiesToClientCommandHandler
+        arguments:
+            - '@SalesManagement.Client.ClientRepository'
+            - '@SalesManagement.Offer.OfferRepository'
+        tags:
+            - name: messenger.message_handler
+              handles: RealDeal\SalesManagement\Application\Command\Client\AddProspectivePropertiesToClientCommand
     
     #event handlers
     SalesManagement.EventHandler.OfferCreated:

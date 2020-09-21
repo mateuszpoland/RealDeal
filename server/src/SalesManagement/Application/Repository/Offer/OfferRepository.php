@@ -23,7 +23,7 @@ class OfferRepository implements ServiceEntityRepositoryInterface
        throw new Exception('Not implemented yet');
     }
 
-    public function findAllByIds(array $ids): ArrayCollection
+    public function findAllByIds(array $ids): array
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('o')

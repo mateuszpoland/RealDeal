@@ -10,3 +10,9 @@ http://preview.themeforest.net/item/boss-ultimate-react-redux-material-admin-tem
 
 // tutaj tez jest live demo
 https://demo.dashboardpack.com/architectui-react-pro/#/components/modals
+
+
+
+##### backend:
+
+https://thomas.jarrand.fr/blog/serialization/

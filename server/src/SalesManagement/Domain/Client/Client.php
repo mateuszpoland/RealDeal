@@ -69,6 +69,8 @@ class Client
     {
         $this->ownedProperties->add($offer);
         $offer->changePropertyOwner($this);
+
+        return $this;
     }
 
     public function removeOwnedProperty(Offer $offer): void
@@ -84,6 +86,9 @@ class Client
 
     public function addProspectiveProperty(Offer $offer): void
     {
+        if($this->ownedProperties->contains($offer)) {
+            throw new \InvalidArgumentException('Cannot add offer ' . $offer->getId() . ' client is its owner.');
+        }
         if(!$this->prospectiveProperties->contains($offer)) {
             $this->prospectiveProperties->add($offer);
             $offer->addProspectiveClient($this);

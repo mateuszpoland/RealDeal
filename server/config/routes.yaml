@@ -30,7 +30,7 @@ salesManagement.addClient:
 
 salesManagement.addProspectiveProperties:
   methods: ['POST']
-  path: clients/{id}/prospectiveProperties/add
+  path: clients/{clientId}/prospectiveProperties/add
   controller: SalesManagement.ClientController::addProspectivePropertyToClientAction
 
 salesManagement.getClient:
