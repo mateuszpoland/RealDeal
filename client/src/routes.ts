@@ -1,4 +1,3 @@
-import { UserDashboardLayout } from './layouts/DashboardLayout/UserDashboardLayout';
 
 export const routes: any = [
     //{

@@ -1,5 +1,6 @@
 1. 09.09.2020 - we start building navigation menu
-from tutorial: https://www.youtube.com/watch?v=97A3uRS7_YA
+from tutorial:
+1) drawer Material-UI https://www.youtube.com/watch?v=CjFWbEOcq-Y
 
 react templates:
 
@@ -11,7 +12,8 @@ http://preview.themeforest.net/item/boss-ultimate-react-redux-material-admin-tem
 // tutaj tez jest live demo
 https://demo.dashboardpack.com/architectui-react-pro/#/components/modals
 
-
+// ikonki (Ionic framework)
+https://ionicons.com/
 
 ##### backend:
 
