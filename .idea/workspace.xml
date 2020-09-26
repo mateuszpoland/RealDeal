@@ -68,11 +68,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ContentView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/documentation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +256,7 @@
       <workItem from="1600874780427" duration="6273000" />
       <workItem from="1600967588044" duration="8687000" />
       <workItem from="1601038434603" duration="4394000" />
-      <workItem from="1601136945398" duration="3100000" />
+      <workItem from="1601136945398" duration="4327000" />
     </task>
     <servers />
   </component>
@@ -318,10 +318,11 @@
     <state x="422" y="163" width="601" height="522" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1600710303185" />
     <state x="422" y="164" width="601" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1600199999267" />
     <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1600282461854" />
-    <state x="385" y="200" width="670" height="614" key="search.everywhere.popup" timestamp="1600979755731">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state x="385" y="197" width="670" height="605" key="search.everywhere.popup" timestamp="1601145410415">
+      <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
+    <state x="385" y="197" width="670" height="605" key="search.everywhere.popup/0.23.1440.801@0.23.1440.801" timestamp="1601145410415" />
     <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1600716873545" />
     <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1600717916587" />
     <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1600624708010" />

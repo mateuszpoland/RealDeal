@@ -3,10 +3,16 @@ import {AppBarTop} from "../components/AppBarTop";
 import {Sidebar} from "../components/Sidebar";
 import { createStyles,  makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import {navLink} from "../App";
+import {ContentView} from "../components/ContentView";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import BusinessCenterRoundedIcon from "@material-ui/icons/BusinessCenterRounded";
+import PermContactCalendarRoundedIcon from "@material-ui/icons/PermContactCalendarRounded";
 
 type DashboardComponentsList = {
     navigation: navLink[]
 }
+
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -41,6 +47,7 @@ export const DashBoardLayout: React.FC<DashboardComponentsList> = (
             <Sidebar navLinks={navigation} />
             <main className={classes.content}>
                 <div className={classes.toolbar}/>
+                <ContentView />
             </main>
         </div>
     );

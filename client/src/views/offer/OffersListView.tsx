@@ -2,8 +2,6 @@ import React, {useEffect, useState} from "react";
 import {Offer} from "../../types/Offer";
 import { fetchOffers } from "../../components/service/fetcher/offer/Fetcher";
 import { Link, Route } from "react-router-dom";
-import { Switch, BrowserRouter as Router } from 'react-router-dom';
-import { OfferView } from "./OfferView";
 
 type FetchingStatus = {
     isLoading: boolean
@@ -39,8 +37,6 @@ export const ListOfferView = () => {
         );
     } else {
         return(
-
-
                 <React.Fragment>
                     <h2>Widok ofert</h2>
                     <ul>
