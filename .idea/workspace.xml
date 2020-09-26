@@ -68,22 +68,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/css/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/assets/css/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/AppBarTop.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/DashboardSettings.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/documentation.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/documentation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/DashboardLayout/UserDashboardLayout.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/DashboardLayout/dist/AdminDashboardLayout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/DashboardLayout/dist/UserDashboardLayout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +88,8 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -265,7 +254,9 @@
       <workItem from="1600435223904" duration="11356000" />
       <workItem from="1600698632385" duration="10735000" />
       <workItem from="1600874780427" duration="6273000" />
-      <workItem from="1600967588044" duration="8387000" />
+      <workItem from="1600967588044" duration="8687000" />
+      <workItem from="1601038434603" duration="4394000" />
+      <workItem from="1601136945398" duration="3100000" />
     </task>
     <servers />
   </component>
@@ -327,8 +318,8 @@
     <state x="422" y="163" width="601" height="522" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1600710303185" />
     <state x="422" y="164" width="601" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1600199999267" />
     <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1600282461854" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup" timestamp="1600972623039">
-      <screen x="0" y="23" width="1440" height="812" />
+    <state x="385" y="200" width="670" height="614" key="search.everywhere.popup" timestamp="1600979755731">
+      <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
     <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1600716873545" />
@@ -336,7 +327,7 @@
     <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1600624708010" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1600877845556" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1600972623039" />
-    <state x="385" y="200" width="670" height="614" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1600701022117" />
+    <state x="385" y="200" width="670" height="614" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1600979755731" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

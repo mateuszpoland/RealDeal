@@ -5,13 +5,28 @@ import { Sidebar } from "./components/Sidebar";
 import { OfferView } from "./views/offer/OfferView";
 import { ListOfferView } from './views/offer/OffersListView';
 import { ClientsListView } from "./views/client/ClientsListView";
-import { navLink } from "./components/Sidebar";
 import './App.css';
 import { AppBarTop } from './components/AppBarTop';
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
+import BusinessCenterRoundedIcon from '@material-ui/icons/BusinessCenterRounded';
+import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalendarRounded';
+import {SvgIconComponent} from "@material-ui/icons";
+import {OverridableComponent} from "@material-ui/core/OverridableComponent";
+import {SvgIconTypeMap} from "@material-ui/core";
+import SvgIcon from "@material-ui/icons/HomeRounded";
+import {DashBoardLayout} from "./layouts/DashboardLayout";
 
 const Index = () => {
   return <h2>Witaj, Mateusz</h2>
 }
+
+export type navLink = {
+    text: string,
+    path: string,
+    icon: JSX.Element
+}
+
+
 
 const App: React.FC = () => {
     const [open, setOpen] = React.useState(false);
@@ -19,28 +34,25 @@ const App: React.FC = () => {
         {
             text: 'Home',
             path: '/',
-            icon: 'ion-ios-home'
+            icon: <HomeRoundedIcon />
         },
         {
             text: 'Lista Ofert',
             path: '/offers',
-            icon: 'ion-ios-business'
+            icon: <BusinessCenterRoundedIcon />
         },
         {
             text: 'Klienci',
             path: '/clients',
-            icon: 'ion-ios-briefcase'
+            icon: <PermContactCalendarRoundedIcon />
         },
     ]
 
-
     return (
    <Router>
-        <AppBarTop/>
-        <Sidebar
-            navLinks={sidebarNavLinks}
-            logo={logo}
-        />
+       <DashBoardLayout
+            navigation={sidebarNavLinks}
+       />
         <Switch>
             <Route path="/" exact component={Index} />
             <Route path='/offers' exact component={ListOfferView} />

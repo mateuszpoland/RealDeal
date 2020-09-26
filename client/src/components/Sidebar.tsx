@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -17,6 +18,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import {SvgIconComponent} from "@material-ui/icons";
+import {navLink} from "../App";
 
 const drawerWidth = 240;
 
@@ -24,19 +27,6 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             display: 'flex',
-        },
-        appBar: {
-            zIndex: theme.zIndex.drawer + 1,
-            transition: theme.transitions.create(['width', 'margin']),
-            duration: theme.transitions.duration.leavingScreen,
-        },
-        appBarShift: {
-            marginLeft: drawerWidth,
-            width: `calc(100% - ${drawerWidth}px)`,
-            transition: theme.transitions.create(['width', 'margin'], {
-                easing: theme.transitions.easing.sharp,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
         },
         menuButton: {
             marginRight: 36,
@@ -82,54 +72,65 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export type navLink = {
-    text: string,
-    path: string,
-    icon: string
+type SidebarProps = {
+    navLinks: navLink[]
 }
 
-type SidebarProps = {
-    navLinks: navLink[],
-    logo: string
-}
 type navBarState = {
     isOpen: boolean
 }
 export const Sidebar: React.FC<SidebarProps> = (
     {
         navLinks,
-        logo
     }) => {
     const classes = useStyles();
+    const theme = useTheme();
+    const [open, setOpen] = useState(false);
     const [navOpen, setNavOpen] = useState<navBarState>({isOpen: true});
     const [hoveredItemIndex, setHoveredItemIndex] = useState(-1);
+
+    const handleDrawerClose = () => {
+        setOpen(false);
+    }
+
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    }
 
     return(
         <div className={classes.root}>
             <CssBaseline/>
-            <ul
+            <Drawer
+                variant="permanent"
+                className={clsx(classes.drawer, {
+                    [classes.drawerOpen]: open,
+                    [classes.drawerClose]: !open,
+                })}
+                classes={{
+                    paper: clsx({
+                        [classes.drawerOpen]: open,
+                        [classes.drawerClose]: !open,
+                    }),
+                }}
             >
-                <figure className="image-logo" onClick={ () => {
-                    const isOpen = !navOpen.isOpen;
-                    setNavOpen({isOpen: isOpen}) }
-                }>
-                    <img src={ logo } height="40px" width="40px" alt="toolbar-logo" />
-                </figure>
-                {navLinks.map((navLink, index) =>
-                    <li
-                        key={index}
-                        onMouseEnter={ () => { setHoveredItemIndex(index) } }
-                        onMouseLeave={ () => { setHoveredItemIndex(-1) } }
-                    >
-                        <Link
-                            to={navLink.path}
-                        >
-                            {navLink.text}
-                            <i className={navLink.icon}/>
-                        </Link>
-                    </li>
-                )}
-            </ul>
+                <div className={classes.toolbar}>
+                    <IconButton onClick={handleDrawerClose}>
+                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                    </IconButton>
+                </div>
+                <Divider />
+                <List>
+                    {navLinks.map((navLink, index) => (
+                        <ListItem button key={index}>
+                            <Link to={navLink.path}>
+                                <ListItemIcon>{navLink.icon}</ListItemIcon>
+                                {navLink.text}
+                            </Link>
+                        </ListItem>
+                    ))}
+                </List>
+                <Divider />
+            </Drawer>
         </div>
     );
 }
