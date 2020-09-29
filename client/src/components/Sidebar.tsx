@@ -1,27 +1,17 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import {SvgIconComponent} from "@material-ui/icons";
 import {navLink} from "../App";
+import { ListItemText } from "@material-ui/core";
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -73,7 +63,8 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 type SidebarProps = {
-    navLinks: navLink[]
+    navLinks: navLink[],
+    isSidebarOpen: boolean
 }
 
 type navBarState = {
@@ -82,20 +73,14 @@ type navBarState = {
 export const Sidebar: React.FC<SidebarProps> = (
     {
         navLinks,
+        isSidebarOpen
     }) => {
     const classes = useStyles();
     const theme = useTheme();
-    const [open, setOpen] = useState(false);
-    const [navOpen, setNavOpen] = useState<navBarState>({isOpen: true});
-    const [hoveredItemIndex, setHoveredItemIndex] = useState(-1);
 
-    const handleDrawerClose = () => {
-        setOpen(false);
-    }
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    }
+    useEffect((() => {
+        console.log('inside sidebar: ' + isSidebarOpen);
+    }), [isSidebarOpen]);
 
     return(
         <div className={classes.root}>
@@ -103,22 +88,18 @@ export const Sidebar: React.FC<SidebarProps> = (
             <Drawer
                 variant="permanent"
                 className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: open,
-                    [classes.drawerClose]: !open,
+                    [classes.drawerOpen]: isSidebarOpen,
+                    [classes.drawerClose]: !isSidebarOpen,
                 })}
                 classes={{
                     paper: clsx({
-                        [classes.drawerOpen]: open,
-                        [classes.drawerClose]: !open,
+                        [classes.drawerOpen]: isSidebarOpen,
+                        [classes.drawerClose]: !isSidebarOpen,
                     }),
                 }}
             >
-                <div className={classes.toolbar}>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-                    </IconButton>
-                </div>
                 <Divider />
+                <div className={classes.toolbar}></div>
                 <List>
                     {navLinks.map((navLink, index) => (
                         <ListItem button key={index}>

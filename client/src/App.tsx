@@ -1,8 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import { OfferView } from "./views/offer/OfferView";
-import { ListOfferView } from './views/offer/OffersListView';
-import { ClientsListView } from "./views/client/ClientsListView";
 import './App.css';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import BusinessCenterRoundedIcon from '@material-ui/icons/BusinessCenterRounded';

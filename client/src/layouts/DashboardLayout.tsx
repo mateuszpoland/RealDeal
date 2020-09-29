@@ -1,18 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {AppBarTop} from "../components/AppBarTop";
 import {Sidebar} from "../components/Sidebar";
 import { createStyles,  makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import {navLink} from "../App";
 import {ContentView} from "../components/ContentView";
-import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
-import BusinessCenterRoundedIcon from "@material-ui/icons/BusinessCenterRounded";
-import PermContactCalendarRoundedIcon from "@material-ui/icons/PermContactCalendarRounded";
 
 type DashboardComponentsList = {
     navigation: navLink[]
 }
-
-
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -39,12 +34,23 @@ export const DashBoardLayout: React.FC<DashboardComponentsList> = (
         navigation,
     }
 ) => {
+    const handleSidebarToggle = () => {
+        setSidebarOpen(!isSidebarOpen);
+        console.log('changing state: ' + isSidebarOpen);
+    }
+
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
     const classes = useStyles();
     /* parent component holding configuration for sidebar, appbar and so on */
     return(
         <div className={classes.root}>
-            <AppBarTop/>
-            <Sidebar navLinks={navigation} />
+            <AppBarTop
+                handleSidebarToggle={handleSidebarToggle}
+            />
+            <Sidebar
+                navLinks={navigation}
+                isSidebarOpen={isSidebarOpen}
+            />
             <main className={classes.content}>
                 <div className={classes.toolbar}/>
                 <ContentView />

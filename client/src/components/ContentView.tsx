@@ -8,6 +8,7 @@ const Index = () => {
     return <h2>Witaj, Mateusz</h2>
 }
 
+/* display contents*/
 export const ContentView = () => {
     return(
         <Switch>

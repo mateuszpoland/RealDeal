@@ -1,18 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import clsx from 'clsx';
 import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
 import { DrawerSettings } from './DashboardSettings';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import {icon} from "@fortawesome/fontawesome-svg-core";
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         appBar: {
-            height: '8vh',
             zIndex: theme.zIndex.drawer + 1,
             transition: theme.transitions.create(['width', 'margin']),
             duration: theme.transitions.duration.leavingScreen,
@@ -39,11 +37,21 @@ export type clickCallbackFunction = {
 }
 
 export interface AppBarTopInterface {
+    handleSidebarToggle: clickCallbackFunction
 }
 
-export const AppBarTop: React.FC<AppBarTopInterface> = () => {
+export const AppBarTop: React.FC<AppBarTopInterface> = (
+    {
+        handleSidebarToggle
+    }
+    ) => {
+    const [open, setOpen] = useState(false);
     const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
+
+    const handleIconClick = () => {
+        setOpen(!setOpen);
+        handleSidebarToggle();
+    }
     return (
         <AppBar
             position="fixed"
@@ -56,7 +64,7 @@ export const AppBarTop: React.FC<AppBarTopInterface> = () => {
                 <IconButton
                     color="inherit"
                     aria-label="open drawer"
-                    onClick={() => {console.log('open drawer')}}
+                    onClick={handleIconClick}
                     edge="start"
                     className={clsx(classes.menuButton, {
                         [classes.hide]: open,
