@@ -43,16 +43,19 @@ class Client
     private string $stage;
 
     /**
-     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="RealDeal\SalesManagement\Domain\Offer\Offer", mappedBy="client", cascade={})
      */
-    private $ownedProperties;
+    private ArrayCollection $ownedProperties;
 
     /**
-     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="RealDeal\SalesManagement\Domain\Offer\Offer", mappedBy="prospectiveClients")
      */
-    private $prospectiveProperties;
+    private ArrayCollection $prospectiveProperties;
+
+    /**
+     * @ORM\Column
+     */
+    private array $propertySearchFilters;
 
     public function __construct()
     {

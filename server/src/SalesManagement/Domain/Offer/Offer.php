@@ -7,6 +7,10 @@ use Doctrine\Common\Collections\ArrayCollection;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 use Doctrine\ORM\Mapping as ORM;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
 
 /**
@@ -34,6 +38,26 @@ class Offer implements OfferState
      * @ORM\Column(type="string", length=280)
      */
     private $name;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private PropertyOfferingType $offeringType;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private PropertyMarketType $propertyMarketType;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private PropertyLegalStatus $propertyLegalStatus;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private PropertyContractType $propertyContractType;
 
     /**
      * @ORM\OneToMany(targetEntity="RealDeal\SalesManagement\Domain\Advertising\Advertising", mappedBy="offer", cascade={"persist"})
@@ -81,18 +105,18 @@ class Offer implements OfferState
     private $buildingNumber;
 
     /**
-     * @var string 
+     * @var string
      * @ORM\Column(type="integer", nullable=true)
      */
     private $flatNumber;
 
     /**
-     * @var int 
+     * @var int
      */
     private $floorNumber;
 
     /**
-     * @var int 
+     * @var int
      */
     private $floorsInBuilding;
 
@@ -103,7 +127,7 @@ class Offer implements OfferState
      */
     private $buildingYear;
 
-    /**    
+    /**
      * @var BuildingType
      */
     private $buildingType;
@@ -117,8 +141,9 @@ class Offer implements OfferState
     /**
      * When Seller is able to release property
      * (e.g. "immediately", "2021-06-15", "not agreed", etc.)
-     *  
+     *
      * @var DateTime
+     * @ORM\Column(type="datetime", name="available_from")
      */
     private $offerReleaseDate;
 
@@ -130,9 +155,9 @@ class Offer implements OfferState
     private $ownershipType;
 
     /**
-     * reference to the Seller - may be 
+     * reference to the Seller - may be
      * current client or new one.
-     * 
+     *
      * @ORM\ManyToOne(targetEntity="RealDeal\SalesManagement\Domain\Client\Client", inversedBy="ownedProperties", cascade={"persist"})
      * @ORM\JoinColumn(name="owner_id", referencedColumnName="id")
      */
@@ -176,7 +201,11 @@ class Offer implements OfferState
         string $name,
         float $totalPrice,
         float $footage,
-        Client $client
+        Client $client,
+        string $contractType,
+        string $legalStatus,
+        string $marketType,
+        string $offeringType
     ): void
     {
         $this->name = $name;
@@ -184,6 +213,11 @@ class Offer implements OfferState
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
         $this->client = $client;
+        $this->propertyContractType = new PropertyContractType($contractType);
+        $this->propertyLegalStatus = new PropertyLegalStatus($legalStatus);
+        $this->propertyMarketType = new PropertyMarketType($marketType);
+        $this->offeringType = new PropertyOfferingType($offeringType);
+
         $client->addOwnedProperty($this);
     }
 

@@ -16,36 +16,68 @@ class OfferDocument
     private $id;
 
     /**
-     * @ES\Property(type="text", name="persisted_id")
+     * @ES\Property(type="integer", name="persisted_id")
      */
-    private $persistedId;
+    private int $persistedId;
     /**
      * @ES\Property(type="text", name="property_name", analyzer="simple_analyzer")
      */
-    private $name;
-    
+    private string $name;
+
      /**
-     * @ES\Property(type="float", name="property_total_price")
+     * @ES\Property(type="float", name="property.total_price.value")
      */
-    private $totalPrice;
+    private float $totalPriceValue;
+
+    /**
+     * @ES\Property(type="text", name="property.total_price.currency")
+     */
+    private string $totalPriceCurrency;
+
+    /**
+     * @ES\Property(type="float", name="property.footage.value")
+     */
+    private float $footage;
+
+    /**
+     * @ES\Property(type="text", name="property.footage.unit")
+     */
+    private string $footageUnit;
 
     /**
      * @ES\Property(type="integer", name="client_id")
      */
-    private $clientId;
-
-
-    public function getClientId()
-    {
-        return $this->clientId;
-    }
+    private int $ownerId;
 
     /**
-     * @param mixed $clientId
+     * @ES\Property(type="text", name="contract_type")
      */
-    public function setClientId($clientId): void
+    private string $propertyContractType;
+
+    /**
+     * @ES\Property(type="text", name="legal_status")
+     */
+    private string $propertyLegalStatus;
+
+    /**
+     * @ES\Property(type="text", name="market_type")
+     */
+    private string $propertyMarketType;
+
+    /**
+     * @ES\Property(type="text", name="offering_type")
+     */
+    private string $propertyOfferingType;
+
+
+    public function getOwnerId()
     {
-        $this->clientId = $clientId;
+        return $this->ownerId;
+    }
+
+    public function setOwnerId($clientId): void
+    {
+        $this->ownerId = $clientId;
     }
 
     public function getId(): ?string
@@ -63,7 +95,7 @@ class OfferDocument
         $this->totalPrice = $totalPrice;
 
     }
-    
+
     public function setName($name): void
     {
         $this->name = $name;
@@ -82,5 +114,88 @@ class OfferDocument
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function getTotalPriceValue(): float
+    {
+        return $this->totalPriceValue;
+    }
+
+    public function setTotalPriceValue(float $totalPriceValue): void
+    {
+        $this->totalPriceValue = $totalPriceValue;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotalPriceCurrency(): string
+    {
+        return $this->totalPriceCurrency;
+    }
+
+    public function setTotalPriceCurrency(string $totalPriceCurrency): void
+    {
+        $this->totalPriceCurrency = $totalPriceCurrency;
+    }
+
+    public function getFootage(): float
+    {
+        return $this->footage;
+    }
+
+    public function setFootage(float $footage): void
+    {
+        $this->footage = $footage;
+    }
+
+    public function getFootageUnit(): string
+    {
+        return $this->footageUnit;
+    }
+
+    public function setFootageUnit(string $footageUnit): void
+    {
+        $this->footageUnit = $footageUnit;
+    }
+
+    public function getPropertyContractType(): string
+    {
+        return $this->propertyContractType;
+    }
+
+    public function setPropertyContractType(string $propertyContractType): void
+    {
+        $this->propertyContractType = $propertyContractType;
+    }
+
+    public function getPropertyLegalStatus(): string
+    {
+        return $this->propertyLegalStatus;
+    }
+
+    public function setPropertyLegalStatus(string $propertyLegalStatus): void
+    {
+        $this->propertyLegalStatus = $propertyLegalStatus;
+    }
+
+    public function getPropertyMarketType(): string
+    {
+        return $this->propertyMarketType;
+    }
+
+    public function setPropertyMarketType(string $propertyMarketType): void
+    {
+        $this->propertyMarketType = $propertyMarketType;
+    }
+
+    public function getPropertyOfferingType(): string
+    {
+        return $this->propertyOfferingType;
+    }
+
+    public function setPropertyOfferingType(string $propertyOfferingType): void
+    {
+        $this->propertyOfferingType = $propertyOfferingType;
     }
 }

@@ -48,14 +48,14 @@ services:
         abstract: true
         calls:
             - [setContainer, ['@service_container']]
-        
+
     ### SalesManagement ###
 
     ## repositories
     SalesManagement.Offer.OfferRepository:
         class: RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository
         arguments:
-            - '@doctrine.orm.entity_manager' 
+            - '@doctrine.orm.entity_manager'
 
     SalesManagement.Client.ClientRepository:
         class: RealDeal\SalesManagement\Application\Repository\Client\ClientRepository
@@ -65,7 +65,7 @@ services:
     ## queries ##
     SalesManagement.Query.GetAllOffersQuery:
         class: RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
-        arguments: 
+        arguments:
             - '@service_container'
     SalesManagement.Query.GetSingleOfferQuery:
         class: RealDeal\SalesManagement\Application\Query\GetSingleOfferQuery
@@ -80,14 +80,14 @@ services:
     #command handlers
     SalesManagement.CommandHandler.CreateNewOffer:
         class: RealDeal\SalesManagement\Application\CommandHandler\CreateOfferHandler
-        arguments: 
+        arguments:
             - '@SalesManagement.Offer.OfferFactory'
             - '@SalesManagement.Offer.OfferRepository'
             - '@SalesManagement.Client.ClientRepository'
             - '@messenger.bus.default'
             - '@service_container'
         tags:
-            - 
+            -
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Command\CreateOfferCommand
 
@@ -109,7 +109,7 @@ services:
         tags:
             - name: messenger.message_handler
               handles: RealDeal\SalesManagement\Application\Command\Client\AddProspectivePropertiesToClientCommand
-    
+
     #event handlers
     SalesManagement.EventHandler.OfferCreated:
         class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
@@ -117,7 +117,7 @@ services:
             - '@service_container'
             - RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
         tags:
-            -   
+            -
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Event\Offer\OfferCreated
 
@@ -141,6 +141,14 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    SalesManagement.FilterController:
+        class: namespace RealDeal\SalesManagement\Infrastructure\Controller\Filter\FilterController
+        arguments:
+            - '@messenger.bus.default'
+            - '@RealDeal.Api.ResponseBuilder'
+        public: true
+            tags: [ 'controller.service_arguments' ]
+
     ## normalizers
 
     realdeal.salesmanagement.normalizer.client:
@@ -154,6 +162,6 @@ services:
         class: RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory
 
 
-            
-        
+
+
 

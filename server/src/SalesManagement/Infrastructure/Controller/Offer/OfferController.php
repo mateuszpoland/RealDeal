@@ -50,7 +50,11 @@ class OfferController
                 $data['name'],
                 $data['totalPrice'],
                 $data['footage'],
-                $data['clientId']
+                $data['clientId'],
+                $data['contract_type'],
+                $data['legal_status'],
+                $data['market_type'],
+                $data['offering_type'],
             );
             $this->commandBus->dispatch($command);
             // catch various levels of exception and return detailed response codes

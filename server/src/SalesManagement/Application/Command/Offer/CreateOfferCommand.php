@@ -7,29 +7,34 @@ use RealDeal\Shared\Application\CommandInterface;
 
 class CreateOfferCommand implements CommandInterface
 {
-    /** @var string */
     private string $name;
-
-    /** @var float */
     private float $totalPrice;
-
-    /** @var float */
     private float $footage;
-
-    /** @var int */
     private int $clientId;
+    private string $propertyContractType;
+    private string $propertyLegalStatus;
+    private string $propertyMarketType;
+    private string $offeringType;
 
     public function __construct(
         string $name,
         float $totalPrice,
         float $footage,
-        int $clientId
+        int $clientId,
+        string $propertyContractType,
+        string $propertyLegalStatus,
+        string $propertyMarketType,
+        string $offeringType
     )
     {
         $this->name = $name;
         $this->totalPrice = $totalPrice;
         $this->footage = $footage;
         $this->clientId = $clientId;
+        $this->propertyContractType = $propertyContractType;
+        $this->propertyLegalStatus = $propertyLegalStatus;
+        $this->propertyMarketType = $propertyMarketType;
+        $this->offeringType = $offeringType;
     }
 
     public function __toString(): string
@@ -55,5 +60,25 @@ class CreateOfferCommand implements CommandInterface
     public function getClientId(): int
     {
         return $this->clientId;
+    }
+
+    public function getPropertyContractType(): string
+    {
+        return $this->propertyContractType;
+    }
+
+    public function getPropertyLegalStatus(): string
+    {
+        return $this->propertyLegalStatus;
+    }
+
+    public function getPropertyMarketType(): string
+    {
+        return $this->propertyMarketType;
+    }
+
+    public function getOfferingType(): string
+    {
+        return $this->offeringType;
     }
 }

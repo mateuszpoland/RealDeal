@@ -68,14 +68,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Filter/PropertyMatchRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Filter/PropertySearchRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/PropertyMatch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/PropertySearch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/PropertySearchInterface.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ValueObject/PriceRange.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Location.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyContractType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyLegalStatus.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyMarketType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyOfferingType.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/FilterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/AppBarTop.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/AppBarTop.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ContentView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DashboardSettings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DashboardSettings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Sidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/layouts/DashboardLayout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,7 +279,10 @@
       <workItem from="1601136945398" duration="10329000" />
       <workItem from="1601269745564" duration="301000" />
       <workItem from="1601301563771" duration="908000" />
-      <workItem from="1601386191697" duration="201000" />
+      <workItem from="1601386191697" duration="6736000" />
+      <workItem from="1601651652477" duration="789000" />
+      <workItem from="1601838337275" duration="4742000" />
+      <workItem from="1601919670254" duration="2239000" />
     </task>
     <servers />
   </component>
@@ -282,30 +302,34 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1600715604964">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser" timestamp="1601922010159">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="496" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1599506200532" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1600715604964" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.806@0.23.1440.806" timestamp="1600353060380" />
-    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.808@0.23.1440.808" timestamp="1600283181490" />
-    <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600714142521">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.808@0.23.1440.808" timestamp="1601920475817" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.811@0.23.1440.811" timestamp="1601922010159" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1601404085783" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1601840147330">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
     <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.804@0.23.1440.804" timestamp="1600714142521" />
-    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.808@0.23.1440.808" timestamp="1600285092753" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.808@0.23.1440.808" timestamp="1601840147330" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.811@0.23.1440.811" timestamp="1601388803050" />
     <state x="100" y="113" width="1240" height="629" key="DiffContextDialog" timestamp="1600094276029">
       <screen x="0" y="23" width="1440" height="808" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599662903393" />
     <state x="100" y="113" width="1240" height="629" key="DiffContextDialog/0.23.1440.808@0.23.1440.808" timestamp="1600094276029" />
-    <state x="406" y="261" key="NewPhpClassDialog" timestamp="1600714084278">
-      <screen x="0" y="23" width="1440" height="804" />
+    <state x="406" y="263" key="NewPhpClassDialog" timestamp="1601408764706">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
     <state x="406" y="261" key="NewPhpClassDialog/0.23.1440.804@0.23.1440.804" timestamp="1600714084278" />
     <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.806@0.23.1440.806" timestamp="1600353714755" />
     <state x="321" y="143" key="NewPhpClassDialog/0.23.1440.808@0.23.1440.808" timestamp="1600281923771" />
-    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.812@0.23.1440.812" timestamp="1600703673372" />
+    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.811@0.23.1440.811" timestamp="1601389527190" />
+    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.812@0.23.1440.812" timestamp="1601408764706" />
     <state x="406" y="264" key="NewPhpClassDialog/0.23.1440.814@0.23.1440.814" timestamp="1600701816403" />
     <state x="539" y="355" key="NewPhpFileDialog" timestamp="1600701791408">
       <screen x="0" y="23" width="1440" height="814" />
@@ -325,7 +349,7 @@
     <state x="422" y="163" width="601" height="522" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1600710303185" />
     <state x="422" y="164" width="601" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1600199999267" />
     <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1600282461854" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup" timestamp="1601317827734">
+    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup" timestamp="1601921813830">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
@@ -333,9 +357,9 @@
     <state x="385" y="197" width="670" height="605" key="search.everywhere.popup/0.23.1440.801@0.23.1440.801" timestamp="1601145410415" />
     <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1600716873545" />
     <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1600717916587" />
-    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1600624708010" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1601317827734" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1600972623039" />
+    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1601920220922" />
+    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1601921813830" />
+    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1601404378690" />
     <state x="385" y="200" width="670" height="614" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1600979755731" />
   </component>
   <component name="XDebuggerManager">

@@ -23,7 +23,7 @@ class Price
         $this->setCurrency($currency);
     }
 
-    public function setAmount(float $amount): void
+    private function setAmount(float $amount): void
     {
         if($amount < 0) {
             throw new InvalidArgumentException('Price cannot be less than 0.');
@@ -31,7 +31,7 @@ class Price
         $this->amount = $amount;
     }
 
-    public function setCurrency(string $currency): void
+    private function setCurrency(string $currency): void
     {
         if(!in_array($currency, self::AVAILABLE_CURRENCIES)) {
             throw new InvalidArgumentException('The currency' . $currency . ' is not recognized.');

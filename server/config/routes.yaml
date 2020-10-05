@@ -37,3 +37,10 @@ salesManagement.getClient:
   methods: ['GET']
   path: clients/{id}
   controller: SalesManagement.ClientController::getClientAction
+
+### Filtering routes
+
+salesManagement.Filter.addPropertySearchToClient:
+  methods: ['POST']
+  path: filters/client/add/{clientId}
+  controller:

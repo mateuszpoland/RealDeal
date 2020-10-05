@@ -72,4 +72,5 @@ class ClientController
         $query = $this->getSingleClient->byId($id);
         return $this->responseBuilder->buildApiSingleResultSerializedResponse($query->execute());
     }
+
 }
