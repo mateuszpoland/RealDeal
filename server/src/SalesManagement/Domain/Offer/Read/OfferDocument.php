@@ -6,7 +6,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\Read;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="offers", default=true)
+ * @ES\Index(alias="offers")
  */
 class OfferDocument
 {
@@ -30,19 +30,9 @@ class OfferDocument
     private float $totalPriceValue;
 
     /**
-     * @ES\Property(type="text", name="property.total_price.currency")
-     */
-    private string $totalPriceCurrency;
-
-    /**
      * @ES\Property(type="float", name="property.footage.value")
      */
     private float $footage;
-
-    /**
-     * @ES\Property(type="text", name="property.footage.unit")
-     */
-    private string $footageUnit;
 
     /**
      * @ES\Property(type="integer", name="client_id")
@@ -69,6 +59,11 @@ class OfferDocument
      */
     private string $propertyOfferingType;
 
+    /**
+     * @ES\Property(type="date", name="available_from")
+     */
+    private \DateTime $offerAvailableFrom;
+
 
     public function getOwnerId()
     {
@@ -90,10 +85,9 @@ class OfferDocument
         $this->persistedId = $id;
     }
 
-    public function setTotalPrice($totalPrice): void
+    public function setTotalPrice(float $totalPrice): void
     {
-        $this->totalPrice = $totalPrice;
-
+        $this->totalPriceValue = $totalPrice;
     }
 
     public function setName($name): void
@@ -103,7 +97,7 @@ class OfferDocument
 
     public function getTotalPrice(): float
     {
-        return $this->totalPrice;
+        return $this->totalPriceValue;
     }
 
     public function getPersistedId(): int
@@ -126,19 +120,6 @@ class OfferDocument
         $this->totalPriceValue = $totalPriceValue;
     }
 
-    /**
-     * @return string
-     */
-    public function getTotalPriceCurrency(): string
-    {
-        return $this->totalPriceCurrency;
-    }
-
-    public function setTotalPriceCurrency(string $totalPriceCurrency): void
-    {
-        $this->totalPriceCurrency = $totalPriceCurrency;
-    }
-
     public function getFootage(): float
     {
         return $this->footage;
@@ -147,16 +128,6 @@ class OfferDocument
     public function setFootage(float $footage): void
     {
         $this->footage = $footage;
-    }
-
-    public function getFootageUnit(): string
-    {
-        return $this->footageUnit;
-    }
-
-    public function setFootageUnit(string $footageUnit): void
-    {
-        $this->footageUnit = $footageUnit;
     }
 
     public function getPropertyContractType(): string
@@ -197,5 +168,15 @@ class OfferDocument
     public function setPropertyOfferingType(string $propertyOfferingType): void
     {
         $this->propertyOfferingType = $propertyOfferingType;
+    }
+
+    public function getOfferAvailableFrom(): \DateTime
+    {
+        return $this->offerAvailableFrom;
+    }
+
+    public function setOfferAvailableFrom(\DateTime $offerAvailableFrom): void
+    {
+        $this->offerAvailableFrom = $offerAvailableFrom;
     }
 }

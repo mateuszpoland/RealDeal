@@ -34,7 +34,7 @@ class ClientNormalizer implements NormalizerInterface
                     UrlGeneratorInterface::ABSOLUTE_URL)
                 ];
             }, $object->getOwnedProperties()->toArray()),
-            'propsectiveProperties' => array_map(function (Offer $property) {
+            'prospectiveProperties' => array_map(function (Offer $property) {
                 return [
                     'id'   => $property->getId(),
                     'name' => $property->getName(),

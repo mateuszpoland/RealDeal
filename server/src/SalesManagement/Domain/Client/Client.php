@@ -45,22 +45,23 @@ class Client
     /**
      * @ORM\OneToMany(targetEntity="RealDeal\SalesManagement\Domain\Offer\Offer", mappedBy="client", cascade={})
      */
-    private ArrayCollection $ownedProperties;
+    private Collection $ownedProperties;
 
     /**
      * @ORM\ManyToMany(targetEntity="RealDeal\SalesManagement\Domain\Offer\Offer", mappedBy="prospectiveClients")
      */
-    private ArrayCollection $prospectiveProperties;
+    private Collection $prospectiveProperties;
 
     /**
-     * @ORM\Column
+     * @ORM\Column(type="array", nullable=true)
      */
-    private array $propertySearchFilters;
+    private Collection $propertySearchFilters;
 
     public function __construct()
     {
         $this->ownedProperties = new ArrayCollection();
         $this->prospectiveProperties = new ArrayCollection();
+        $this->propertySearchFilters = new ArrayCollection();
     }
 
     public function getId(): int
@@ -106,12 +107,12 @@ class Client
         }
     }
 
-    public function setOwnedProperties(ArrayCollection $ownedProperties): void
+    public function setOwnedProperties(Collection $ownedProperties): void
     {
         $this->ownedProperties = $ownedProperties;
     }
 
-    public function setProspectiveProperties(ArrayCollection $prospectiveProperties): void
+    public function setProspectiveProperties(Collection $prospectiveProperties): void
     {
         foreach ($prospectiveProperties as $prospectiveProperty) {
             if($prospectiveProperties instanceof Offer) {

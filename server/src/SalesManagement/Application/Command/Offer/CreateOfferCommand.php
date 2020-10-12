@@ -15,6 +15,7 @@ class CreateOfferCommand implements CommandInterface
     private string $propertyLegalStatus;
     private string $propertyMarketType;
     private string $offeringType;
+    private \DateTime $availableFrom;
 
     public function __construct(
         string $name,
@@ -24,7 +25,8 @@ class CreateOfferCommand implements CommandInterface
         string $propertyContractType,
         string $propertyLegalStatus,
         string $propertyMarketType,
-        string $offeringType
+        string $offeringType,
+        string $availableFrom
     )
     {
         $this->name = $name;
@@ -35,6 +37,7 @@ class CreateOfferCommand implements CommandInterface
         $this->propertyLegalStatus = $propertyLegalStatus;
         $this->propertyMarketType = $propertyMarketType;
         $this->offeringType = $offeringType;
+        $this->availableFrom = new \DateTime($availableFrom);
     }
 
     public function __toString(): string
@@ -80,5 +83,10 @@ class CreateOfferCommand implements CommandInterface
     public function getOfferingType(): string
     {
         return $this->offeringType;
+    }
+
+    public function getAvailableFrom(): \DateTime
+    {
+        return $this->availableFrom;
     }
 }

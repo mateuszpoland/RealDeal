@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="clients")
+ * @ES\Index(alias="clients", default=true)
  */
 class ClientDocument
 {
@@ -165,5 +165,4 @@ class ClientDocument
     {
         $this->prospectiveProperties = $prospectiveProperties;
     }
-
 }

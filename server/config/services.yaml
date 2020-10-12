@@ -142,12 +142,12 @@ services:
         tags: ['controller.service_arguments']
 
     SalesManagement.FilterController:
-        class: namespace RealDeal\SalesManagement\Infrastructure\Controller\Filter\FilterController
+        class: RealDeal\SalesManagement\Infrastructure\Controller\Filter\FilterController
         arguments:
             - '@messenger.bus.default'
             - '@RealDeal.Api.ResponseBuilder'
         public: true
-            tags: [ 'controller.service_arguments' ]
+        tags: [ 'controller.service_arguments' ]
 
     ## normalizers
 

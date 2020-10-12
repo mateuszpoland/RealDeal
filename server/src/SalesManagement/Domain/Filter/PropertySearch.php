@@ -12,7 +12,9 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
 
 /**
- * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Application\Repository\Filter\PropertySearchRepository")
+ * Class PropertySearch
+ * @package RealDeal\SalesManagement\Domain\Filter
+ * can be an entity @todo
  */
 class PropertySearch
 {

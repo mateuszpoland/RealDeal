@@ -26,4 +26,9 @@ final class PropertyLegalStatus
         }
         $this->propertyLegalStatus = $status;
     }
+
+    public function __toString(): string
+    {
+        return $this->propertyLegalStatus;
+    }
 }

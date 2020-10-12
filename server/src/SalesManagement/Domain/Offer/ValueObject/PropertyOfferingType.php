@@ -7,7 +7,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 class PropertyOfferingType
 {
     private const OFFERING_TYPES = [
-        'to sell',
+        'sales',
         'long-term-lend',
         'short-term-lend'
     ];
@@ -21,7 +21,14 @@ class PropertyOfferingType
 
     private function setOfferingType(string $offeringType): void
     {
-        if(!in_array($offeringType, self::OFFERING_TYPES))
+        if(!in_array($offeringType, self::OFFERING_TYPES)) {
+            throw new \InvalidArgumentException('Offering type ' . $offeringType . ' not recognized');
+        }
         $this->offeringType = $offeringType;
+    }
+
+    public function __toString(): string
+    {
+        return $this->offeringType;
     }
 }

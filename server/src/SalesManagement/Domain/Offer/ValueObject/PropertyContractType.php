@@ -24,4 +24,9 @@ class PropertyContractType
         }
         $this->propertyLegalStatus = $contractType;
     }
+
+    public function __toString(): string
+    {
+        return $this->propertyLegalStatus;
+    }
 }

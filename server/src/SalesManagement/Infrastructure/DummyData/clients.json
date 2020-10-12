@@ -1,0 +1,94 @@
+{
+  "clients": [
+    {
+      "name": "Aleksander",
+      "secondName": "Janiak",
+      "email": "ajaniak@wp.pl",
+      "stage": "New"
+    },
+    {
+      "name": "Marcin",
+      "secondName": "Tracz",
+      "email": "mtracz@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Grzegorz",
+      "secondName": "Sałek",
+      "email": "gsalek1@wgmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Jan",
+      "secondName": "Muszynski",
+      "email": "mateuszpoland6@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Karol",
+      "secondName": "Wojciak",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Stefan",
+      "secondName": "Polakowski",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Ksawery",
+      "secondName": "Petelicki",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Hieronim",
+      "secondName": "Małecki",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Arnold",
+      "secondName": "Boczek",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Arnold",
+      "secondName": "Boczek",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Ferdynand",
+      "secondName": "Kiepski",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Stanisław",
+      "secondName": "Denert",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Bartosz Bazylewicz",
+      "secondName": "Boczek",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Mateusz",
+      "secondName": "Kowalewski",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    },
+    {
+      "name": "Daniel",
+      "secondName": "Sobiesiński",
+      "email": "mateuszpoland6+1@gmail.com",
+      "stage": "New"
+    }
+  ]
+}

@@ -52,7 +52,8 @@ class CreateOfferHandler implements MessageHandlerInterface
             $command->getPropertyContractType(),
             $command->getPropertyLegalStatus(),
             $command->getPropertyMarketType(),
-            $command->getOfferingType()
+            $command->getOfferingType(),
+            $command->getAvailableFrom()
         );
 
         $this->offerRepository->save($offer);
@@ -61,11 +62,13 @@ class CreateOfferHandler implements MessageHandlerInterface
             $offer->getId(),
             $command->getName(),
             $command->getTotalPrice(),
+            $command->getFootage(),
             $command->getClientId(),
             $command->getPropertyContractType(),
             $command->getPropertyLegalStatus(),
             $command->getPropertyMarketType(),
             $command->getOfferingType(),
+            $command->getAvailableFrom()
         );
 
         $this->commandBus->dispatch($event);

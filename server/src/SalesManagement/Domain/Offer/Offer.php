@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 use Doctrine\ORM\Mapping as ORM;
@@ -40,29 +41,33 @@ class Offer implements OfferState
     private $name;
 
     /**
+     * @var PropertyOfferingType
      * @ORM\Column(type="string", length=200)
      */
-    private PropertyOfferingType $offeringType;
+    private $offeringType;
 
     /**
+     * @var PropertyMarketType
      * @ORM\Column(type="string", length=200)
      */
-    private PropertyMarketType $propertyMarketType;
+    private $propertyMarketType;
 
     /**
+     * @var PropertyLegalStatus
      * @ORM\Column(type="string", length=200)
      */
-    private PropertyLegalStatus $propertyLegalStatus;
+    private $propertyLegalStatus;
 
     /**
+     * @var PropertyContractType
      * @ORM\Column(type="string", length=200)
      */
-    private PropertyContractType $propertyContractType;
+    private  $propertyContractType;
 
     /**
      * @ORM\OneToMany(targetEntity="RealDeal\SalesManagement\Domain\Advertising\Advertising", mappedBy="offer", cascade={"persist"})
      */
-    private $ads;
+    private Collection $ads;
 
     /**
      * @var Price
@@ -76,9 +81,6 @@ class Offer implements OfferState
      */
     private $footage;
 
-    /**
-     * @var Price
-     */
     private $pricePerFootage;
 
     /**
@@ -195,8 +197,6 @@ class Offer implements OfferState
         return $this->name;
     }
 
-
-
     public function publishNewOffer(
         string $name,
         float $totalPrice,
@@ -205,7 +205,8 @@ class Offer implements OfferState
         string $contractType,
         string $legalStatus,
         string $marketType,
-        string $offeringType
+        string $offeringType,
+        \DateTime $availableFrom
     ): void
     {
         $this->name = $name;
@@ -217,6 +218,7 @@ class Offer implements OfferState
         $this->propertyLegalStatus = new PropertyLegalStatus($legalStatus);
         $this->propertyMarketType = new PropertyMarketType($marketType);
         $this->offeringType = new PropertyOfferingType($offeringType);
+        $this->offerReleaseDate = $availableFrom;
 
         $client->addOwnedProperty($this);
     }
@@ -247,5 +249,30 @@ class Offer implements OfferState
             $this->prospectiveClients->remove($client);
             $client->removeProspectiveProperty($this);
         }
+    }
+
+    public function getIdentifier(): UniqueOfferIdentifier
+    {
+        return $this->identifier;
+    }
+
+    public function getOfferingType(): PropertyOfferingType
+    {
+        return $this->offeringType;
+    }
+
+    public function getPropertyMarketType(): PropertyMarketType
+    {
+        return $this->propertyMarketType;
+    }
+
+    public function getPropertyLegalStatus(): PropertyLegalStatus
+    {
+        return $this->propertyLegalStatus;
+    }
+
+    public function getPropertyContractType(): PropertyContractType
+    {
+        return $this->propertyContractType;
     }
 }
