@@ -62,6 +62,7 @@ class OfferController
                 $data['legal_status'],
                 $data['market_type'],
                 $data['offering_type'],
+                $data['property_type'],
                 $data['available_from']
             );
             $this->commandBus->dispatch($command);

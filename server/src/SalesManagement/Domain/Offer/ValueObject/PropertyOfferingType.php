@@ -3,15 +3,10 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyOfferingTypeInterface;
 
-class PropertyOfferingType
+class PropertyOfferingType implements PropertyOfferingTypeInterface
 {
-    private const OFFERING_TYPES = [
-        'sales',
-        'long-term-lend',
-        'short-term-lend'
-    ];
-
     private string $offeringType;
 
     public function __construct(string $offeringType)
@@ -21,7 +16,7 @@ class PropertyOfferingType
 
     private function setOfferingType(string $offeringType): void
     {
-        if(!in_array($offeringType, self::OFFERING_TYPES)) {
+        if(!in_array($offeringType, PropertyOfferingTypeInterface::OFFERING_TYPES)) {
             throw new \InvalidArgumentException('Offering type ' . $offeringType . ' not recognized');
         }
         $this->offeringType = $offeringType;

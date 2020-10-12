@@ -53,6 +53,7 @@ class CreateOfferHandler implements MessageHandlerInterface
             $command->getPropertyLegalStatus(),
             $command->getPropertyMarketType(),
             $command->getOfferingType(),
+            $command->getPropertyType(),
             $command->getAvailableFrom()
         );
 

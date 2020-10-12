@@ -12,11 +12,11 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
 
 /**
- * Class PropertySearch
+ * Class OfferSearch
  * @package RealDeal\SalesManagement\Domain\Filter
  * can be an entity @todo
  */
-class PropertySearch
+class OfferSearch
 {
     private Client $client;
 
@@ -157,7 +157,7 @@ class PropertySearch
         $this->notes = $notes;
     }
 
-    public function equals(PropertySearch $object): bool
+    public function equals(OfferSearch $object): bool
     {
         // todo
     }

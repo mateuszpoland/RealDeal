@@ -12,6 +12,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
 
 /**
@@ -39,6 +40,12 @@ class Offer implements OfferState
      * @ORM\Column(type="string", length=280)
      */
     private $name;
+
+    /**
+     * @var PropertyType
+     * @ORM\Column(type="string", length=200)
+     */
+    private $propertyType;
 
     /**
      * @var PropertyOfferingType
@@ -206,6 +213,7 @@ class Offer implements OfferState
         string $legalStatus,
         string $marketType,
         string $offeringType,
+        string $propertyType,
         \DateTime $availableFrom
     ): void
     {
@@ -218,6 +226,7 @@ class Offer implements OfferState
         $this->propertyLegalStatus = new PropertyLegalStatus($legalStatus);
         $this->propertyMarketType = new PropertyMarketType($marketType);
         $this->offeringType = new PropertyOfferingType($offeringType);
+        $this->propertyType = new PropertyType($propertyType);
         $this->offerReleaseDate = $availableFrom;
 
         $client->addOwnedProperty($this);
