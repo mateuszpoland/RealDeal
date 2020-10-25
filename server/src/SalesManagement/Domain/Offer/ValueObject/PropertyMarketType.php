@@ -4,7 +4,11 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Embeddable()
+ */
 final class PropertyMarketType implements FilterEnabledInterface
 {
     public const FILTER_ALIAS = 'property_market_type';
@@ -13,6 +17,9 @@ final class PropertyMarketType implements FilterEnabledInterface
         'primary market'
     ];
 
+    /**
+     * @ORM\Column(type="string")
+     */
     private string $propertyMarketType;
 
     public function __construct(string $marketType)

@@ -4,17 +4,25 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use InvalidArgumentException;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Embeddable()
+ */
 class Price
 {
     public const PLN = 'PLN';
 
     public const AVAILABLE_CURRENCIES = ['PLN', 'EUR'];
 
-    /** @var float */
-    private $amount;
+    /**
+     * @ORM\Column(type="float")
+     */
+    private float $amount;
 
-    /** @var string */
+    /**
+     * @ORM\Column(type="string")
+     */
     private $currency;
 
     public function __construct(float $amount, string $currency=self::PLN)

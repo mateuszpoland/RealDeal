@@ -24,13 +24,13 @@ class OfferSearch
 
     /**
      * @var PropertyOfferingType
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType")
      */
     private $propertyOfferingType;
 
     /**
      * @var PropertyType
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType")
      */
     private $propertyType;
 

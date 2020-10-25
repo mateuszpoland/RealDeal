@@ -12,23 +12,33 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Request;
-
+use RealDeal\SalesManagement\Application\Query\Filter\GetClientFilterQuery;
 
 class FilterController
 {
     private MessageBusInterface $commandBus;
     private ApiResponseBuilder $responseBuilder;
     private OfferFilterFactoriesRegistry $offerFilterFactoriesRegistry;
+    private GetClientFilterQuery $getClientFilterQuery;
 
     public function __construct(
         MessageBusInterface $commandBus,
         ApiResponseBuilder $apiResponseBuilder,
-        OfferFilterFactoriesRegistry $offerFilterFactoriesRegistry
+        OfferFilterFactoriesRegistry $offerFilterFactoriesRegistry,
+        GetClientFilterQuery $getClientFilterQuery
     )
     {
         $this->commandBus = $commandBus;
         $this->responseBuilder = $apiResponseBuilder;
         $this->offerFilterFactoriesRegistry = $offerFilterFactoriesRegistry;
+        $this->getClientFilterQuery = $getClientFilterQuery;
+    }
+
+    public function getClientFiltersAction(int $clientId)
+    {
+        $query = $this->getClientFilterQuery->byClientId($clientId);
+
+        return $this->responseBuilder->buildApiSingleResultSerializedResponse($query->execute());
     }
 
     public function addPropertySearchToClientAction(Request $request): JsonResponse
@@ -42,6 +52,7 @@ class FilterController
             $command = new CreateNewClientLooksForPropertyFilterCommand($clientId, $setOfFilters);
             $this->commandBus->dispatch($command);
 
+            return new JsonResponse('created', Response::HTTP_CREATED);
         } catch (\Exception $exception) {
             return new JsonResponse(json_encode($exception->getMessage()), Response::HTTP_BAD_REQUEST);
         }

@@ -44,31 +44,31 @@ class Offer implements OfferState
 
     /**
      * @var PropertyType
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType")
      */
     private $propertyType;
 
     /**
      * @var PropertyOfferingType
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType")
      */
     private $offeringType;
 
     /**
      * @var PropertyMarketType
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType")
      */
     private $propertyMarketType;
 
     /**
      * @var PropertyLegalStatus
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus")
      */
     private $propertyLegalStatus;
 
     /**
      * @var PropertyContractType
-     * @ORM\Column(type="string", length=200)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType")
      */
     private  $propertyContractType;
 
@@ -79,7 +79,7 @@ class Offer implements OfferState
 
     /**
      * @var Price
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\Price")
      */
     public $totalPrice;
 
@@ -93,7 +93,7 @@ class Offer implements OfferState
 
     /**
      * @var RoomsNumber
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\RoomsNumber")
      */
     private $numberOfRooms;
 

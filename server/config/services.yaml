@@ -32,6 +32,7 @@ services:
         arguments:
             -
                 - '@realdeal.salesmanagement.normalizer.client'
+                - '@realdeal.salesmanagement.normalizer.offer_search'
                 - '@serializer.normalizer.object'
             -
                 - '@realdeal.encoder.json'
@@ -81,6 +82,12 @@ services:
         class: RealDeal\SalesManagement\Application\Query\Client\GetSingleClientQuery
         arguments:
             - '@SalesManagement.Client.ClientRepository'
+
+    SalesManagement.Query.Filter.GetClientFiltersQuery:
+        class: RealDeal\SalesManagement\Application\Query\Filter\GetClientFilterQuery
+        arguments:
+            - '@SalesManagement.Filter.OfferSearchRepository'
+
 
     #command handlers
     SalesManagement.CommandHandler.CreateNewOffer:
@@ -162,6 +169,7 @@ services:
             - '@messenger.bus.default'
             - '@RealDeal.Api.ResponseBuilder'
             - '@RealDeal\SalesManagement\Application\DomainService\Registry\Filter\Offer\OfferFilterFactoriesRegistry'
+            - '@SalesManagement.Query.Filter.GetClientFiltersQuery'
         public: true
         tags: [ 'controller.service_arguments' ]
 
@@ -171,6 +179,16 @@ services:
         class: RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Client\ClientNormalizer
         arguments:
             - '@router.default'
+        tags:
+            - { name: 'serializer.normalizer' }
+
+    realdeal.salesmanagement.normalizer.offer_search:
+        class: RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Filter\OfferSearchNormalizer
+        arguments:
+            - '@router.default'
+            - '@realdeal.salesmanagement.normalizer.client'
+        tags:
+            - { name: 'serializer.normalizer' }
 
     # domain services
     #factories

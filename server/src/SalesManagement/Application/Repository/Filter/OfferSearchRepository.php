@@ -28,4 +28,19 @@ class OfferSearchRepository implements ServiceEntityRepositoryInterface
     {
         throw new \Exception('Not implemented');
     }
+
+    public function findAllForClient(int $clientId)
+    {
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('cso')
+            ->from('RealDeal\SalesManagement\Domain\Filter\Offer\Category\OfferSearch', 'cso')
+            ->join('RealDeal\SalesManagement\Domain\Client\Client', 'c', 'c.id = cso.client_id')
+            ->where(
+                $qb->expr()->eq('c.id', ':clientId')
+            );
+
+        $qb->setParameter('clientId', $clientId);
+
+        return $qb->getQuery()->getResult();
+    }
 }

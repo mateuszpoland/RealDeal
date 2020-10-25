@@ -4,7 +4,11 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Embeddable()
+ */
 class PropertyContractType implements FilterEnabledInterface
 {
     public const FILTER_ALIAS = 'property_contract_type';
@@ -14,6 +18,9 @@ class PropertyContractType implements FilterEnabledInterface
         'contract_type_2'
     ];
 
+    /**
+     * @ORM\Column(type="string")
+     */
     private string $propertyLegalStatus;
 
     public function __construct(string $contractType)

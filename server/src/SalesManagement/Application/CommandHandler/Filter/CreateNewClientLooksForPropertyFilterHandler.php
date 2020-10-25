@@ -8,6 +8,7 @@ use RealDeal\SalesManagement\Application\Repository\Client\ClientRepository;
 use RealDeal\SalesManagement\Application\Repository\Filter\OfferSearchRepository;
 use RealDeal\SalesManagement\Domain\Filter\Offer\Category\OfferSearch;
 use Symfony\Component\Messenger\MessageBusInterface;
+use RealDeal\SalesManagement\Application\Event\Filter\OfferSearchCreatedEvent;
 
 class CreateNewClientLooksForPropertyFilterHandler
 {
@@ -31,15 +32,16 @@ class CreateNewClientLooksForPropertyFilterHandler
         $filters = $command->getFilters();
         // maybe do some cross-validation between existing client filters (?)
         $client = $this->clientRepository->findById($command->getClientId());
+
         if(!$client) {
             throw new \InvalidArgumentException('Client not found');
         }
-        //
+
         $filter = OfferSearch::createFromFilters($client, $filters);
         $this->offerSearchRepository->save($filter);
 
-        // dispatch event to amqp - match poperties to clients and generate PropertyMatches out of it.
-        $event = new OfferSearchCreatedEvent($filter);
-        $this->messageBus->dispatch($event);
+        //dispatch event to amqp - match poperties to clients and generate PropertyMatches out of it.
+        //$event = new OfferSearchCreatedEvent($filter);
+        //$this->messageBus->dispatch($event);
     }
 }

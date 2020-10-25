@@ -17,7 +17,7 @@ class ClientNormalizer implements NormalizerInterface
         $this->router = $router;
     }
 
-    public function normalize($object, string $format = null, array $context = [])
+    public function normalize($object, string $format = null, array $context = []): array
     {
         $data = [
             'id'                    => $object->getId(),
@@ -47,6 +47,10 @@ class ClientNormalizer implements NormalizerInterface
         $data['href']['self'] = $this->router->generate('salesManagement.getClient', [
             'id' => $object->getId()
         ], UrlGeneratorInterface::ABSOLUTE_URL);
+
+        if(isset($context['base_data'])) {
+            return array_intersect_key($data, ['id', 'href']);
+        }
 
         return $data;
     }

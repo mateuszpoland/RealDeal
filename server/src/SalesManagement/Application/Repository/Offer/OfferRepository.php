@@ -3,7 +3,6 @@
 namespace RealDeal\SalesManagement\Application\Repository\Offer;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 use RealDeal\SalesManagement\Domain\Offer\Offer;
@@ -39,12 +38,12 @@ class OfferRepository implements ServiceEntityRepositoryInterface
     public function save(Offer $offer): void
     {
        $this->em->persist($offer);
-       $this->em->flush(); 
+       $this->em->flush();
     }
 
     public function delete(Offer $offer): void
     {
        $this->em->remove($offer);
-       $this->em->flush(); 
+       $this->em->flush();
     }
 }

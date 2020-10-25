@@ -17,17 +17,11 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 class OfferController
 {
-    /** @var MessageBusInterface  */
-    private $commandBus;
 
-    /** @var GetAllOffersQuery  */
-    private $getAllOffersQuery;
-
-    /** @var GetSingleOfferQuery */
-    private $getSingleOffer;
-
-    /** @var ApiResponseBuilder  */
-    private $responseBuilder;
+    private MessageBusInterface $commandBus;
+    private GetAllOffersQuery $getAllOffersQuery;
+    private GetSingleOfferQuery $getSingleOffer;
+    private ApiResponseBuilder $responseBuilder;
 
     public function __construct(
         MessageBusInterface $commandBus,

@@ -5,9 +5,18 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\Shared\Domain\ValueObject\BaseGreaterThanZeroIntegerValue;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Embeddable()
+ */
 class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabledInterface
 {
+    /**
+     * @ORM\Column(type="integer", name="rooms_number")
+     */
+    protected int $value;
+
     public const FILTER_ALIAS = 'rooms_number';
     private const VALUE_MODIFIER = 'rooms';
 
