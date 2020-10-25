@@ -3,8 +3,12 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
-class PropertyContractType
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
+
+class PropertyContractType implements FilterEnabledInterface
 {
+    public const FILTER_ALIAS = 'property_contract_type';
+
     private const CONTRACT_TYPES = [
         'contract_type_1',
         'contract_type_2'
@@ -22,6 +26,7 @@ class PropertyContractType
         if (!in_array($contractType, self::CONTRACT_TYPES)) {
             throw new \InvalidArgumentException('unrecognized property status type: ' . $status);
         }
+
         $this->propertyLegalStatus = $contractType;
     }
 
@@ -29,4 +34,11 @@ class PropertyContractType
     {
         return $this->propertyLegalStatus;
     }
+
+    public function getServiceAlias(): string
+    {
+        return self::FILTER_ALIAS;
+    }
+
+
 }

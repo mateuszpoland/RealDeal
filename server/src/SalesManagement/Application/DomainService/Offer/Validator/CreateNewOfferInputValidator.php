@@ -24,13 +24,14 @@ final class CreateNewOfferInputValidator
             'name'              => [ new Assert\NotBlank(['message' => 'offer.name.not_blank']) ],
             'totalPrice'        => [ new Assert\NotBlank() ],
             'footage'           => [ new Assert\NotBlank() ],
-            'numberOfRooms'     => [ new Assert\NotBlank() ],
+            'rooms_number'      => [ new Assert\NotBlank() ],
             'clientId'          => [ new Assert\NotBlank() ],
             'contract_type'     => [ new Assert\NotBlank() ],
             'legal_status'      => [ new Assert\NotBlank() ],
             'market_type'       => [ new Assert\NotBlank() ],
             'offering_type'     => [ new Assert\NotBlank() ],
             'available_from'    => [ new Assert\NotBlank() ],
+            'property_type'     => [ new Assert\NotBlank() ],
         ]);
     }
 

@@ -6,7 +6,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\Read;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="offers")
+ * @ES\Index(alias="offers", default=true)
  */
 class OfferDocument
 {
@@ -35,6 +35,11 @@ class OfferDocument
     private float $footage;
 
     /**
+     * @ES\Property(type="integer", name="property.rooms_number")
+     */
+    private $numberOfRooms;
+
+    /**
      * @ES\Property(type="integer", name="client_id")
      */
     private int $ownerId;
@@ -53,6 +58,11 @@ class OfferDocument
      * @ES\Property(type="text", name="market_type")
      */
     private string $propertyMarketType;
+
+    /**
+     * @ES\Property(type="text", name="property_type")
+     */
+    private $propertyType;
 
     /**
      * @ES\Property(type="text", name="offering_type")
@@ -178,5 +188,25 @@ class OfferDocument
     public function setOfferAvailableFrom(\DateTime $offerAvailableFrom): void
     {
         $this->offerAvailableFrom = $offerAvailableFrom;
+    }
+
+    public function getPropertyType(): string
+    {
+        return $this->propertyType;
+    }
+
+    public function setPropertyType(string $propertyType): void
+    {
+        $this->propertyType = $propertyType;
+    }
+
+    public function getNumberOfRooms(): int
+    {
+        return $this->numberOfRooms;
+    }
+
+    public function setNumberOfRooms($numberOfRooms): void
+    {
+        $this->numberOfRooms = $numberOfRooms;
     }
 }

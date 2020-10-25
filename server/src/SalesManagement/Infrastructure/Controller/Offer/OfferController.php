@@ -57,6 +57,7 @@ class OfferController
                 $data['name'],
                 $data['totalPrice'],
                 $data['footage'],
+                $data['rooms_number'],
                 $data['clientId'],
                 $data['contract_type'],
                 $data['legal_status'],
@@ -65,6 +66,7 @@ class OfferController
                 $data['property_type'],
                 $data['available_from']
             );
+
             $this->commandBus->dispatch($command);
             // catch various levels of exception and return detailed response codes
             return new JsonResponse(['name' => $command->getName()], Response::HTTP_CREATED);

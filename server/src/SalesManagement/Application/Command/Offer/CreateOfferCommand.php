@@ -10,6 +10,7 @@ class CreateOfferCommand implements CommandInterface
     private string $name;
     private float $totalPrice;
     private float $footage;
+    private int $numberOfRooms;
     private int $clientId;
     private string $propertyContractType;
     private string $propertyLegalStatus;
@@ -22,6 +23,7 @@ class CreateOfferCommand implements CommandInterface
         string $name,
         float $totalPrice,
         float $footage,
+        int $numberOfRooms,
         int $clientId,
         string $propertyContractType,
         string $propertyLegalStatus,
@@ -34,6 +36,7 @@ class CreateOfferCommand implements CommandInterface
         $this->name = $name;
         $this->totalPrice = $totalPrice;
         $this->footage = $footage;
+        $this->numberOfRooms = $numberOfRooms;
         $this->clientId = $clientId;
         $this->propertyContractType = $propertyContractType;
         $this->propertyLegalStatus = $propertyLegalStatus;
@@ -96,5 +99,10 @@ class CreateOfferCommand implements CommandInterface
     public function getPropertyType(): string
     {
         return $this->propertyType;
+    }
+
+    public function getNumberOfRooms(): int
+    {
+        return $this->numberOfRooms;
     }
 }

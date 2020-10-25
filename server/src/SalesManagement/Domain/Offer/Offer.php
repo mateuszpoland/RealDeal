@@ -13,6 +13,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\RoomsNumber;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
 
 /**
@@ -91,7 +92,7 @@ class Offer implements OfferState
     private $pricePerFootage;
 
     /**
-     * @var int
+     * @var RoomsNumber
      * @ORM\Column(type="integer", nullable=true)
      */
     private $numberOfRooms;
@@ -208,6 +209,7 @@ class Offer implements OfferState
         string $name,
         float $totalPrice,
         float $footage,
+        int $numberOfRooms,
         Client $client,
         string $contractType,
         string $legalStatus,
@@ -221,6 +223,7 @@ class Offer implements OfferState
         $this->identifier = new UniqueOfferIdentifier();
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
+        $this->numberOfRooms = (new RoomsNumber($numberOfRooms))->getValue();
         $this->client = $client;
         $this->propertyContractType = new PropertyContractType($contractType);
         $this->propertyLegalStatus = new PropertyLegalStatus($legalStatus);

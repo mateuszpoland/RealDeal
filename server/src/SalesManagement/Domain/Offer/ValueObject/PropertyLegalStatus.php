@@ -4,8 +4,12 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 
-final class PropertyLegalStatus
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
+
+final class PropertyLegalStatus implements FilterEnabledInterface
 {
+    public const FILTER_ALIAS = 'property_legal_status';
+
     private const LEGAL_STATUSES = [
         'ownership',
         'cooperative',
@@ -31,4 +35,11 @@ final class PropertyLegalStatus
     {
         return $this->propertyLegalStatus;
     }
+
+    public function getServiceAlias(): string
+    {
+        return self::FILTER_ALIAS;
+    }
+
+
 }

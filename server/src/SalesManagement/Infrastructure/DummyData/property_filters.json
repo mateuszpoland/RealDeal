@@ -1,0 +1,9 @@
+{
+  "client": 1,
+  "filters" : {
+    "property_type": "house",
+    "property_offering_type": "sales",
+    "price_range"  : [150000, 230000],
+    "rooms_number"       : 2
+  }
+}

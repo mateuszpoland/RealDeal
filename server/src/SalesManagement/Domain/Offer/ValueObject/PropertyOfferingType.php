@@ -3,10 +3,14 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyOfferingTypeInterface;
 
-class PropertyOfferingType implements PropertyOfferingTypeInterface
+class PropertyOfferingType implements
+    PropertyOfferingTypeInterface,
+    FilterEnabledInterface
 {
+    public const FILTER_ALIAS = 'property_offering_type';
     private string $offeringType;
 
     public function __construct(string $offeringType)
@@ -25,5 +29,10 @@ class PropertyOfferingType implements PropertyOfferingTypeInterface
     public function __toString(): string
     {
         return $this->offeringType;
+    }
+
+    public function getServiceAlias(): string
+    {
+        return self::FILTER_ALIAS;
     }
 }

@@ -100,6 +100,17 @@
       <path value="$PROJECT_DIR$/server/vendor/fig/link-util" />
       <path value="$PROJECT_DIR$/server/vendor/api-platform/core" />
       <path value="$PROJECT_DIR$/server/vendor/willdurand/negotiation" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/server/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/server/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/server/vendor/theofidry/alice-data-fixtures" />
+      <path value="$PROJECT_DIR$/server/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/server/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/server/vendor/nelmio/alice" />
+      <path value="$PROJECT_DIR$/server/vendor/hautelook/alice-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/server/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/server/vendor/sebastian/comparator" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

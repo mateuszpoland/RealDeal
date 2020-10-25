@@ -62,6 +62,11 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
 
+    SalesManagement.Filter.OfferSearchRepository:
+        class: RealDeal\SalesManagement\Application\Repository\Filter\OfferSearchRepository
+        arguments:
+            - '@doctrine.orm.entity_manager'
+
     ## queries ##
     SalesManagement.Query.GetAllOffersQuery:
         class: RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
@@ -110,6 +115,16 @@ services:
             - name: messenger.message_handler
               handles: RealDeal\SalesManagement\Application\Command\Client\AddProspectivePropertiesToClientCommand
 
+    SalesManagement.CommandHandler.CreateNewClientLooksForPropertyFilterHandler:
+        class: RealDeal\SalesManagement\Application\CommandHandler\Filter\CreateNewClientLooksForPropertyFilterHandler
+        arguments:
+            - '@SalesManagement.Client.ClientRepository'
+            - '@SalesManagement.Filter.OfferSearchRepository'
+            - '@messenger.bus.default'
+        tags:
+            - name: messenger.message_handler
+              handles: RealDeal\SalesManagement\Application\Command\Filter\CreateNewClientLooksForPropertyFilterCommand
+
     #event handlers
     SalesManagement.EventHandler.OfferCreated:
         class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
@@ -146,6 +161,7 @@ services:
         arguments:
             - '@messenger.bus.default'
             - '@RealDeal.Api.ResponseBuilder'
+            - '@RealDeal\SalesManagement\Application\DomainService\Registry\Filter\Offer\OfferFilterFactoriesRegistry'
         public: true
         tags: [ 'controller.service_arguments' ]
 
@@ -161,7 +177,25 @@ services:
     SalesManagement.Offer.OfferFactory:
         class: RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory
 
+    #### filters
+    ### Offer (Property) filters
+    RealDeal\SalesManagement\Application\DomainService\Registry\Filter\Offer\OfferFilterFactoriesRegistry: ~
 
+    ## filter factories
+    RealDeal\SalesManagement\Application\DomainService\Filter\Factory\OfferFilter\PriceRangeFilterFactory:
+        tags:
+            - { name: 'factory.filter.offer', filter_alias: 'price_range' }
 
+    RealDeal\SalesManagement\Application\DomainService\Filter\Factory\OfferFilter\PropertyOfferingTypeFilterFactory:
+        tags:
+            - { name: 'factory.filter.offer', filter_alias: 'property_offering_type' }
+
+    RealDeal\SalesManagement\Application\DomainService\Filter\Factory\OfferFilter\PropertyTypeFilterFactory:
+        tags:
+            - { name: 'factory.filter.offer', filter_alias: 'property_type' }
+
+    RealDeal\SalesManagement\Application\DomainService\Filter\Factory\OfferFilter\RoomsNumberFilterFactory:
+        tags:
+            - { name: 'factory.filter.offer', filter_alias: 'rooms_number' }
 
 

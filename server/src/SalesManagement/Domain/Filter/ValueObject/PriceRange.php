@@ -5,26 +5,26 @@ namespace RealDeal\SalesManagement\Domain\Filter\ValueObject;
 
 
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
-class PriceRange
+class PriceRange implements FilterEnabledInterface
 {
+    private const FILTER_ALIAS = 'price_range';
+    private const PRICE_RANGE_TOLERANCE = 5;
+
     private Price $priceFrom;
     private Price $priceTo;
     private ?Price $requestedPrice;
-    private float $priceRangePercent;
 
     public function __construct(
-        float $priceFrom,
-        float $priceTo,
-        float $requestedPrice = null, // if client specified he want it to be 'around' some amount, use this value
-        float $priceRangePercent = 5
+        array $priceRanges,
+        ?float $requestedPrice = null // if client specified he want it to be 'around' some amount, use this value
     ) {
         if($requestedPrice) {
             $this->requestedPrice = new Price($requestedPrice);
-            $this->priceRangePercent = $priceRangePercent;
         } else {
-            $this->priceFrom = new Price($priceFrom);
-            $this->priceTo = new Price($priceTo);
+            $this->requestedPrice = null;
+            $this->calculatePrices($priceRanges);
         }
     }
 
@@ -32,9 +32,47 @@ class PriceRange
     {
         $result = ['from' => $this->priceFrom, 'to' => $this->priceTo];
         if($this->requestedPrice) {
-            $result['from'] = $this->requestedPrice - ($this->requestedPrice * ($this->priceRangePercent / 100));
-            $result['to'] = $this->requestedPrice + ($this->requestedPrice * ($this->priceRangePercent / 100));
+            $result['from'] = $this->requestedPrice - ($this->requestedPrice * (self::PRICE_RANGE_TOLERANCE / 100));
+            $result['to'] = $this->requestedPrice + ($this->requestedPrice * (self::PRICE_RANGE_TOLERANCE / 100));
         }
         return json_encode($result);
     }
+
+    public function getServiceAlias(): string
+    {
+        return self::FILTER_ALIAS;
+    }
+
+    private function calculatePrices(array $priceRanges): void
+    {
+        if(!count($priceRanges) == 2) {
+            throw new \InvalidArgumentException('Need exactly 2 prices to form a range');
+        }
+
+        if($priceRanges[0] > $priceRanges[1]) {
+            throw new \InvalidArgumentException('Lower range value should be less than upper range value.');
+        }
+
+        $this->priceFrom =  new Price($priceRanges[0]);
+        $this->priceTo = new Price($priceRanges[1]);
+    }
+
+    public function serialize()
+    {
+        $serialized['price_from'] = $this->priceFrom;
+        $serialized['price_to'] = $this->priceTo;
+        $serialized['requested_price'] = $this->requestedPrice;
+
+        return $serialized;
+    }
+
+    public function unserialize($serialized): PriceRange
+    {
+        return new self(
+            [ $serialized['price_from'], $serialized['price_to']],
+             $serialized['requested_price']
+        );
+    }
+
+
 }

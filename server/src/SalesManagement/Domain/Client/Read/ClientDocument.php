@@ -7,7 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use ONGR\ElasticsearchBundle\Annotation as ES;
 
 /**
- * @ES\Index(alias="clients", default=true)
+ * @ES\Index(alias="clients")
  */
 class ClientDocument
 {

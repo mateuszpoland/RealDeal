@@ -43,4 +43,4 @@ salesManagement.getClient:
 salesManagement.Filter.addPropertySearchToClient:
   methods: ['POST']
   path: filters/client/add/{clientId}
-  controller:
+  controller: SalesManagement.FilterController::addPropertySearchToClientAction

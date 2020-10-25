@@ -14,6 +14,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/cache" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/collections" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/data-fixtures" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/dbal" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/doctrine-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/doctrine-migrations-bundle" />
@@ -28,13 +29,17 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/elasticsearch/elasticsearch" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/gedmo/doctrine-extensions" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/guzzlehttp/ringphp" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/guzzlehttp/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/hautelook/alice-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/laminas/laminas-code" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/laminas/laminas-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/nelmio/alice" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nelmio/cors-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ongr/elasticsearch-bundle" />
@@ -50,6 +55,10 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/stof/doctrine-extensions-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/amqp-messenger" />
@@ -92,6 +101,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/twig-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/twig-bundle" />
@@ -100,6 +110,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/web-link" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/theofidry/alice-data-fixtures" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/webimpress/safe-writer" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/webmozart/assert" />

@@ -53,7 +53,7 @@ class Client
     private Collection $prospectiveProperties;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\OneToMany(targetEntity="RealDeal\SalesManagement\Domain\Filter\Offer\Category\OfferSearch", mappedBy="client")
      */
     private Collection $propertySearchFilters;
 

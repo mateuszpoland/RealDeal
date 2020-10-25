@@ -9,11 +9,13 @@ class OfferCreated
     private string $offerName;
     private float $offerTotalPrice;
     private float $footage;
+    private int $roomsNumber;
     private int $clientId;
     private string $propertyContractType;
     private string $propertyLegalStatus;
     private string $propertyMarketType;
     private string $offeringType;
+    private string $propertyType;
     private \DateTime $availableFrom;
 
     public function __construct
@@ -22,11 +24,13 @@ class OfferCreated
         string $offerName,
         float $offerTotalPrice,
         float $footage,
+        int $roomsNumber,
         int $clientId,
         string $propertyContractType,
         string $propertyLegalStatus,
         string $propertyMarketType,
         string $offeringType,
+        string $propertyType,
         \DateTime $availableFrom
     )
     {
@@ -34,11 +38,13 @@ class OfferCreated
         $this->offerName = $offerName;
         $this->offerTotalPrice = $offerTotalPrice;
         $this->footage = $footage;
+        $this->roomsNumber = $roomsNumber;
         $this->clientId = $clientId;
         $this->propertyContractType = $propertyContractType;
         $this->propertyLegalStatus = $propertyLegalStatus;
         $this->propertyMarketType = $propertyMarketType;
         $this->offeringType = $offeringType;
+        $this->propertyType = $propertyType;
         $this->availableFrom = $availableFrom;
     }
 
@@ -90,5 +96,15 @@ class OfferCreated
     public function getAvailableFrom(): \DateTime
     {
         return $this->availableFrom;
+    }
+
+    public function getPropertyType(): string
+    {
+        return $this->propertyType;
+    }
+
+    public function getRoomsNumber(): int
+    {
+        return $this->roomsNumber;
     }
 }
