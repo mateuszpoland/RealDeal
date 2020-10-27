@@ -30,7 +30,7 @@ class OfferSearchNormalizer implements NormalizerInterface
             'property_type'          => $object->getPropertyType()->__toString(),
             'filters'                 => array_map(function (FilterEnabledInterface $filter) {
                 return [
-                    $filter->getServiceAlias() => $filter
+                    $filter->getServiceAlias() => $filter->getFilterableValue()->__serialize()
                 ];
             }, $object->getFilters())
         ];
@@ -45,5 +45,4 @@ class OfferSearchNormalizer implements NormalizerInterface
     {
         return $data instanceof OfferSearch;
     }
-
 }

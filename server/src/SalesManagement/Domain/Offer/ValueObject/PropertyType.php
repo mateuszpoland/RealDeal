@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
+use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
+use RealDeal\SalesManagement\Domain\Filter\FloatFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\StringFilterValue;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyTypeInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -19,9 +22,12 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
      */
     private string $propertyType;
 
+    private StringFilterValue $filterValue;
+
     public function __construct(string $propertyType)
     {
         $this->setPropertyType($propertyType);
+        $this->filterValue = (new StringFilterValue())->__unserialize(['filter_value' => $this->propertyType]);
     }
 
     private function setPropertyType(string $propertyType): void
@@ -50,5 +56,10 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
     public function equals(PropertyTypeInterface $propertyType): bool
     {
         return ((string)$this == (string) $propertyType);
+    }
+
+    public function getFilterableValue(): FilterValueInterface
+    {
+        return $this->filterValue;
     }
 }

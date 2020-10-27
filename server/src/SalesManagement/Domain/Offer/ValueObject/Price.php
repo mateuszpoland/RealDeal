@@ -5,15 +5,19 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use InvalidArgumentException;
 use Doctrine\ORM\Mapping as ORM;
+use RealDeal\SalesManagement\Domain\Filter\ArrayFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
+use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
 /**
  * @ORM\Embeddable()
  */
-class Price
+class Price implements FilterEnabledInterface
 {
     public const PLN = 'PLN';
-
     public const AVAILABLE_CURRENCIES = ['PLN', 'EUR'];
+
+    private const FILTER_ALIAS = 'price';
 
     /**
      * @ORM\Column(type="float")
@@ -25,10 +29,16 @@ class Price
      */
     private $currency;
 
+    private FilterValueInterface $filterValue;
+
     public function __construct(float $amount, string $currency=self::PLN)
     {
         $this->setAmount($amount);
         $this->setCurrency($currency);
+
+        $this->filterValue = (new ArrayFilterValue())
+            ->__unserialize(['filter_value' => ['amount' => $this->amount, 'currency' => $this->currency]]);
+
     }
 
     private function setAmount(float $amount): void
@@ -51,4 +61,16 @@ class Price
     {
         return (string)$this->amount . ' ' . $this->currency;
     }
+
+    public function getServiceAlias(): string
+    {
+        return self::FILTER_ALIAS;
+    }
+
+    public function getFilterableValue(): FilterValueInterface
+    {
+        return $this->filterValue;
+    }
+
+
 }

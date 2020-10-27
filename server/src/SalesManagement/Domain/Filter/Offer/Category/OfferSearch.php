@@ -36,9 +36,14 @@ class OfferSearch
 
     /**
      * @var FilterEnabledInterface[]
+     */
+   // private $filters;
+
+    /**
+     * @var array
      * @ORM\Column(type="array")
      */
-    private $filters;
+    private  $filtersSerialized;
 
     /**
      * @var Client
@@ -57,7 +62,8 @@ class OfferSearch
     public static function createFromFilters(Client $client, array $filters): self
     {
         $offerSearch = new self($client);
-        array_walk($filters, function (FilterEnabledInterface $filter) use ($offerSearch) {
+        $filterClasses = [];
+        array_walk($filters, function (FilterEnabledInterface $filter) use ($offerSearch, $filterClasses) {
             if(get_class($filter) == PropertyOfferingType::class) {
                 $offerSearch->propertyOfferingType = $filter;
             }
@@ -65,9 +71,11 @@ class OfferSearch
                 $offerSearch->propertyType = $filter;
             }
             else {
-                $offerSearch->filters[] = $filter;
+                $filterClasses[] = $filter;
             }
         });
+
+        $offerSearch->calculateFiltersString($filterClasses);
 
         return $offerSearch;
     }
@@ -87,30 +95,34 @@ class OfferSearch
         return $this->propertyType;
     }
 
+    public function getFiltersSerialized(): array
+    {
+        return $this->filtersSerialized;
+    }
+
     /**
+     * Note: I may make this entity read and replace only.
+     * So, FilterEnabledInterface filter array may only serve for initialization at the moment of creation
+     * without even persisting it as a class field, only to calculate serialized, "flat" filters, that represent FilterValueInterface
      * @return FilterEnabledInterface[]
-     */
+
     public function getFilters(): array
     {
+        // calculate them from serialized filters
+        foreach ($this->filtersSerialized as $filterClass => $filterValue)
         return $this->filters;
     }
+    */
 
     public function getClient(): Client
     {
         return $this->client;
     }
 
-    public function addFilter(FilterEnabledInterface $filter): void
+    private function calculateFiltersString(FilterEnabledInterface ...$filters)
     {
-        if(!in_array($filter, $this->filters)) {
-            $this->filters[] = $filter;
-        }
-    }
-
-    public function removeFilter(FilterEnabledInterface $filter): void
-    {
-        if(in_array($filter, $this->filters)) {
-            unset($this->filters[$filter]);
-        }
+        array_map(function (FilterEnabledInterface $filter) {
+            $this->filtersSerialized[$filter->getServiceAlias()] = $filter->getFilterableValue()->__serialize();
+        }, $filters);
     }
 }

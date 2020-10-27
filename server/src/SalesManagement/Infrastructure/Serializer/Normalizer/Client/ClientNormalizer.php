@@ -48,8 +48,10 @@ class ClientNormalizer implements NormalizerInterface
             'id' => $object->getId()
         ], UrlGeneratorInterface::ABSOLUTE_URL);
 
+        $context = array_flip($context);
+
         if(isset($context['base_data'])) {
-            return array_intersect_key($data, ['id', 'href']);
+            return array_intersect_key($data, array_flip(['id', 'href']));
         }
 
         return $data;

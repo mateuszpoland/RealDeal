@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Embeddable()
  */
-final class PropertyLegalStatus implements FilterEnabledInterface
+final class PropertyLegalStatus
 {
     public const FILTER_ALIAS = 'property_legal_status';
 

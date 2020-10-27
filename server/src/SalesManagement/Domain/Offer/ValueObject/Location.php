@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * represents Location in the format supported by OpenStreetMap
  * @ORM\Embeddable()
  */
-class Location implements FilterEnabledInterface
+class Location
 {
     public const FILTER_ALIAS = 'preferred_location';
 

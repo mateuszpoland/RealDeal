@@ -4,6 +4,9 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Filter\ValueObject;
 
 
+use RealDeal\SalesManagement\Domain\Filter\ArrayFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
+use RealDeal\SalesManagement\Domain\Filter\FloatFilterValue;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
@@ -16,12 +19,15 @@ class PriceRange implements FilterEnabledInterface
     private Price $priceTo;
     private ?Price $requestedPrice;
 
+    private FilterValueInterface $filterValue;
+
     public function __construct(
         array $priceRanges,
         ?float $requestedPrice = null // if client specified he want it to be 'around' some amount, use this value
     ) {
         if($requestedPrice) {
             $this->requestedPrice = new Price($requestedPrice);
+            $this->filterValue = (new FloatFilterValue())->__unserialize(['filter_value' => $this->requestedPrice]);
         } else {
             $this->requestedPrice = null;
             $this->calculatePrices($priceRanges);
@@ -55,24 +61,16 @@ class PriceRange implements FilterEnabledInterface
 
         $this->priceFrom =  new Price($priceRanges[0]);
         $this->priceTo = new Price($priceRanges[1]);
+
+        $this->filterValue = (new ArrayFilterValue())
+            ->__unserialize(['filter_value' => [
+                'from' => $this->priceFrom->getFilterableValue()->__serialize(),
+                'to'   => $this->priceTo->getFilterableValue()->__serialize()
+            ]]);
     }
 
-    public function serialize()
+    public function getFilterableValue(): FilterValueInterface
     {
-        $serialized['price_from'] = $this->priceFrom;
-        $serialized['price_to'] = $this->priceTo;
-        $serialized['requested_price'] = $this->requestedPrice;
-
-        return $serialized;
+        return $this->filterValue;
     }
-
-    public function unserialize($serialized): PriceRange
-    {
-        return new self(
-            [ $serialized['price_from'], $serialized['price_to']],
-             $serialized['requested_price']
-        );
-    }
-
-
 }

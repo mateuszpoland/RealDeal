@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Embeddable()
  */
-final class PropertyMarketType implements FilterEnabledInterface
+final class PropertyMarketType
 {
     public const FILTER_ALIAS = 'property_market_type';
     private const MARKET_TYPES = [

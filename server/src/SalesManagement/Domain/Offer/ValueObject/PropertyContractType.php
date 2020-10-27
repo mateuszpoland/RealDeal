@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Embeddable()
  */
-class PropertyContractType implements FilterEnabledInterface
+class PropertyContractType
 {
     public const FILTER_ALIAS = 'property_contract_type';
 
