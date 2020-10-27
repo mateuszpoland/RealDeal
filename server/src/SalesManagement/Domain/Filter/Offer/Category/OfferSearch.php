@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Filter\Offer\Category;
 
+use DeepCopy\Filter\Filter;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
@@ -43,7 +44,7 @@ class OfferSearch
      * @var array
      * @ORM\Column(type="array")
      */
-    private  $filtersSerialized;
+    private $filtersSerialized;
 
     /**
      * @var Client
@@ -63,7 +64,7 @@ class OfferSearch
     {
         $offerSearch = new self($client);
         $filterClasses = [];
-        array_walk($filters, function (FilterEnabledInterface $filter) use ($offerSearch, $filterClasses) {
+        array_walk($filters, function (FilterEnabledInterface $filter) use ($offerSearch, &$filterClasses) {
             if(get_class($filter) == PropertyOfferingType::class) {
                 $offerSearch->propertyOfferingType = $filter;
             }
@@ -119,10 +120,14 @@ class OfferSearch
         return $this->client;
     }
 
-    private function calculateFiltersString(FilterEnabledInterface ...$filters)
+    public function calculateFiltersString(array $filters)
     {
-        array_map(function (FilterEnabledInterface $filter) {
+        foreach ($filters as $filter) {
+            if(!$filter instanceof FilterEnabledInterface) {
+                throw new \InvalidArgumentException('Expected class ' . FilterEnabledInterface::class);
+            }
+
             $this->filtersSerialized[$filter->getServiceAlias()] = $filter->getFilterableValue()->__serialize();
-        }, $filters);
+        }
     }
 }

@@ -28,11 +28,14 @@ class OfferSearchNormalizer implements NormalizerInterface
             'client'                 => $this->normalizeClient($object->getClient()),
             'property_offering_type' => $object->getPropertyOfferingType()->__toString(),
             'property_type'          => $object->getPropertyType()->__toString(),
+            /*
             'filters'                 => array_map(function (FilterEnabledInterface $filter) {
                 return [
                     $filter->getServiceAlias() => $filter->getFilterableValue()->__serialize()
                 ];
             }, $object->getFilters())
+            */
+            'filters'                 => $object->getFiltersSerialized()
         ];
     }
 
