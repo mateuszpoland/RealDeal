@@ -34,6 +34,6 @@ final class GetClientFilterQuery
 
     private function executeSearchByClientId()
     {
-       return $this->offerSearchRepository->findAllForClient($this->clientId);
+       return $this->offerSearchRepository->findForClient($this->clientId);
     }
 }

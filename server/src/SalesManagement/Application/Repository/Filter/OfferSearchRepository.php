@@ -29,7 +29,7 @@ class OfferSearchRepository implements ServiceEntityRepositoryInterface
         throw new \Exception('Not implemented');
     }
 
-    public function findAllForClient(int $clientId)
+    public function findForClient(int $clientId)
     {
         $qb = $this->em->createQueryBuilder();
         $qb->select('cso')
@@ -41,6 +41,6 @@ class OfferSearchRepository implements ServiceEntityRepositoryInterface
 
         $qb->setParameter('clientId', $clientId);
 
-        return $qb->getQuery()->getResult();
+        return $qb->getQuery()->getOneOrNullResult();
     }
 }

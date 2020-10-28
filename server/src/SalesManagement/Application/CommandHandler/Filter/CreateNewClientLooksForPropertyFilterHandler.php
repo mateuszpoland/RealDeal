@@ -37,8 +37,16 @@ class CreateNewClientLooksForPropertyFilterHandler
             throw new \InvalidArgumentException('Client not found');
         }
 
-        $filter = OfferSearch::createFromFilters($client, $filters);
-        $this->offerSearchRepository->save($filter);
+        // check if the client has his filters already - if so, then update them
+        $clientOfferFilter = $this->offerSearchRepository->findForClient($client->getId());
+        if($clientOfferFilter) {
+            $clientOfferFilter->updateSearchFilters($filters);
+            $this->offerSearchRepository->save($clientOfferFilter);
+            return;
+        }
+
+        $clientOfferFilter = OfferSearch::createFromFilters($client, $filters);
+        $this->offerSearchRepository->save($clientOfferFilter);
 
         //dispatch event to amqp - match poperties to clients and generate PropertyMatches out of it.
         //$event = new OfferSearchCreatedEvent($filter);

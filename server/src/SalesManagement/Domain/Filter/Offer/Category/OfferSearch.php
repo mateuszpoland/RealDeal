@@ -81,6 +81,25 @@ class OfferSearch
         return $offerSearch;
     }
 
+    // function used to update filters - add set of filters and recalculate the flat filters
+    public function updateSearchFilters(array $filters): void
+    {
+        $filterClasses = [];
+        array_walk($filters, function (FilterEnabledInterface $filter) use (&$filterClasses) {
+            if(get_class($filter) == PropertyOfferingType::class) {
+                $this->propertyOfferingType = $filter;
+            }
+            else if(get_class($filter) == PropertyType::class) {
+                $this->propertyType = $filter;
+            }
+            else {
+                $filterClasses[] = $filter;
+            }
+        });
+
+        $this->calculateFiltersString($filterClasses);
+    }
+
     public function getId()
     {
         return $this->id;
@@ -122,6 +141,7 @@ class OfferSearch
 
     public function calculateFiltersString(array $filters)
     {
+        $this->filtersSerialized = [];
         foreach ($filters as $filter) {
             if(!$filter instanceof FilterEnabledInterface) {
                 throw new \InvalidArgumentException('Expected class ' . FilterEnabledInterface::class);
