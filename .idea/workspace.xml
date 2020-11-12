@@ -68,62 +68,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/fixtures/clients.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/fixtures/offers.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Filter/CreateNewClientLooksForPropertyFilterCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Filter/CreateNewClientLooksForPropertyFilterHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Filter/Factory/FilterFactoryInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Filter/Factory/OfferFilter/PriceRangeFilterFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Filter/Factory/OfferFilter/PropertyOfferingTypeFilterFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Filter/Factory/OfferFilter/PropertyTypeFilterFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Filter/Factory/OfferFilter/RoomsNumberFilterFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Registry/Filter/Offer/OfferFilterFactoriesRegistry.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Filter/OfferSearchRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/DependencyInjection/Compiler/OfferFilterFactoryPass.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Interfaces/FilterEnabledInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/RoomsNumber.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/DummyData/property_filters.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/Shared/Domain/ValueObject/BaseGreaterThanZeroIntegerValue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RealDeal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RealDeal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/components/Navbar/Navbar.elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/components/Navbar/Navbar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/components/Signup/Signup.elements.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/components/Signup/Signup.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/components/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Landing_Page/landing/src/globalStyles.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/form/offer/OfferForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Offer/Aggregator/ElasticAggregator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Client/ClientCreatedEvent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Client/NewClientCreatedHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/ClientMatchController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/ClientFilterController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferMatchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f66a660-d307-44e9-81bb-93eef223412f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f66a660-d307-44e9-81bb-93eef223412f.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201005190529.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201006192609.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201006192631.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201012191443.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Command/Offer/CreateOfferCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/CreateOfferHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Offer/Validator/CreateNewOfferInputValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Offer/Validator/CreateNewOfferInputValidator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Event/Offer/OfferCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201025205258.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201027204348.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/CreateClientCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Client/CreateClientCommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Filter/CreateNewClientLooksForPropertyFilterHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Filter/CreateNewClientLooksForPropertyFilterHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/EventHandler/Offer/OfferCreatedHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Filter/PropertyMatchRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Repository/Filter/PropertySearchRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Client.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Read/ClientDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Client/Read/ClientDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearchCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/OfferSearch.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ValueObject/PriceRange.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ValueObject/PriceRange.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Read/OfferDocument.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Location.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Location.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyContractType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyContractType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyLegalStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyLegalStatus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyMarketType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyMarketType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyOfferingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyOfferingType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/RoomsNumber.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/RoomsNumber.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/FilterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/DummyData/clients.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/DummyData/clients.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/DummyData/properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/DummyData/properties.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Serializer/Normalizer/Filter/OfferSearchNormalizer.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Serializer/Normalizer/Filter/OfferSearchNormalizer.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,8 +119,8 @@
       <list>
         <option value="Python Script" />
         <option value="CSS File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -333,7 +313,21 @@
       <workItem from="1602512943633" duration="10856000" />
       <workItem from="1602688688618" duration="53000" />
       <workItem from="1602688742942" duration="6522000" />
-      <workItem from="1602945034417" duration="46882000" />
+      <workItem from="1602945034417" duration="63519000" />
+      <workItem from="1603732578158" duration="1225000" />
+      <workItem from="1603812449911" duration="318000" />
+      <workItem from="1603812952539" duration="10177000" />
+      <workItem from="1603885169467" duration="7160000" />
+      <workItem from="1603999770542" duration="724000" />
+      <workItem from="1604159103280" duration="1542000" />
+      <workItem from="1604161244702" duration="7447000" />
+      <workItem from="1604514284360" duration="990000" />
+      <workItem from="1604746913019" duration="540000" />
+      <workItem from="1604949439058" duration="629000" />
+      <workItem from="1605048349009" duration="10085000" />
+      <workItem from="1605125284069" duration="1770000" />
+      <workItem from="1605163543218" duration="134000" />
+      <workItem from="1605188461092" duration="158000" />
     </task>
     <servers />
   </component>
@@ -357,70 +351,89 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="320" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806@0.23.1440.806" timestamp="1603566764093" />
-    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser" timestamp="1603562030411">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser" timestamp="1605117327861">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="496" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1599506200532" />
+    <state x="496" y="169" key="#com.intellij.ide.util.MemberChooser/0.23.1440.798@0.23.1440.798" timestamp="1603826736968" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1603134509466" />
-    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.806@0.23.1440.806" timestamp="1603562030411" />
+    <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.806@0.23.1440.806" timestamp="1603621390818" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.808@0.23.1440.808" timestamp="1603222677446" />
-    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.811@0.23.1440.811" timestamp="1602706904874" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.811@0.23.1440.811" timestamp="1605117327861" />
     <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1601923789130" />
     <state x="496" y="172" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1602014216331" />
-    <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603554984456">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603822491325">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
+    <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.798@0.23.1440.798" timestamp="1603822491325" />
     <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.806@0.23.1440.806" timestamp="1603554984456" />
     <state x="420" y="49" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.808@0.23.1440.808" timestamp="1602707423582" />
     <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.811@0.23.1440.811" timestamp="1602528158934" />
-    <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603554641011">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605118521441">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
+    <state x="458" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.798@0.23.1440.798" timestamp="1603826251438" />
     <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.804@0.23.1440.804" timestamp="1602945233668" />
-    <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.806@0.23.1440.806" timestamp="1603554641011" />
-    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.808@0.23.1440.808" timestamp="1602520800399" />
-    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.811@0.23.1440.811" timestamp="1602529103239" />
-    <state x="100" y="113" width="1240" height="629" key="DiffContextDialog" timestamp="1600094276029">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="458" y="187" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.806@0.23.1440.806" timestamp="1603621427525" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.808@0.23.1440.808" timestamp="1605113350764" />
+    <state x="458" y="188" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.811@0.23.1440.811" timestamp="1605118521441" />
+    <state x="100" y="113" width="1240" height="632" key="DiffContextDialog" timestamp="1605118936474">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="100" y="100" width="1240" height="700" key="DiffContextDialog/0.0.1440.900@0.0.1440.900" timestamp="1599662903393" />
     <state x="100" y="113" width="1240" height="629" key="DiffContextDialog/0.23.1440.808@0.23.1440.808" timestamp="1600094276029" />
-    <state width="1109" height="261" key="GridCell.Tab.0.bottom" timestamp="1603612876268">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="100" y="113" width="1240" height="632" key="DiffContextDialog/0.23.1440.811@0.23.1440.811" timestamp="1605118936474" />
+    <state width="1109" height="246" key="GridCell.Tab.0.bottom" timestamp="1605126746413">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
-    <state width="1109" height="212" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1603025662940" />
+    <state width="1109" height="194" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1603955763372" />
+    <state width="1109" height="200" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1604165962487" />
+    <state width="1109" height="246" key="GridCell.Tab.0.bottom/0.23.1440.804@0.23.1440.804" timestamp="1605125532417" />
     <state width="1109" height="261" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1603612876268" />
-    <state width="1109" height="137" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1603217041857" />
-    <state width="1109" height="261" key="GridCell.Tab.0.center" timestamp="1603612876267">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state width="1109" height="246" key="GridCell.Tab.0.bottom/0.23.1440.808@0.23.1440.808" timestamp="1605126746413" />
+    <state width="1109" height="246" key="GridCell.Tab.0.bottom/0.23.1440.811@0.23.1440.811" timestamp="1605120277219" />
+    <state width="1109" height="246" key="GridCell.Tab.0.center" timestamp="1605126746411">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
-    <state width="1109" height="212" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1603025662939" />
+    <state width="1109" height="194" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1603955763372" />
+    <state width="1109" height="200" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1604165962486" />
+    <state width="1109" height="246" key="GridCell.Tab.0.center/0.23.1440.804@0.23.1440.804" timestamp="1605125532416" />
     <state width="1109" height="261" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1603612876267" />
-    <state width="1109" height="137" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1603217041856" />
-    <state width="1109" height="261" key="GridCell.Tab.0.left" timestamp="1603612876265">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state width="1109" height="246" key="GridCell.Tab.0.center/0.23.1440.808@0.23.1440.808" timestamp="1605126746411" />
+    <state width="1109" height="246" key="GridCell.Tab.0.center/0.23.1440.811@0.23.1440.811" timestamp="1605120277218" />
+    <state width="1109" height="246" key="GridCell.Tab.0.left" timestamp="1605126746411">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
-    <state width="1109" height="212" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1603025662939" />
+    <state width="1109" height="194" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1603955763371" />
+    <state width="1109" height="200" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1604165962485" />
+    <state width="1109" height="246" key="GridCell.Tab.0.left/0.23.1440.804@0.23.1440.804" timestamp="1605125532415" />
     <state width="1109" height="261" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1603612876265" />
-    <state width="1109" height="137" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1603217041855" />
-    <state width="1109" height="261" key="GridCell.Tab.0.right" timestamp="1603612876267">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state width="1109" height="246" key="GridCell.Tab.0.left/0.23.1440.808@0.23.1440.808" timestamp="1605126746411" />
+    <state width="1109" height="246" key="GridCell.Tab.0.left/0.23.1440.811@0.23.1440.811" timestamp="1605120277218" />
+    <state width="1109" height="246" key="GridCell.Tab.0.right" timestamp="1605126746412">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
-    <state width="1109" height="212" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1603025662940" />
+    <state width="1109" height="194" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1603955763372" />
+    <state width="1109" height="200" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1604165962486" />
+    <state width="1109" height="246" key="GridCell.Tab.0.right/0.23.1440.804@0.23.1440.804" timestamp="1605125532416" />
     <state width="1109" height="261" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1603612876267" />
-    <state width="1109" height="137" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1603217041856" />
-    <state x="406" y="263" key="NewPhpClassDialog" timestamp="1603554623091">
-      <screen x="0" y="23" width="1440" height="806" />
-    </state>
-    <state x="406" y="261" key="NewPhpClassDialog/0.23.1440.804@0.23.1440.804" timestamp="1603029642644" />
-    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.806@0.23.1440.806" timestamp="1603554623091" />
-    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.808@0.23.1440.808" timestamp="1603548385541" />
-    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.811@0.23.1440.811" timestamp="1602695051146" />
-    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.812@0.23.1440.812" timestamp="1601408764706" />
-    <state x="406" y="264" key="NewPhpClassDialog/0.23.1440.814@0.23.1440.814" timestamp="1600701816403" />
-    <state x="539" y="354" key="NewPhpFileDialog" timestamp="1602528198775">
+    <state width="1109" height="246" key="GridCell.Tab.0.right/0.23.1440.808@0.23.1440.808" timestamp="1605126746412" />
+    <state width="1109" height="246" key="GridCell.Tab.0.right/0.23.1440.811@0.23.1440.811" timestamp="1605120277219" />
+    <state x="379" y="268" key="NewPhpClassDialog" timestamp="1605117831449">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
+    <state x="385" y="178" key="NewPhpClassDialog/0.23.1440.797@0.23.1440.797" timestamp="1603997398883" />
+    <state x="385" y="178" key="NewPhpClassDialog/0.23.1440.798@0.23.1440.798" timestamp="1603822586567" />
+    <state x="406" y="261" key="NewPhpClassDialog/0.23.1440.804@0.23.1440.804" timestamp="1603029642644" />
+    <state x="422" y="263" key="NewPhpClassDialog/0.23.1440.806@0.23.1440.806" timestamp="1603621070462" />
+    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.808@0.23.1440.808" timestamp="1605112576802" />
+    <state x="379" y="268" key="NewPhpClassDialog/0.23.1440.811@0.23.1440.811" timestamp="1605117831449" />
+    <state x="406" y="263" key="NewPhpClassDialog/0.23.1440.812@0.23.1440.812" timestamp="1601408764706" />
+    <state x="406" y="264" key="NewPhpClassDialog/0.23.1440.814@0.23.1440.814" timestamp="1600701816403" />
+    <state x="539" y="349" key="NewPhpFileDialog" timestamp="1603821277988">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="539" y="349" key="NewPhpFileDialog/0.23.1440.798@0.23.1440.798" timestamp="1603821277988" />
     <state x="539" y="352" key="NewPhpFileDialog/0.23.1440.806@0.23.1440.806" timestamp="1600196639842" />
     <state x="539" y="353" key="NewPhpFileDialog/0.23.1440.808@0.23.1440.808" timestamp="1600280643650" />
     <state x="539" y="354" key="NewPhpFileDialog/0.23.1440.811@0.23.1440.811" timestamp="1602528198775" />
@@ -434,25 +447,32 @@
       <screen x="0" y="23" width="1440" height="804" />
     </state>
     <state x="308" y="85" key="com.intellij.database.dbimport.ImportDialog/0.23.1440.804@0.23.1440.804" timestamp="1603134190436" />
-    <state x="0" y="164" width="1440" height="522" key="find.popup" timestamp="1603569527193">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="485" y="242" width="470" height="357" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1604163740655">
+      <screen x="0" y="23" width="1440" height="798" />
     </state>
+    <state x="485" y="242" width="470" height="357" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.23.1440.798@0.23.1440.798" timestamp="1604163740655" />
+    <state x="422" y="162" width="852" height="523" key="find.popup" timestamp="1604165350817">
+      <screen x="0" y="23" width="1440" height="798" />
+    </state>
+    <state x="422" y="162" width="601" height="522" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1603905612067" />
+    <state x="422" y="162" width="852" height="523" key="find.popup/0.23.1440.798@0.23.1440.798" timestamp="1604165350817" />
     <state x="422" y="162" width="613" height="522" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1601195011041" />
     <state x="422" y="163" width="601" height="522" key="find.popup/0.23.1440.804@0.23.1440.804" timestamp="1603029123819" />
-    <state x="0" y="164" width="1440" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1603569527193" />
-    <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1600282461854" />
+    <state x="0" y="268" width="1440" height="522" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1603621030195" />
+    <state x="422" y="164" width="601" height="524" key="find.popup/0.23.1440.808@0.23.1440.808" timestamp="1603649964932" />
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602097637977" />
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602099502912" />
-    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup" timestamp="1603615519782">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup" timestamp="1605126758765">
+      <screen x="0" y="23" width="1440" height="808" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
-    <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.798@0.23.1440.798" timestamp="1601198404250" />
+    <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1603998307358" />
+    <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.798@0.23.1440.798" timestamp="1604514307468" />
     <state x="385" y="197" width="670" height="605" key="search.everywhere.popup/0.23.1440.801@0.23.1440.801" timestamp="1601145410415" />
     <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1603138395072" />
-    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1603615519782" />
-    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1603546393029" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1602689445713" />
+    <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1603648326964" />
+    <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1605126758765" />
+    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1605123116677" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1602099444156" />
     <state x="385" y="200" width="670" height="614" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1600979755731" />
     <state x="385" y="201" width="670" height="616" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1602013797571" />

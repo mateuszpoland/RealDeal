@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Filter\Offer\Category;
 
-use DeepCopy\Filter\Filter;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;

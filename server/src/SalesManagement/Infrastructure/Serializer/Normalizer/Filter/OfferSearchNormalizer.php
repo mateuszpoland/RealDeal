@@ -8,7 +8,6 @@ use RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Client\ClientN
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 use RealDeal\SalesManagement\Domain\Client\Client;
-use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
 class OfferSearchNormalizer implements NormalizerInterface
 {
@@ -28,13 +27,6 @@ class OfferSearchNormalizer implements NormalizerInterface
             'client'                 => $this->normalizeClient($object->getClient()),
             'property_offering_type' => $object->getPropertyOfferingType()->__toString(),
             'property_type'          => $object->getPropertyType()->__toString(),
-            /*
-            'filters'                 => array_map(function (FilterEnabledInterface $filter) {
-                return [
-                    $filter->getServiceAlias() => $filter->getFilterableValue()->__serialize()
-                ];
-            }, $object->getFilters())
-            */
             'filters'                 => $object->getFiltersSerialized()
         ];
     }

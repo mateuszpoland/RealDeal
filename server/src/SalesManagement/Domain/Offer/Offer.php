@@ -44,31 +44,31 @@ class Offer implements OfferState
 
     /**
      * @var PropertyType
-     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType")
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType", columnPrefix=false)
      */
     private $propertyType;
 
     /**
      * @var PropertyOfferingType
-     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType")
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType", columnPrefix=false)
      */
     private $offeringType;
 
     /**
      * @var PropertyMarketType
-     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType")
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyMarketType", columnPrefix=false)
      */
     private $propertyMarketType;
 
     /**
      * @var PropertyLegalStatus
-     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus")
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyLegalStatus", columnPrefix=false)
      */
     private $propertyLegalStatus;
 
     /**
      * @var PropertyContractType
-     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType")
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyContractType", columnPrefix=false)
      */
     private  $propertyContractType;
 
@@ -79,7 +79,7 @@ class Offer implements OfferState
 
     /**
      * @var Price
-     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\Price")
+     * @ORM\Embedded(class="RealDeal\SalesManagement\Domain\Offer\ValueObject\Price", columnPrefix=false)
      */
     public $totalPrice;
 
@@ -93,13 +93,13 @@ class Offer implements OfferState
 
     /**
      * @var RoomsNumber
-     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\RoomsNumber")
+     * @ORM\Embedded (class="RealDeal\SalesManagement\Domain\Offer\ValueObject\RoomsNumber", columnPrefix=false)
      */
     private $numberOfRooms;
 
     /**
      * @var string
-     * @todo - make another entity
+     * @todo - make another entity - embeddable address
      * @ORM\Column(type="string", nullable=true)
      */
     private $district;
@@ -223,7 +223,7 @@ class Offer implements OfferState
         $this->identifier = new UniqueOfferIdentifier();
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
-        $this->numberOfRooms = (new RoomsNumber($numberOfRooms))->getValue();
+        $this->numberOfRooms = new RoomsNumber($numberOfRooms);
         $this->client = $client;
         $this->propertyContractType = new PropertyContractType($contractType);
         $this->propertyLegalStatus = new PropertyLegalStatus($legalStatus);

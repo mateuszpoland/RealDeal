@@ -10,7 +10,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyOfferin
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Embeddable()
+ * @ORM\Embeddable
  */
 class PropertyOfferingType implements
     PropertyOfferingTypeInterface,

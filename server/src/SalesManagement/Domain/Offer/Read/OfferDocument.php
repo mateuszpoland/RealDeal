@@ -25,17 +25,17 @@ class OfferDocument
     private string $name;
 
      /**
-     * @ES\Property(type="float", name="property.total_price.value")
+     * @ES\Property(type="float", name="total_price.value")
      */
     private float $totalPriceValue;
 
     /**
-     * @ES\Property(type="float", name="property.footage.value")
+     * @ES\Property(type="float", name="footage.value")
      */
     private float $footage;
 
     /**
-     * @ES\Property(type="integer", name="property.rooms_number")
+     * @ES\Property(type="integer", name="rooms_number")
      */
     private $numberOfRooms;
 
@@ -45,17 +45,17 @@ class OfferDocument
     private int $ownerId;
 
     /**
-     * @ES\Property(type="text", name="contract_type")
+     * @ES\Property(type="text", name="property_contract_type")
      */
     private string $propertyContractType;
 
     /**
-     * @ES\Property(type="text", name="legal_status")
+     * @ES\Property(type="text", name="property_legal_status")
      */
     private string $propertyLegalStatus;
 
     /**
-     * @ES\Property(type="text", name="market_type")
+     * @ES\Property(type="text", name="property_market_type")
      */
     private string $propertyMarketType;
 

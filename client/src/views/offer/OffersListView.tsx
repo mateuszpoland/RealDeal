@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Offer} from "../../types/Offer";
 import { fetchOffers } from "../../components/service/fetcher/offer/Fetcher";
 import { Link, Route } from "react-router-dom";
+import { OfferForm } from '../../components/form/offer/OfferForm';
 
 type FetchingStatus = {
     isLoading: boolean
@@ -49,6 +50,9 @@ export const ListOfferView = () => {
                             </li>
                         ))}
                     </ul>
+
+                    {/* add offer Form */}
+                    <OfferForm/>
                 </React.Fragment>
 
         );

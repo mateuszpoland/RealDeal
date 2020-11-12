@@ -7,7 +7,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledIn
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Embeddable()
+ * @ORM\Embeddable
  */
 final class PropertyMarketType
 {

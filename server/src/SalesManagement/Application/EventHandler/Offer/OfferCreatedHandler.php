@@ -5,12 +5,12 @@ namespace RealDeal\SalesManagement\Application\EventHandler\Offer;
 
 use RealDeal\SalesManagement\Application\Event\Offer\OfferCreated;
 use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 
 class OfferCreatedHandler implements MessageHandlerInterface
 {
-    /** @var */
-    private $container;
+    private Container $container;
 
     public function __construct($container)
     {

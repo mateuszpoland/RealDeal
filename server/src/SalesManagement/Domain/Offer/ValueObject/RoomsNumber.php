@@ -10,7 +10,7 @@ use RealDeal\Shared\Domain\ValueObject\BaseGreaterThanZeroIntegerValue;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Embeddable()
+ * @ORM\Embeddable
  */
 class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabledInterface
 {

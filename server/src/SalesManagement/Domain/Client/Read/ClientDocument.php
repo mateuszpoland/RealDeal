@@ -14,7 +14,12 @@ class ClientDocument
     /**
      * @ES\Id()
      */
-    private string $id;
+    private $id;
+
+    /**
+     * @ES\Property(type="text", name="client_id")
+     */
+    private int $clientId;
 
     /**
      * @ES\Property(type="text", name="name")
@@ -22,17 +27,17 @@ class ClientDocument
     private string $name;
 
     /**
-     * @ES\Property(type="text", name="name")
+     * @ES\Property(type="text", name="secondName")
      */
     private string $secondName;
 
     /**
-     * @ES\Property(type="text", name="name")
+     * @ES\Property(type="text", name="email")
      */
     private string $email;
 
     /**
-     * @ES\Property(type="text", name="name")
+     * @ES\Property(type="text", name="stage")
      */
     private string $stage;
 
@@ -52,9 +57,19 @@ class ClientDocument
         $this->prospectiveProperties = new ArrayCollection();
     }
 
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
+    }
+
+    public function getClientId(): int
+    {
+        return $this->clientId;
+    }
+
+    public function setClientId(int $clientId): void
+    {
+        $this->clientId = $clientId;
     }
 
     /**

@@ -4,14 +4,13 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
-use RealDeal\SalesManagement\Domain\Filter\FloatFilterValue;
 use RealDeal\SalesManagement\Domain\Filter\StringFilterValue;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyTypeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Embeddable()
+ * @ORM\Embeddable
  */
 class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
 {
@@ -35,6 +34,7 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
         if(!in_array($propertyType, PropertyTypeInterface::PROPERTY_TYPES)) {
             throw new \InvalidArgumentException('Property type ' . $propertyType . ' not recognized');
         }
+
         $this->propertyType = $propertyType;
     }
 

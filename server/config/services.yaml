@@ -137,13 +137,21 @@ services:
         class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
         arguments:
             - '@service_container'
-            - RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
         tags:
             -
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Event\Offer\OfferCreated
 
-    ## controllers
+    SalesManagement.EventHandler.Client.NewClientCreatedHandler:
+        class: RealDeal\SalesManagement\Application\EventHandler\Client\NewClientCreatedHandler
+        arguments:
+            - '@service_container'
+        tags:
+            -
+                name: messenger.message_handler
+                handles: RealDeal\SalesManagement\Application\Event\Client\ClientCreatedEvent
+
+                ## controllers
     SalesManagement.OfferController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
         arguments:

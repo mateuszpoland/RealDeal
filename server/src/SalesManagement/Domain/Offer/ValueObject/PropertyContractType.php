@@ -7,7 +7,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledIn
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Embeddable()
+ * @ORM\Embeddable
  */
 class PropertyContractType
 {
@@ -21,7 +21,7 @@ class PropertyContractType
     /**
      * @ORM\Column(type="string")
      */
-    private string $propertyLegalStatus;
+    private string $propertyContractType;
 
     public function __construct(string $contractType)
     {
@@ -34,7 +34,7 @@ class PropertyContractType
             throw new \InvalidArgumentException('unrecognized property status type: ' . $status);
         }
 
-        $this->propertyLegalStatus = $contractType;
+        $this->propertyContractType = $contractType;
     }
 
     public function __toString(): string

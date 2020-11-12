@@ -30,15 +30,14 @@ class CreateNewClientLooksForPropertyFilterHandler
     public function __invoke(CreateNewClientLooksForPropertyFilterCommand $command)
     {
         $filters = $command->getFilters();
-        // maybe do some cross-validation between existing client filters (?)
         $client = $this->clientRepository->findById($command->getClientId());
 
         if(!$client) {
             throw new \InvalidArgumentException('Client not found');
         }
 
-        // check if the client has his filters already - if so, then update them
         $clientOfferFilter = $this->offerSearchRepository->findForClient($client->getId());
+
         if($clientOfferFilter) {
             $clientOfferFilter->updateSearchFilters($filters);
             $this->offerSearchRepository->save($clientOfferFilter);

@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
 use RealDeal\SalesManagement\Domain\Client\Client;
+use RealDeal\SalesManagement\Application\Event\Client\ClientCreatedEvent;
 
 class CreateClientCommandHandler implements MessageHandlerInterface
 {
@@ -38,10 +39,14 @@ class CreateClientCommandHandler implements MessageHandlerInterface
 
         try{
             $this->clientRepository->save($client);
-            #$event = new ClientCreatedEvent(
-            #
-            #);
-            #$this->commandBus->dispatch($event);
+            $event = new ClientCreatedEvent(
+                $client->getId(),
+                $client->getName(),
+                $client->getSecondName(),
+                $client->getEmail(),
+                $client->getStage()
+            );
+            $this->commandBus->dispatch($event);
         } catch (\Exception $exception) {
             throw $exception;
         }

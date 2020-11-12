@@ -58,11 +58,6 @@ class FilterController
         }
     }
 
-    public function addClientSearchToPropertyAction(): JsonResponse
-    {
-        throw new \Exception('Not implemented');
-    }
-
     public function getConstraintCollection(): Assert\Collection
     {
         return new Assert\Collection([
