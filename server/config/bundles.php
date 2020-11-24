@@ -8,6 +8,7 @@ return [
     Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
     Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle::class => ['all' => true],
     RealDeal\SalesManagement\SalesManagementBundle::class => ['all' => true],
+    RealDeal\UserAuthentication\UserAuthenticationBundle::class => ['all' => true],
     ONGR\ElasticsearchBundle\ONGRElasticsearchBundle::class => ['all' => true],
     Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle::class => ['all' => true],
     Nelmio\Alice\Bridge\Symfony\NelmioAliceBundle::class => ['dev' => true, 'test' => true],

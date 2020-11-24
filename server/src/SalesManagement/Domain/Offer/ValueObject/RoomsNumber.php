@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
-use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
-use RealDeal\SalesManagement\Domain\Filter\FloatFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\BoolFilterMustBeEqualOrGreaterThan;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\Shared\Domain\ValueObject\BaseGreaterThanZeroIntegerValue;
 use Doctrine\ORM\Mapping as ORM;
@@ -18,15 +18,6 @@ class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabl
      * @ORM\Column(type="integer", name="rooms_number")
      */
     protected int $value;
-
-    private FilterValueInterface $filterValue;
-
-    public function __construct(int $value)
-    {
-        parent::__construct($value);
-
-        $this->filterValue = (new FloatFilterValue())->__unserialize(['filter_value' => $this->getValue()]);
-    }
 
     public const FILTER_ALIAS = 'rooms_number';
     private const VALUE_MODIFIER = 'rooms';
@@ -46,8 +37,16 @@ class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabl
         return self::FILTER_ALIAS;
     }
 
-    public function getFilterableValue(): FilterValueInterface
+    public function getElasticFieldName(): string
     {
-       return $this->filterValue;
+        return 'rooms_number';
+    }
+
+    public function getFilterableValue(): ElasticFilterInterface
+    {
+       return (new BoolFilterMustBeEqualOrGreaterThan())->__unserialize([
+           'fieldName' => $this->getElasticFieldName(),
+           'value'    => $this->getValue()
+       ]);
     }
 }

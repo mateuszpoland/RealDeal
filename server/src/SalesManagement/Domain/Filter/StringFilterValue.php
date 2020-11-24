@@ -3,19 +3,27 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Filter;
 
-class StringFilterValue implements FilterValueInterface
+abstract class StringFilterValue implements ElasticFilterInterface
 {
-    private string $filterValue;
+    protected float $filterValue;
+
+    protected string $elasticFieldName;
 
     public function __serialize(): array
     {
-        return ['filter_value' => $this->filterValue];
+        return [
+            'fieldName' => $this->fieldName,
+            'value' => $this->filterValue,
+        ];
     }
 
-    public function __unserialize(array $serialized): self
+    public function __unserialize(array $parameters): self
     {
-        $this->filterValue = $serialized['filter_value'];
+        $this->filterValue = $parameters['value'];
+        $this->elasticFieldName = $parameters['fieldName'];
 
         return $this;
     }
+
+    abstract public function createElasticQueryFromFilter(): array;
 }

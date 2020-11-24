@@ -38,6 +38,12 @@ salesManagement.getClient:
   path: clients/{id}
   controller: SalesManagement.ClientController::getClientAction
 
+##### OfferMatches routes #####
+salesManagement.ClientMatches.get:
+  methods: ['GET']
+  path: clients/{clientId}/propertyMatches
+  controller: SalesManagement.OfferMatchController::getPropertyMatchesForClient
+
 ### Filtering routes
 
 salesManagement.Filter.addPropertySearchToClient:

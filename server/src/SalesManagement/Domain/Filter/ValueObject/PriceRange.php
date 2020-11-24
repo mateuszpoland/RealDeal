@@ -27,7 +27,6 @@ class PriceRange implements FilterEnabledInterface
     ) {
         if($requestedPrice) {
             $this->requestedPrice = new Price($requestedPrice);
-            $this->filterValue = (new FloatFilterValue())->__unserialize(['filter_value' => $this->requestedPrice]);
         } else {
             $this->requestedPrice = null;
             $this->calculatePrices($priceRanges);
@@ -71,6 +70,6 @@ class PriceRange implements FilterEnabledInterface
 
     public function getFilterableValue(): FilterValueInterface
     {
-        return $this->filterValue;
+        return (new BoolFilterMustNotBeGreaterThan())->__unserialize(['filter_value' => $this->requestedPrice]);
     }
 }

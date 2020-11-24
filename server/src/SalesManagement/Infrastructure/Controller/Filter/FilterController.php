@@ -34,7 +34,7 @@ class FilterController
         $this->getClientFilterQuery = $getClientFilterQuery;
     }
 
-    public function getClientFiltersAction(int $clientId)
+    public function getClientFiltersAction(int $clientId): Response
     {
         $query = $this->getClientFilterQuery->byClientId($clientId);
 

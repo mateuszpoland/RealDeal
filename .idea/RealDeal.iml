@@ -25,11 +25,10 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/persistence" />
-      <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/reflection" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/doctrine/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/elasticsearch/elasticsearch" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/fakerphp/faker" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/fig/link-util" />
-      <excludeFolder url="file://$MODULE_DIR$/server/vendor/fzaninotto/faker" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/gedmo/doctrine-extensions" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/guzzlehttp/ringphp" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/guzzlehttp/streams" />
@@ -41,6 +40,7 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nelmio/alice" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/nelmio/cors-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ongr/elasticsearch-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/ongr/elasticsearch-dsl" />
@@ -80,8 +80,10 @@
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/flex" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/framework-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/http-foundation" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/maker-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/messenger" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/polyfill-intl-grapheme" />
       <excludeFolder url="file://$MODULE_DIR$/server/vendor/symfony/polyfill-intl-normalizer" />

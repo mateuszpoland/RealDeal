@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
-use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
-use RealDeal\SalesManagement\Domain\Filter\StringFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
+use RealDeal\SalesManagement\Domain\Filter\BoolFilterMustMatch;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\PropertyTypeInterface;
 use Doctrine\ORM\Mapping as ORM;
@@ -21,12 +21,9 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
      */
     private string $propertyType;
 
-    private StringFilterValue $filterValue;
-
     public function __construct(string $propertyType)
     {
         $this->setPropertyType($propertyType);
-        $this->filterValue = (new StringFilterValue())->__unserialize(['filter_value' => $this->propertyType]);
     }
 
     private function setPropertyType(string $propertyType): void
@@ -58,8 +55,16 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
         return ((string)$this == (string) $propertyType);
     }
 
-    public function getFilterableValue(): FilterValueInterface
+    public function getElasticFieldName(): string
     {
-        return $this->filterValue;
+        return 'property_type';
+    }
+
+    public function getFilterableValue(): ?ElasticFilterInterface
+    {
+        return (new BoolFilterMustMatch())->__unserialize([
+            'fieldName' => $this->getElasticFieldName(),
+            'value'    => $this->propertyType
+        ]);
     }
 }

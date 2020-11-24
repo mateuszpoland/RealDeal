@@ -17,7 +17,6 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\RoomsNumber;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\UniqueOfferIdentifier;
 
 /**
- * Class Offer
  * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository")
  * @ORM\Table(name="offers", indexes={@ORM\Index(name="name_idx", columns={"name"})})
  */

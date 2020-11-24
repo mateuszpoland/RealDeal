@@ -119,20 +119,6 @@ class OfferSearch
         return $this->filtersSerialized;
     }
 
-    /**
-     * Note: I may make this entity read and replace only.
-     * So, FilterEnabledInterface filter array may only serve for initialization at the moment of creation
-     * without even persisting it as a class field, only to calculate serialized, "flat" filters, that represent FilterValueInterface
-     * @return FilterEnabledInterface[]
-
-    public function getFilters(): array
-    {
-        // calculate them from serialized filters
-        foreach ($this->filtersSerialized as $filterClass => $filterValue)
-        return $this->filters;
-    }
-    */
-
     public function getClient(): Client
     {
         return $this->client;

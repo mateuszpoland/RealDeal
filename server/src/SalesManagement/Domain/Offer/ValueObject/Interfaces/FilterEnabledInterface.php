@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces;
 
-use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 
 interface FilterEnabledInterface
 {
@@ -13,5 +13,15 @@ interface FilterEnabledInterface
      */
     public function getServiceAlias(): string;
 
-    public function getFilterableValue(): FilterValueInterface;
+    /**
+     * Gets a key representing field in ElasticSearch document
+     * @return string
+     */
+    public function getElasticFieldName(): string;
+
+    /**
+     * Get value object that elastic query can be extracted from
+     * @return ElasticFilterInterface|null
+     */
+    public function getFilterableValue(): ?ElasticFilterInterface;
 }

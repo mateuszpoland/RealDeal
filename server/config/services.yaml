@@ -151,7 +151,7 @@ services:
                 name: messenger.message_handler
                 handles: RealDeal\SalesManagement\Application\Event\Client\ClientCreatedEvent
 
-                ## controllers
+    ## controllers
     SalesManagement.OfferController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
         arguments:
@@ -171,6 +171,16 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    SalesManagement.OfferMatchController:
+        class: RealDeal\SalesManagement\Infrastructure\Controller\Client\OfferMatchController
+        arguments:
+            - '@SalesManagement.Client.ClientRepository'
+            - '@SalesManagement.Query.Filter.GetClientFiltersQuery'
+            - '@RealDeal.Api.ResponseBuilder'
+            - '@RealDeal\SalesManagement\Application\DomainService\Offer\Aggregator\ElasticAggregator'
+        public: true
+        tags: [ 'controller.service_arguments' ]
+
     SalesManagement.FilterController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Filter\FilterController
         arguments:
@@ -182,7 +192,6 @@ services:
         tags: [ 'controller.service_arguments' ]
 
     ## normalizers
-
     realdeal.salesmanagement.normalizer.client:
         class: RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Client\ClientNormalizer
         arguments:
@@ -198,7 +207,7 @@ services:
         tags:
             - { name: 'serializer.normalizer' }
 
-    # domain services
+    #domain services
     #factories
     SalesManagement.Offer.OfferFactory:
         class: RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory
@@ -224,4 +233,8 @@ services:
         tags:
             - { name: 'factory.filter.offer', filter_alias: 'rooms_number' }
 
+    ### aggregators
+    RealDeal\SalesManagement\Application\DomainService\Offer\Aggregator\ElasticAggregator:
+        arguments:
+            - '@service_container'
 

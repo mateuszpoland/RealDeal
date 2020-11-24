@@ -28,7 +28,7 @@ class GetSingleOfferQuery
         if(!$this->offerId) {
             throw new Exception('Missing search parameter: doc_id');
         }
-        $indexService = $this->container->get(OfferDocument::class); 
+        $indexService = $this->container->get(OfferDocument::class);
         $client = $indexService->getClient();
         // top level containing object
         $search = new Search();
@@ -37,6 +37,7 @@ class GetSingleOfferQuery
             'index' => 'offers',
             'body' => $search->toArray()
         ];
+        
         return $client->search($params);
     }
 

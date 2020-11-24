@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Filter;
 
-class ArrayFilterValue implements FilterValueInterface
+abstract class ArrayFilterValue implements ElasticFilterInterface
 {
     private array $filterValue;
 
@@ -18,4 +18,6 @@ class ArrayFilterValue implements FilterValueInterface
 
         return $this;
     }
+
+    abstract public function createElasticFilterQuery(): array;
 }
