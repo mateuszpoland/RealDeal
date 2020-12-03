@@ -5,7 +5,7 @@ namespace RealDeal\SalesManagement\Domain\Filter;
 
 abstract class StringFilterValue implements ElasticFilterInterface
 {
-    protected float $filterValue;
+    protected string $filterValue;
 
     protected string $elasticFieldName;
 

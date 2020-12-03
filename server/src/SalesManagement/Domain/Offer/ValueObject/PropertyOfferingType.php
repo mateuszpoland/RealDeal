@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
+use RealDeal\SalesManagement\Domain\Filter\BoolFilterMustMatch;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
 use RealDeal\SalesManagement\Domain\Filter\StringFilterValue;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
@@ -23,13 +25,9 @@ class PropertyOfferingType implements
      */
     private string $offeringType;
 
-    private StringFilterValue $filterValue;
-
     public function __construct(string $offeringType)
     {
         $this->setOfferingType($offeringType);
-
-        $this->filterValue = (new StringFilterValue())->__unserialize(['filter_value' => $this->offeringType]);
     }
 
     private function setOfferingType(string $offeringType): void
@@ -50,10 +48,16 @@ class PropertyOfferingType implements
         return self::FILTER_ALIAS;
     }
 
-    public function getFilterableValue(): FilterValueInterface
+    public function getElasticFieldName(): string
     {
-        // TODO: Implement getFilterableValue() method.
+        return 'offering_type';
     }
 
-
+    public function getFilterableValue(): ElasticFilterInterface
+    {
+        return (new BoolFilterMustMatch())->__unserialize([
+            'value'    => $this->offeringType,
+            'fieldName' => $this->getElasticFieldName()
+        ]);
+    }
 }

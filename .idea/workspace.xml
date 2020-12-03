@@ -68,42 +68,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterMustBeEqualOrGreaterThan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterMustMatch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterValuesBetween.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFitlerMustNotBeGreaterThan.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ElasticFilterInterface.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Client/OfferMatchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/ClientMatchController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/UserAuthentication/Application/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/RealDeal.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/RealDeal.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/routes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/routes.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201031170147.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201031170441.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20201031170719.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Offer/Aggregator/ElasticAggregator.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/DomainService/Offer/Aggregator/ElasticAggregator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/Query/GetSingleOfferQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Filter/CreateNewClientLooksForPropertyFilterHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Application/CommandHandler/Filter/CreateNewClientLooksForPropertyFilterHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ArrayFilterValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ArrayFilterValue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/FilterValueInterface.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/FloatFilterValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/FloatFilterValue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/Offer/Category/OfferSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterValuesBetween.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterValuesBetween.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFitlerMustNotBeGreaterThan.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/BoolFilterMustNotBeGreaterThan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/StringFilterValue.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/StringFilterValue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ValueObject/PriceRange.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Filter/ValueObject/PriceRange.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/Offer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Interfaces/FilterEnabledInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Interfaces/FilterEnabledInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/RoomsNumber.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/RoomsNumber.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/FilterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Filter/FilterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Infrastructure/Controller/Offer/OfferMatchController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/Shared/Infrastructure/ElasticResponseBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/UserAuthentication/Domain/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/UserAuthentication/Domain/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyOfferingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/PropertyOfferingType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -341,7 +314,11 @@
       <workItem from="1605858421207" duration="110000" />
       <workItem from="1605896046015" duration="3172000" />
       <workItem from="1606145165020" duration="6981000" />
-      <workItem from="1606254792009" duration="2539000" />
+      <workItem from="1606254792009" duration="3356000" />
+      <workItem from="1606283914381" duration="703000" />
+      <workItem from="1606686435092" duration="1130000" />
+      <workItem from="1606850488424" duration="3408000" />
+      <workItem from="1607023254573" duration="801000" />
     </task>
     <servers />
   </component>
@@ -365,7 +342,7 @@
       <screen x="0" y="23" width="1440" height="806" />
     </state>
     <state x="320" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.806@0.23.1440.806" timestamp="1603566764093" />
-    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser" timestamp="1606258344401">
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser" timestamp="1606258815659">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="496" y="164" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1599506200532" />
@@ -373,7 +350,7 @@
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.804@0.23.1440.804" timestamp="1603134509466" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.806@0.23.1440.806" timestamp="1605214453590" />
     <state x="496" y="170" key="#com.intellij.ide.util.MemberChooser/0.23.1440.808@0.23.1440.808" timestamp="1605214343140" />
-    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.811@0.23.1440.811" timestamp="1606258344401" />
+    <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.811@0.23.1440.811" timestamp="1606258815659" />
     <state x="496" y="171" key="#com.intellij.ide.util.MemberChooser/0.23.1440.812@0.23.1440.812" timestamp="1606165680557" />
     <state x="496" y="172" key="#com.intellij.ide.util.MemberChooser/0.23.1440.816@0.23.1440.816" timestamp="1602014216331" />
     <state x="420" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603822491325">
@@ -488,8 +465,8 @@
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602097637977" />
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602099502912" />
     <state x="422" y="166" width="852" height="539" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1605475967343" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup" timestamp="1606258197164">
-      <screen x="0" y="23" width="1440" height="811" />
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup" timestamp="1607024256051">
+      <screen x="0" y="23" width="1440" height="824" />
     </state>
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1599502086389" />
     <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1603998307358" />
@@ -498,12 +475,14 @@
     <state x="385" y="198" width="670" height="604" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1603138395072" />
     <state x="385" y="199" width="670" height="607" key="search.everywhere.popup/0.23.1440.806@0.23.1440.806" timestamp="1605192501286" />
     <state x="385" y="199" width="670" height="608" key="search.everywhere.popup/0.23.1440.808@0.23.1440.808" timestamp="1605214280087" />
-    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1606258197164" />
+    <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.811@0.23.1440.811" timestamp="1606258623514" />
     <state x="385" y="200" width="670" height="612" key="search.everywhere.popup/0.23.1440.812@0.23.1440.812" timestamp="1606166536772" />
     <state x="385" y="200" width="670" height="614" key="search.everywhere.popup/0.23.1440.814@0.23.1440.814" timestamp="1606159373582" />
-    <state x="385" y="201" width="670" height="616" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1602013797571" />
+    <state x="385" y="201" width="670" height="616" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1606687933543" />
     <state x="385" y="202" width="670" height="620" key="search.everywhere.popup/0.23.1440.821@0.23.1440.821" timestamp="1605650613347" />
     <state x="385" y="202" width="670" height="621" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1605651523790" />
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1607024256051" />
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.825@0.23.1440.825" timestamp="1606931688551" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

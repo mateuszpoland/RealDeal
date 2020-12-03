@@ -8,7 +8,6 @@ use RealDeal\SalesManagement\Application\Repository\Client\ClientRepository;
 use RealDeal\SalesManagement\Application\Repository\Filter\OfferSearchRepository;
 use RealDeal\SalesManagement\Domain\Filter\Offer\Category\OfferSearch;
 use Symfony\Component\Messenger\MessageBusInterface;
-use RealDeal\SalesManagement\Application\Event\Filter\OfferSearchCreatedEvent;
 
 class CreateNewClientLooksForPropertyFilterHandler
 {

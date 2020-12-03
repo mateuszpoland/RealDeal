@@ -6,7 +6,7 @@ namespace RealDeal\SalesManagement\Domain\Filter;
 use ONGR\ElasticsearchDSL\Query\Compound\BoolQuery;
 use ONGR\ElasticsearchDSL\Query\TermLevel\RangeQuery;
 
-class BoolFitlerMustNotBeGreaterThan extends FloatFilterValue
+class BoolFilterMustNotBeGreaterThan extends FloatFilterValue
 {
     public function createElasticFilterQuery(): array
     {

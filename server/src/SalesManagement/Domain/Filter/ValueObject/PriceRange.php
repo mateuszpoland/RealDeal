@@ -5,6 +5,8 @@ namespace RealDeal\SalesManagement\Domain\Filter\ValueObject;
 
 
 use RealDeal\SalesManagement\Domain\Filter\ArrayFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\BoolFilterValuesBetween;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
 use RealDeal\SalesManagement\Domain\Filter\FloatFilterValue;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
@@ -18,8 +20,6 @@ class PriceRange implements FilterEnabledInterface
     private Price $priceFrom;
     private Price $priceTo;
     private ?Price $requestedPrice;
-
-    private FilterValueInterface $filterValue;
 
     public function __construct(
         array $priceRanges,
@@ -48,6 +48,11 @@ class PriceRange implements FilterEnabledInterface
         return self::FILTER_ALIAS;
     }
 
+    public function getElasticFieldName(): string
+    {
+        return 'total_price.value';
+    }
+
     private function calculatePrices(array $priceRanges): void
     {
         if(!count($priceRanges) == 2) {
@@ -60,16 +65,17 @@ class PriceRange implements FilterEnabledInterface
 
         $this->priceFrom =  new Price($priceRanges[0]);
         $this->priceTo = new Price($priceRanges[1]);
-
-        $this->filterValue = (new ArrayFilterValue())
-            ->__unserialize(['filter_value' => [
-                'from' => $this->priceFrom->getFilterableValue()->__serialize(),
-                'to'   => $this->priceTo->getFilterableValue()->__serialize()
-            ]]);
     }
 
-    public function getFilterableValue(): FilterValueInterface
+    public function getFilterableValue(): ?ElasticFilterInterface
     {
-        return (new BoolFilterMustNotBeGreaterThan())->__unserialize(['filter_value' => $this->requestedPrice]);
+        //@TODO - check if requested price is specified, if so, use another filter, like BoolFilterLessThan..
+        return (new BoolFilterValuesBetween())
+            ->__unserialize([
+                'fieldName' => $this->getElasticFieldName(),
+                'value' => [
+                    'from' => $this->priceFrom->getFilterableValue()->__serialize(),
+                    'to'   => $this->priceTo->getFilterableValue()->__serialize()
+                ]]);
     }
 }

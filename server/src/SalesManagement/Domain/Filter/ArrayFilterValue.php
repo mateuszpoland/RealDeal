@@ -5,7 +5,9 @@ namespace RealDeal\SalesManagement\Domain\Filter;
 
 abstract class ArrayFilterValue implements ElasticFilterInterface
 {
-    private array $filterValue;
+    protected array $filterValue;
+
+    protected string $elasticFieldName;
 
     public function __serialize(): array
     {
@@ -14,7 +16,16 @@ abstract class ArrayFilterValue implements ElasticFilterInterface
 
     public function __unserialize(array $parameters): self
     {
+        if(!isset($parameters['filter_value']) || !is_array($parameters['filter_value'])) {
+            throw new \InvalidArgumentException('Parameters for an array filter should be array.');
+        }
+
+        if(!isset($parameters['fieldName'])) {
+            throw new \InvalidArgumentException('Missing filter name.');
+        }
+
         $this->filterValue = $parameters['filter_value'];
+        $this->elasticFieldName = $parameters['fieldName'];
 
         return $this;
     }

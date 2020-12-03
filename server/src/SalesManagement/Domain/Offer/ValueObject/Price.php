@@ -6,6 +6,8 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 use InvalidArgumentException;
 use Doctrine\ORM\Mapping as ORM;
 use RealDeal\SalesManagement\Domain\Filter\ArrayFilterValue;
+use RealDeal\SalesManagement\Domain\Filter\BoolFilterMustNotBeGreaterThan;
+use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
@@ -29,16 +31,10 @@ class Price implements FilterEnabledInterface
      */
     private $currency;
 
-    private FilterValueInterface $filterValue;
-
     public function __construct(float $amount, string $currency=self::PLN)
     {
         $this->setAmount($amount);
         $this->setCurrency($currency);
-
-        $this->filterValue = (new ArrayFilterValue())
-            ->__unserialize(['filter_value' => ['amount' => $this->amount, 'currency' => $this->currency]]);
-
     }
 
     private function setAmount(float $amount): void
@@ -67,10 +63,16 @@ class Price implements FilterEnabledInterface
         return self::FILTER_ALIAS;
     }
 
-    public function getFilterableValue(): FilterValueInterface
+    public function getElasticFieldName(): string
     {
-        return $this->filterValue;
+        return 'total_price.value';
     }
 
-
+    public function getFilterableValue(): ElasticFilterInterface
+    {
+        return (new BoolFilterMustNotBeGreaterThan())->__unserialize([
+            'value' => $this->amount,
+            'fieldName' => $this->getElasticFieldName()
+        ]);
+    }
 }
