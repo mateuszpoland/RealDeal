@@ -11,8 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PropertyContractType
 {
-    public const FILTER_ALIAS = 'property_contract_type';
-
     private const CONTRACT_TYPES = [
         'contract_type_1',
         'contract_type_2'
@@ -44,7 +42,7 @@ class PropertyContractType
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
 

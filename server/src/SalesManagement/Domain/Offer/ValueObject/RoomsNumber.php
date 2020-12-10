@@ -19,7 +19,6 @@ class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabl
      */
     protected int $value;
 
-    public const FILTER_ALIAS = 'rooms_number';
     private const VALUE_MODIFIER = 'rooms';
 
     public function getValueNameModifier()
@@ -34,7 +33,7 @@ class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabl
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
     public function getElasticFieldName(): string
@@ -48,5 +47,15 @@ class RoomsNumber extends BaseGreaterThanZeroIntegerValue implements FilterEnabl
            'fieldName' => $this->getElasticFieldName(),
            'value'    => $this->getValue()
        ]);
+    }
+
+    public function serialize()
+    {
+        return serialize($this->value);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->value = unserialize($serialized);
     }
 }

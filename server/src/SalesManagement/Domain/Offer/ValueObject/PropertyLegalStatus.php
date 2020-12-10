@@ -11,8 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 final class PropertyLegalStatus
 {
-    public const FILTER_ALIAS = 'property_legal_status';
-
     private const LEGAL_STATUSES = [
         'ownership',
         'cooperative',
@@ -44,8 +42,6 @@ final class PropertyLegalStatus
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
-
-
 }

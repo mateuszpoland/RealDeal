@@ -5,7 +5,6 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject;
 
 use InvalidArgumentException;
 use Doctrine\ORM\Mapping as ORM;
-use RealDeal\SalesManagement\Domain\Filter\ArrayFilterValue;
 use RealDeal\SalesManagement\Domain\Filter\BoolFilterMustNotBeGreaterThan;
 use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 use RealDeal\SalesManagement\Domain\Filter\FilterValueInterface;
@@ -18,8 +17,6 @@ class Price implements FilterEnabledInterface
 {
     public const PLN = 'PLN';
     public const AVAILABLE_CURRENCIES = ['PLN', 'EUR'];
-
-    private const FILTER_ALIAS = 'price';
 
     /**
      * @ORM\Column(type="float")
@@ -60,7 +57,7 @@ class Price implements FilterEnabledInterface
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
     public function getElasticFieldName(): string
@@ -74,5 +71,27 @@ class Price implements FilterEnabledInterface
             'value' => $this->amount,
             'fieldName' => $this->getElasticFieldName()
         ]);
+    }
+
+    public function serialize()
+    {
+        return serialize([
+            'amount' => $this->amount,
+            'currency' =>$this->currency
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        // construct array out of a string
+        $unserialized = unserialize($serialized);
+
+        $this->amount = $unserialized['amount'];
+        $this->currency = $unserialized['currency'];
+    }
+
+    public function getAmount(): float
+    {
+        return $this->amount;
     }
 }

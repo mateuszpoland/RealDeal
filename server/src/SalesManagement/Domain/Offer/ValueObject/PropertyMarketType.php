@@ -11,7 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 final class PropertyMarketType
 {
-    public const FILTER_ALIAS = 'property_market_type';
     private const MARKET_TYPES = [
         'aftermarket',
         'primary market'
@@ -42,6 +41,6 @@ final class PropertyMarketType
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 }

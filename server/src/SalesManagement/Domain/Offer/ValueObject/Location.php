@@ -15,11 +15,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Location
 {
-    public const FILTER_ALIAS = 'preferred_location';
-
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
 }

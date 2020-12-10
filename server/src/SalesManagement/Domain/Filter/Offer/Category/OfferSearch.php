@@ -8,6 +8,7 @@ use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledIn
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyOfferingType;
 use Doctrine\ORM\Mapping as ORM;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\PropertyType;
+use RealDeal\SalesManagement\Application\DomainService\Offer\Factory\Filter\OfferFiltersFactory;
 
 /**
  * @ORM\Entity(repositoryClass="RealDeal\SalesManagement\Application\Repository\Filter\OfferSearchRepository")
@@ -37,7 +38,7 @@ class OfferSearch
     /**
      * @var FilterEnabledInterface[]
      */
-   // private $filters;
+    private $filters;
 
     /**
      * @var array
@@ -57,6 +58,11 @@ class OfferSearch
     )
     {
         $this->client = $client;
+    }
+
+    public function __wakeup()
+    {
+        $this->reinitializeFilters();
     }
 
     public static function createFromFilters(Client $client, array $filters): self
@@ -132,7 +138,21 @@ class OfferSearch
                 throw new \InvalidArgumentException('Expected class ' . FilterEnabledInterface::class);
             }
 
-            $this->filtersSerialized[$filter->getServiceAlias()] = $filter->getFilterableValue()->__serialize();
+            //$this->filtersSerialized[$filter->getServiceAlias()] = $filter->getFilterableValue()->__serialize();
+            // use of serializable interface
+            $this->filtersSerialized[] = serialize($filter);
         }
+    }
+
+    public function getFilterObjects(): ?array
+    {
+        if(empty($this->filtersSerialized)) {
+           return null;
+        }
+        foreach ($this->filtersSerialized as $serializedFilter) {
+            $this->filters[] = unserialize($serializedFilter);
+        }
+
+        return $this->filters;
     }
 }

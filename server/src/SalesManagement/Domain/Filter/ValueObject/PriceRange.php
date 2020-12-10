@@ -45,7 +45,7 @@ class PriceRange implements FilterEnabledInterface
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
     public function getElasticFieldName(): string
@@ -67,6 +67,24 @@ class PriceRange implements FilterEnabledInterface
         $this->priceTo = new Price($priceRanges[1]);
     }
 
+    public function serialize()
+    {
+        return serialize([
+            'price_ranges' => [$this->priceFrom, $this->priceTo],
+            'requested_price' =>$this->requestedPrice
+        ]);
+    }
+
+    public function unserialize($serialized)
+    {
+        $unserialized = unserialize($serialized);
+
+        $this->priceFrom = $unserialized['price_ranges'][0];
+        $this->priceTo = $unserialized['price_ranges'][1];
+        $this->requestedPrice = $unserialized['requested_price'];
+    }
+
+
     public function getFilterableValue(): ?ElasticFilterInterface
     {
         //@TODO - check if requested price is specified, if so, use another filter, like BoolFilterLessThan..
@@ -74,8 +92,8 @@ class PriceRange implements FilterEnabledInterface
             ->__unserialize([
                 'fieldName' => $this->getElasticFieldName(),
                 'value' => [
-                    'from' => $this->priceFrom->getFilterableValue()->__serialize(),
-                    'to'   => $this->priceTo->getFilterableValue()->__serialize()
+                    'from' => $this->priceFrom->getAmount(),
+                    'to'   => $this->priceTo->getAmount()
                 ]]);
     }
 }

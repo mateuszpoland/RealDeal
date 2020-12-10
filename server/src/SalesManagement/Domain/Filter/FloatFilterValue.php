@@ -15,7 +15,7 @@ abstract class FloatFilterValue implements ElasticFilterInterface
     public function __serialize(): array
     {
         return [
-            'fieldName' => $this->fieldName,
+            'fieldName' => $this->elasticFieldName,
             'value' => $this->filterValue
         ];
     }
@@ -28,5 +28,5 @@ abstract class FloatFilterValue implements ElasticFilterInterface
         return $this;
     }
 
-    abstract public function createElasticFilterQuery(): array;
+    abstract public function createElasticQueryFromFilter(): array;
 }

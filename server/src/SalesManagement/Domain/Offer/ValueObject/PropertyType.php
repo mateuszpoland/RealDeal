@@ -14,8 +14,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
 {
-    public const FILTER_ALIAS = 'property_type';
-
     /**
      * @ORM\Column(type="string")
      */
@@ -47,7 +45,7 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
     public function equals(PropertyTypeInterface $propertyType): bool
@@ -58,6 +56,16 @@ class PropertyType implements PropertyTypeInterface, FilterEnabledInterface
     public function getElasticFieldName(): string
     {
         return 'property_type';
+    }
+
+    public function serialize()
+    {
+        return serialize($this->propertyType);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->propertyType = unserialize($serialized);
     }
 
     public function getFilterableValue(): ?ElasticFilterInterface

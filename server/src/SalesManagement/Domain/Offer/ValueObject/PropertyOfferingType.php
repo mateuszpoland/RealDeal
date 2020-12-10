@@ -45,7 +45,7 @@ class PropertyOfferingType implements
 
     public function getServiceAlias(): string
     {
-        return self::FILTER_ALIAS;
+        return get_class($this);
     }
 
     public function getElasticFieldName(): string
@@ -60,4 +60,16 @@ class PropertyOfferingType implements
             'fieldName' => $this->getElasticFieldName()
         ]);
     }
+
+    public function serialize()
+    {
+        return serialize($this->offeringType);
+    }
+
+    public function unserialize($serialized)
+    {
+        $this->offeringType = unserialize($serialized);
+    }
+
+
 }

@@ -11,12 +11,12 @@ abstract class ArrayFilterValue implements ElasticFilterInterface
 
     public function __serialize(): array
     {
-        return ['filter_value' => $this->filterValue];
+        return ['value' => $this->filterValue];
     }
 
     public function __unserialize(array $parameters): self
     {
-        if(!isset($parameters['filter_value']) || !is_array($parameters['filter_value'])) {
+        if(!isset($parameters['value']) || !is_array($parameters['value'])) {
             throw new \InvalidArgumentException('Parameters for an array filter should be array.');
         }
 
@@ -24,11 +24,11 @@ abstract class ArrayFilterValue implements ElasticFilterInterface
             throw new \InvalidArgumentException('Missing filter name.');
         }
 
-        $this->filterValue = $parameters['filter_value'];
+        $this->filterValue = $parameters['value'];
         $this->elasticFieldName = $parameters['fieldName'];
 
         return $this;
     }
 
-    abstract public function createElasticFilterQuery(): array;
+    abstract public function createElasticQueryFromFilter(): array;
 }
