@@ -1,1 +1,1 @@
-https://www.youtube.com/watch?v=iP_HqoCuRI0 - tutorial Landing PAGE w Ract + styled components
+https://www.youtube.com/watch?v=iP_HqoCuRI0 - tutorial Landing PAGE w React + styled components

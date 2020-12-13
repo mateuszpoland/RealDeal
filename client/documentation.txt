@@ -23,3 +23,14 @@ https://thomas.jarrand.fr/blog/serialization/
 STRONA z softem :
 
 https://www.g2.com/products/contactually-by-compass/reviews
+
+
+### architektura frontendu
+https://www.simform.com/react-architecture-best-practices/#react-architecture-diagram
+
+Wykorzystuje tu najlepsze praktyki architektury frontendowej do SPA.
+Do zarządzania stanem użyję Reduxa z libkami:
+- Redix Saga
+- Immutable.js
+
+https://www.simform.com/tips-building-scalable-web-applications/#tip1

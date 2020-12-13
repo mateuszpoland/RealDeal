@@ -4,6 +4,7 @@ import './App.css';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import BusinessCenterRoundedIcon from '@material-ui/icons/BusinessCenterRounded';
 import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalendarRounded';
+import FitnessCenter from '@material-ui/icons/FitnessCenter';
 import {DashBoardLayout} from "./layouts/DashboardLayout";
 
 export type navLink = {
@@ -30,6 +31,11 @@ const App: React.FC = () => {
             path: '/clients',
             icon: <PermContactCalendarRoundedIcon />
         },
+        {
+            text: 'Sprzedaż',
+            path: '/sell',
+            icon: <FitnessCenter/>
+        }
     ]
 
     return (
