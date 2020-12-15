@@ -27,6 +27,7 @@ https://www.g2.com/products/contactually-by-compass/reviews
 
 ### architektura frontendu
 https://www.simform.com/react-architecture-best-practices/#react-architecture-diagram
+https://www.simform.com/tips-building-scalable-web-applications/#tip1
 
 Wykorzystuje tu najlepsze praktyki architektury frontendowej do SPA.
 Do zarządzania stanem użyję Reduxa z libkami:
@@ -34,3 +35,17 @@ Do zarządzania stanem użyję Reduxa z libkami:
 - Immutable.js
 
 https://www.simform.com/tips-building-scalable-web-applications/#tip1
+
+DO fetchowania danych i obsługi tzw. "side effects", czyli odwolan do API, wysylania requestów
+wykorzystamy 2 libki:
+- Redux Saga + React query ->
+Pierwszy z nich to middleware, dzięki któremu te operacje są znacznie czytelniejsze, a druga
+libka pozwala nam na automatyczne cache'owanie requestów i odpowiedzi, co podnosi szybkość i wydajność apki.
+
+
+Obecnie fetchuje dane bezpośrednio do widoków, które trzymam w katalogu /views
+trzeba to stamtąd wywalić i przeniesc do sagi.
+
+Poki co jednie pobieram dane o :
+- ofertach (lista ofert)
+- pojedynczej ofercie

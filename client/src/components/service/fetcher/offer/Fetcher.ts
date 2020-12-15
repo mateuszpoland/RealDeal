@@ -1,4 +1,4 @@
-import { OfferRequestData } from '../../../../types/Offer';
+import { OfferRequestData } from '../../../../models/Offer';
 import { useQuery } from 'react-query';
 const API_ENDPOINT_FETCH_ALL_OFFERS = 'http://localhost/offers/all';
 const API_ENDPOINT_FETCH_SINGLE_OFFER = 'http://localhost/offers/';

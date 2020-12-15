@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import FormControl from '@material-ui/core/FormControl';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+// connect to store to add new Offer to the state
+import { connect } from 'react-redux';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -14,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
     }),
 );
 
-export const OfferForm = () => {
+export const AddNewOfferForm = () => {
     const classes = useStyles();
     return (
         <div>
@@ -43,3 +45,5 @@ export const OfferForm = () => {
         </div>
     );
 }
+                                                                // action
+//export default connect(null, { addNewOffer })(AddNewOfferForm)

@@ -7,6 +7,7 @@ import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalend
 import FitnessCenter from '@material-ui/icons/FitnessCenter';
 import {DashBoardLayout} from "./layouts/DashboardLayout";
 
+
 export type navLink = {
     text: string,
     path: string,
@@ -39,11 +40,11 @@ const App: React.FC = () => {
     ]
 
     return (
-   <Router>
-       <DashBoardLayout
-            navigation={sidebarNavLinks}
-       />
-   </Router>
+        <Router>
+            <DashBoardLayout
+                navigation={sidebarNavLinks}
+            />
+        </Router>
   );
 }
 

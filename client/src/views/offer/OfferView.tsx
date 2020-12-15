@@ -2,7 +2,7 @@ import {RouteComponentProps} from "react-router";
 import React, {PropsWithChildren, useEffect, useState} from "react";
 // fake offers for test
 import {FakeOffer} from "../../fake_data/FakeOffers";
-import {OfferRequestData} from "../../types/Offer";
+import {OfferRequestData} from "../../models/Offer";
 import {fetchSingleOffer} from "../../components/service/fetcher/offer/Fetcher";
 
 export interface RouteInfo extends RouteComponentProps<{ id: string }> {}

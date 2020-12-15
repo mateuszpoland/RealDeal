@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Offer} from "../../types/Offer";
+import {Offer} from "../../models/Offer";
 import { fetchOffers } from "../../components/service/fetcher/offer/Fetcher";
+// try useSelector and useDispatch Redux hooks instead of custom fetcher.
+//import { useSelector, useDispatch } from "react-redux";
 import { Link, Route } from "react-router-dom";
-import { OfferForm } from '../../components/form/offer/OfferForm';
+import { AddNewOfferForm } from '../../components/form/offer/AddNewOfferForm';
 
 type FetchingStatus = {
     isLoading: boolean
@@ -51,8 +53,8 @@ export const ListOfferView = () => {
                         ))}
                     </ul>
 
-                    {/* add offer Form */}
-                    <OfferForm/>
+                    {/* add new  offer Form */}
+                    <AddNewOfferForm />
                 </React.Fragment>
 
         );
