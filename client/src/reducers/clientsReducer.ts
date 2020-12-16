@@ -2,7 +2,9 @@ import {AnyAction} from "redux";
 import {ADD_NEW_CLIENT, DELETE_CLIENT, LOAD_CLIENTS} from "../action_types/client_action_types";
 
 const initialClientsState = {
-    clients: []
+    loading: true,
+    data: [],
+    error: ''
 };
 
 export const clientReducer = (prevState: any = initialClientsState, action: AnyAction) => {

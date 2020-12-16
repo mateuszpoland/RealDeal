@@ -1,8 +1,15 @@
 import {AnyAction} from "redux";
-import {ADD_NEW_OFFER, LOAD_OFFERS} from "../action_types/offer_action_types";
+import {
+    ADD_NEW_OFFER,
+    LOAD_OFFERS,
+    LOAD_OFFERS_FAILURE,
+    LOAD_OFFERS_SUCCESS
+} from "../action_types/offer_action_types";
 
 const initialOffersState = {
-    offers: []
+    loading: true,
+    data: [],
+    error: ''
 };
 
 export const offersReducer = (prevState: any = initialOffersState, action: AnyAction) => {
@@ -18,6 +25,13 @@ export const offersReducer = (prevState: any = initialOffersState, action: AnyAc
                ...prevState,
                offers: action.payload
            }
+       }
+       case LOAD_OFFERS_SUCCESS: {
+
+       }
+
+       case LOAD_OFFERS_FAILURE: {
+
        }
        default:
            return prevState;
