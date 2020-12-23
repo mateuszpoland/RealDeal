@@ -1,7 +1,7 @@
 import {AnyAction} from "redux";
 import {
     ADD_NEW_OFFER,
-    LOAD_OFFERS,
+    FETCHING_OFFERS,
     LOAD_OFFERS_FAILURE,
     LOAD_OFFERS_SUCCESS
 } from "../action_types/offer_action_types";
@@ -20,18 +20,26 @@ export const offersReducer = (prevState: any = initialOffersState, action: AnyAc
                offers: [...prevState.offers, action.payload]
            }
        }
-       case LOAD_OFFERS: {
-           return {
-               ...prevState,
-               offers: action.payload
-           }
+       case FETCHING_OFFERS: {
+            return {
+                ...prevState,
+                loading: true
+            }
        }
        case LOAD_OFFERS_SUCCESS: {
-
+           return {
+               loading: false,
+               data: action.payload,
+               error: ''
+           }
        }
 
        case LOAD_OFFERS_FAILURE: {
-
+            return {
+                loading: false,
+                data: [],
+                error: action.payload
+            }
        }
        default:
            return prevState;

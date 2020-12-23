@@ -1,0 +1,2 @@
+# This file is used to govern elasticsearch cluster settings inside its container
+path.repo: ["/opt/elasticsearch/backup"]

@@ -22,7 +22,9 @@ export const ListOfferView = () => {
     // fetch Offers
     useEffect(() => {
         const loadOffers = async() => {
-            const offersSet = await fetchOffers();
+            const offersSet = await fetchOffers().catch((error) => {
+                console.log(error);
+            });
             setOffers(offersSet);
             setStatus({isLoading: false});
         }
