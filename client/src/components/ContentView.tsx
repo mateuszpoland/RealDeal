@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import {ListOfferView} from "../views/offer/OffersListView";
+//import {ListOfferView} from "../views/offer/OffersListView";
+import ListOfferView from "../views/offer/OffersListView";
 import {ClientsListView} from "../views/client/ClientsListView";
 import {OfferView} from "../views/offer/OfferView";
 

@@ -2,9 +2,13 @@ import React, {useEffect, useState} from "react";
 import {Offer} from "../../models/Offer";
 import { fetchOffers } from "../../components/service/fetcher/offer/Fetcher";
 // try useSelector and useDispatch Redux hooks instead of custom fetcher.
-//import { useSelector, useDispatch } from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import { Link, Route } from "react-router-dom";
 import { AddNewOfferForm } from '../../components/form/offer/AddNewOfferForm';
+import {AppState} from "../../reducer";
+import {getAllOffers} from "../../selectors/offers/allOffersSelector";
+import {Dispatch} from "redux";
+import {fetchAllOffers} from "../../actions/offer";
 
 type FetchingStatus = {
     isLoading: boolean
@@ -14,38 +18,43 @@ interface OfferQuery {
     term?: null
 }
 
-export const ListOfferView = () => {
+/*
+const mapStateToProps = (state: AppState) => {
+    return {
+        offers: getAllOffers(state)
+    }
+}
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
+    return {
+        fetchOffers: () => dispatch(fetchAllOffers()),
+    }
+}
+*/
+const ListOfferView = () => {
+    //derive state form useSelector hook
+    const [offers, isListLoading] = useSelector((state: AppState) => [state.offers.data, state.offers.loading]);
+    const dispatch = useDispatch();
     //state
-    const [status, setStatus] = useState<FetchingStatus>({isLoading: true})
     const [offerQuery, setOfferQuery] = useState<OfferQuery>({term: null});
-    const [offers, setOffers] = useState<Offer[]>([]);
+    //const [offers, setOffers] = useState<Offer[]>([]);
+
     // fetch Offers
     useEffect(() => {
-        const loadOffers = async() => {
-            const offersSet = await fetchOffers().catch((error) => {
-                console.log(error);
-            });
-            setOffers(offersSet);
-            setStatus({isLoading: false});
-        }
-        loadOffers();
-    }, []); // activate hook only on component mount
+        dispatch(fetchAllOffers())
+    }, [dispatch])
 
-    // activate hook on queryterm change
-    useEffect(() => {
-
-    }, [offerQuery]);
-
-    if(status.isLoading) {
+    if(isListLoading) {
         return (
             <p>pobieram oferty ...</p>
         );
     } else {
+        // @ts-ignore
         return(
                 <React.Fragment>
-                    <h2>Widok ofert</h2>
+                    <h2>Twoje oferty</h2>
                     <ul>
-                        {offers.map(offer => (
+                        {offers.map((offer: Offer) => (
                             <li key={offer.doc_id} data-id={offer.id}>
                                 <h3>{offer.property_name}</h3>
                                 <p>Cena: {offer.property_total_price}</p>
@@ -58,8 +67,9 @@ export const ListOfferView = () => {
                     {/* add new  offer Form */}
                     <AddNewOfferForm />
                 </React.Fragment>
-
         );
     }
-
 }
+
+//export default connect(mapStateToProps, mapDispatchToProps)(ListOfferView);
+export default ListOfferView;

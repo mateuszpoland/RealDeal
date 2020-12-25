@@ -5,14 +5,16 @@ import {
     LOAD_OFFERS_FAILURE,
     LOAD_OFFERS_SUCCESS
 } from "../action_types/offer_action_types";
+import {AsyncFetchedDataState} from "../models/state/AsyncFetchedDataState";
+import {Offer} from "../models/Offer";
 
-const initialOffersState = {
+const initialOffersState: AsyncFetchedDataState<Offer> = {
     loading: true,
     data: [],
     error: ''
 };
 
-export const offersReducer = (prevState: any = initialOffersState, action: AnyAction) => {
+export const offers = (prevState: any = initialOffersState, action: AnyAction) => {
    switch (action.type) {
        case ADD_NEW_OFFER: {
            return {

@@ -113,8 +113,8 @@ volumes:
     driver: local
   esdata:
     driver: local
-  esdata_backup:
-    external: true
+ # esdata_backup:
+ #   external: true
   certs:
     driver: local
   certs_data:

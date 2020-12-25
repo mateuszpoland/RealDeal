@@ -1,7 +1,15 @@
 import {AnyAction, combineReducers} from "redux";
 
 // register rest of the reducers
-import { offersReducer } from "./reducers/offersReducer";
-import { clientReducer } from "./reducers/clientsReducer";
+import { offers } from "./reducers/offersReducer";
+import { clients } from "./reducers/clientsReducer";
+import {AsyncFetchedDataState} from "./models/state/AsyncFetchedDataState";
+import {Client} from "./models/Client";
+import {Offer} from "./models/Offer";
 
-export default combineReducers({offersReducer, clientReducer});
+export interface AppState {
+    clients: AsyncFetchedDataState<Client>
+    offers: AsyncFetchedDataState<Offer>
+}
+
+export default combineReducers({offers, clients});
