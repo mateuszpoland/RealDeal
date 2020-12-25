@@ -1,39 +1,51 @@
 import {RouteComponentProps} from "react-router";
 import React, {PropsWithChildren, useEffect, useState} from "react";
-// fake offers for test
-import {FakeOffer} from "../../fake_data/FakeOffers";
-import {OfferRequestData} from "../../models/Offer";
-import {fetchSingleOffer} from "../../components/service/fetcher/offer/Fetcher";
+import {useDispatch, useSelector} from "react-redux";
+import { AppState } from "../../reducer";
+import {fetchSingleOffer} from "../../actions/offer";
 
 export interface RouteInfo extends RouteComponentProps<{ id: string }> {}
 
+// @ts-ignore
 export const OfferView: React.FC<RouteInfo> =  ({match}) => {
-    const [offer, setOffer] = useState<FakeOffer|undefined>();
+    const [offer, isLoading] = useSelector((state:AppState) => state.offers.data.filter((offer, key) => {
+         if(offer.doc_id == match.params.id) return[ offer, state.offers.loading ]; }
+    ));
+    const dispatch = useDispatch();
+    /*
+    //const [offer, setOffer] = useState<FakeOffer|undefined>();
     useEffect(() => {
+        console.log('all offers' + offer);
         const loadSingleOffer = async() => {
             const request: OfferRequestData = { doc_id: match.params.id };
-            const offer: FakeOffer|undefined = await fetchSingleOffer(request);
+            const offer: FakeOffer|undefined = await fetchSingleOfferObject(request);
             setOffer(offer);
         }
         loadSingleOffer();
     }, []);
+    */
 
-    if(offer != undefined) {
-        console.log(Object.values(offer)[0]);
-        const offerVal: any = Object.values(offer)[0];
+    useEffect(() => {
+        dispatch(fetchSingleOffer(match.params.id))
+    }, [dispatch]);
+
+    // logic to fix - code situation where offer was not found because it does not exist (based on http return code)
+    if(isLoading || offer == undefined) {
+        return (
+            <p>trwa ładowanie oferty...</p>
+        );
+    } else {
         return(
             <React.Fragment>
                 <h2>Detale oferty:</h2>
-                <p><strong>ID: </strong>{offerVal.doc_id}</p>
+                <p><strong>ID: </strong>{offer.doc_id}</p>
                 <p><strong>Nazwa: </strong></p>
-                <p>{offerVal.property_name}</p>
+                <p>{offer.property_name}</p>
                 <p><strong>Cena całkowita: </strong></p>
-                <p>{offerVal.property_total_price} PLN</p>
-                <p><strong>Klient: </strong>{offerVal.client_id}</p>
-                <p><strong>Liczba pokoi: </strong>{offerVal.rooms}</p>
+                <p>{offer.property_total_price} PLN</p>
+                <p><strong>Klient: </strong>{offer.client_id}</p>
+                <p><strong>Liczba pokoi: </strong>{offer.rooms}</p>
             </React.Fragment>
         );
     }
-    return <p>Loading offer..</p>
-    //@todo -  else return loading spinner
 }

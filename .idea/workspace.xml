@@ -68,17 +68,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/models/state/AsyncFetchedDataState.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/selectors/offers/allOffersSelector.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ContentView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/models/Client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/clientsReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/clientsReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/action_types/offer_action_types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/action_types/offer_action_types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/offer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/models/Offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/models/Offer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/reducers/offersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/offersReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/setupTests.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +335,7 @@
       <workItem from="1607790248211" duration="14327000" />
       <workItem from="1608056437266" duration="8835000" />
       <workItem from="1608138838693" duration="10313000" />
-      <workItem from="1608733966862" duration="7203000" />
+      <workItem from="1608733966862" duration="13459000" />
     </task>
     <servers />
   </component>
@@ -496,7 +493,7 @@
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602099502912" />
     <state x="422" y="166" width="852" height="539" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1605475967343" />
     <state x="422" y="167" width="852" height="541" key="find.popup/0.23.1440.824@0.23.1440.824" timestamp="1607813130935" />
-    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup" timestamp="1608762567602">
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup" timestamp="1608934938768">
       <screen x="0" y="23" width="1440" height="824" />
     </state>
     <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1603998307358" />
@@ -511,7 +508,7 @@
     <state x="385" y="201" width="670" height="616" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1606687933543" />
     <state x="385" y="202" width="670" height="620" key="search.everywhere.popup/0.23.1440.821@0.23.1440.821" timestamp="1605650613347" />
     <state x="385" y="202" width="670" height="621" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1605651523790" />
-    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1608762567602" />
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1608934938768" />
     <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.825@0.23.1440.825" timestamp="1607292283369" />
   </component>
   <component name="XDebuggerManager">

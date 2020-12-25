@@ -11,7 +11,11 @@ export const fetchOffers = async (): Promise<any> => {
     return await response.json();
 }
 
-export const fetchSingleOffer = async (request: OfferRequestData) => {
+export const fetchSingleOfferObject = async (request: OfferRequestData) => {
    const id = request.doc_id;
-   return await(await fetch(API_ENDPOINT_FETCH_SINGLE_OFFER + id)).json();
+   const response =  await fetch(API_ENDPOINT_FETCH_SINGLE_OFFER + id);
+    if(!response.ok) {
+        throw new Error(response.statusText);
+    }
+   return await response.json();
 }

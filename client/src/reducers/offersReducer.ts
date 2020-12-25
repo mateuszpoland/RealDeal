@@ -1,7 +1,7 @@
 import {AnyAction} from "redux";
 import {
     ADD_NEW_OFFER,
-    FETCHING_OFFERS,
+    FETCHING_OFFERS, FETCHING_SINGLE_OFFER,
     LOAD_OFFERS_FAILURE,
     LOAD_OFFERS_SUCCESS
 } from "../action_types/offer_action_types";
@@ -28,6 +28,7 @@ export const offers = (prevState: any = initialOffersState, action: AnyAction) =
                 loading: true
             }
        }
+
        case LOAD_OFFERS_SUCCESS: {
            return {
                loading: false,

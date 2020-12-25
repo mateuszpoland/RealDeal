@@ -18,26 +18,13 @@ interface OfferQuery {
     term?: null
 }
 
-/*
-const mapStateToProps = (state: AppState) => {
-    return {
-        offers: getAllOffers(state)
-    }
-}
 
-const mapDispatchToProps = (dispatch: Dispatch) => {
-    return {
-        fetchOffers: () => dispatch(fetchAllOffers()),
-    }
-}
-*/
-const ListOfferView = () => {
+const ListOfferView: React.FC = () => {
     //derive state form useSelector hook
     const [offers, isListLoading] = useSelector((state: AppState) => [state.offers.data, state.offers.loading]);
     const dispatch = useDispatch();
     //state
     const [offerQuery, setOfferQuery] = useState<OfferQuery>({term: null});
-    //const [offers, setOffers] = useState<Offer[]>([]);
 
     // fetch Offers
     useEffect(() => {
@@ -49,7 +36,6 @@ const ListOfferView = () => {
             <p>pobieram oferty ...</p>
         );
     } else {
-        // @ts-ignore
         return(
                 <React.Fragment>
                     <h2>Twoje oferty</h2>

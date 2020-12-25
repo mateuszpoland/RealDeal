@@ -2,7 +2,9 @@ export type Offer = {
     doc_id: string,
     id: string,
     property_name: string,
-    property_total_price: number
+    property_total_price: number,
+    client_id?: string,
+    rooms?: number
 }
 
 export type OfferRequestData = {
