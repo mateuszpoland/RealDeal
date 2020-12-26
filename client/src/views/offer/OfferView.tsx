@@ -1,29 +1,16 @@
 import {RouteComponentProps} from "react-router";
-import React, {PropsWithChildren, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { AppState } from "../../reducer";
 import {fetchSingleOffer} from "../../actions/offer";
 
 export interface RouteInfo extends RouteComponentProps<{ id: string }> {}
 
-// @ts-ignore
 export const OfferView: React.FC<RouteInfo> =  ({match}) => {
     const [offer, isLoading] = useSelector((state:AppState) => state.offers.data.filter((offer, key) => {
          if(offer.doc_id == match.params.id) return[ offer, state.offers.loading ]; }
     ));
     const dispatch = useDispatch();
-    /*
-    //const [offer, setOffer] = useState<FakeOffer|undefined>();
-    useEffect(() => {
-        console.log('all offers' + offer);
-        const loadSingleOffer = async() => {
-            const request: OfferRequestData = { doc_id: match.params.id };
-            const offer: FakeOffer|undefined = await fetchSingleOfferObject(request);
-            setOffer(offer);
-        }
-        loadSingleOffer();
-    }, []);
-    */
 
     useEffect(() => {
         dispatch(fetchSingleOffer(match.params.id))

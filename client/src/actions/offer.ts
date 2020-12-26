@@ -30,6 +30,7 @@ export const fetchAllOffers = () => {
 
 /**
  * fetch single offer object
+ * use if there is no object in array in redux store
  */
 export const fetchSingleOffer = (id: string) => {
     return async (dispatch: Dispatch) => {
@@ -37,7 +38,6 @@ export const fetchSingleOffer = (id: string) => {
 
         try {
             const offer = await fetchSingleOfferObject({doc_id: id})
-            console.log(offer);
             dispatch(loadOffersSuccess(offer));
         } catch (error) {
             handleErrors(dispatch, error);

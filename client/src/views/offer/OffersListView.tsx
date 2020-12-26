@@ -9,6 +9,7 @@ import {AppState} from "../../reducer";
 import {getAllOffers} from "../../selectors/offers/allOffersSelector";
 import {Dispatch} from "redux";
 import {fetchAllOffers} from "../../actions/offer";
+import OfferCard from "../../components/Offer/OfferCard";
 
 type FetchingStatus = {
     isLoading: boolean
@@ -41,12 +42,7 @@ const ListOfferView: React.FC = () => {
                     <h2>Twoje oferty</h2>
                     <ul>
                         {offers.map((offer: Offer) => (
-                            <li key={offer.doc_id} data-id={offer.id}>
-                                <h3>{offer.property_name}</h3>
-                                <p>Cena: {offer.property_total_price}</p>
-                                <strong>Szczegóły oferty: </strong><br/>
-                                <Link to={`/offers/${offer.doc_id}`}>Link</Link>
-                            </li>
+                            <OfferCard  key={offer.id} offer={offer}/>
                         ))}
                     </ul>
 

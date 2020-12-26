@@ -69,13 +69,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/action_types/offer_action_types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/action_types/offer_action_types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/offer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/service/fetcher/offer/Fetcher.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/models/Offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/models/Offer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/reducers/offersReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reducers/offersReducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OfferView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -335,7 +329,7 @@
       <workItem from="1607790248211" duration="14327000" />
       <workItem from="1608056437266" duration="8835000" />
       <workItem from="1608138838693" duration="10313000" />
-      <workItem from="1608733966862" duration="13459000" />
+      <workItem from="1608733966862" duration="13630000" />
     </task>
     <servers />
   </component>
