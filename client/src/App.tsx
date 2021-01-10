@@ -5,7 +5,9 @@ import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import BusinessCenterRoundedIcon from '@material-ui/icons/BusinessCenterRounded';
 import PermContactCalendarRoundedIcon from '@material-ui/icons/PermContactCalendarRounded';
 import FitnessCenter from '@material-ui/icons/FitnessCenter';
+import {HTML5Backend}  from 'react-dnd-html5-backend';
 import {DashBoardLayout} from "./layouts/DashboardLayout";
+import {DndProvider} from "react-dnd";
 
 
 export type navLink = {
@@ -39,11 +41,14 @@ const App: React.FC = () => {
         }
     ]
 
+    // @ts-ignore
     return (
         <Router>
-            <DashBoardLayout
-                navigation={sidebarNavLinks}
-            />
+            <DndProvider backend={HTML5Backend}>
+                <DashBoardLayout
+                    navigation={sidebarNavLinks}
+                />
+            </DndProvider>
         </Router>
   );
 }

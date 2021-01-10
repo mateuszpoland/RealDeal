@@ -5,6 +5,17 @@ export type Offer = {
     property_total_price: number,
     client_id?: string,
     rooms?: number
+};
+// list all keys in Offer type and assign them as required by setting : true
+type KeysEnum<T> = { [P in keyof Required<T>]: true };
+
+export const OfferAttributeKeys: KeysEnum<Offer> = {
+    doc_id: true,
+    id: true,
+    property_name: true,
+    property_total_price: true,
+    client_id: true,
+    rooms: true
 }
 
 export type OfferRequestData = {
