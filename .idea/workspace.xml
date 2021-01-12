@@ -68,21 +68,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/css/globalStyles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/DragAndDrop/Column.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/DragAndDrop/DraggableItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/Offer/Offer.elements.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/Offer/OfferTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Offer/OfferCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Offer/OfferCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/models/Offer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/models/Offer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/views/offer/OffersListView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn-error.log" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn-error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,9 +88,9 @@
         <option value="Python Script" />
         <option value="CSS File" />
         <option value="HTML File" />
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -353,7 +342,10 @@
       <workItem from="1609963595322" duration="4630000" />
       <workItem from="1610033405591" duration="196000" />
       <workItem from="1610118618721" duration="1635000" />
-      <workItem from="1610131224403" duration="4020000" />
+      <workItem from="1610131224403" duration="8780000" />
+      <workItem from="1610369166701" duration="210000" />
+      <workItem from="1610369939148" duration="91000" />
+      <workItem from="1610478942681" duration="1844000" />
     </task>
     <servers />
   </component>
@@ -503,7 +495,7 @@
     <state x="422" y="164" width="613" height="530" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602099502912" />
     <state x="422" y="166" width="852" height="539" key="find.popup/0.23.1440.821@0.23.1440.821" timestamp="1605475967343" />
     <state x="422" y="167" width="852" height="541" key="find.popup/0.23.1440.824@0.23.1440.824" timestamp="1607813130935" />
-    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup" timestamp="1610131427581">
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup" timestamp="1610480857086">
       <screen x="0" y="23" width="1440" height="824" />
     </state>
     <state x="385" y="196" width="670" height="603" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1603998307358" />
@@ -517,7 +509,7 @@
     <state x="385" y="201" width="670" height="616" key="search.everywhere.popup/0.23.1440.816@0.23.1440.816" timestamp="1606687933543" />
     <state x="385" y="202" width="670" height="620" key="search.everywhere.popup/0.23.1440.821@0.23.1440.821" timestamp="1605650613347" />
     <state x="385" y="202" width="670" height="621" key="search.everywhere.popup/0.23.1440.823@0.23.1440.823" timestamp="1605651523790" />
-    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1610131427581" />
+    <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1610480857086" />
     <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.825@0.23.1440.825" timestamp="1607292283369" />
   </component>
   <component name="XDebuggerManager">

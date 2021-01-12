@@ -10,6 +10,10 @@ import {Dispatch} from "redux";
 import {fetchAllOffers} from "../../actions/offer";
 import OfferCard from "../../components/Offer/OfferCard";
 import MUIDataTable from "mui-datatables";
+import Collapse from '@material-ui/core/Collapse';
+import TableRow from "@material-ui/core/TableRow";
+import TableCell from "@material-ui/core/TableCell";
+import OffersTable from "../../components/Offer/OfferTable";
 
 type FetchingStatus = {
     isLoading: boolean
@@ -36,8 +40,11 @@ const ListOfferView: React.FC = () => {
             <p>pobieram oferty ...</p>
         );
     } else {
-        const offerAttributes = Object.keys(OfferAttributeKeys);
-        const columns = offerAttributes.map((attibuteName: string) => {
+        const getOnlyColumnAttuributes = (value: string) => {
+           const columnAttuributes = ['id', 'property_name', 'property_total_price', 'client_id', 'rooms']
+           return (columnAttuributes.includes(value));
+        }
+        const columns = Object.keys(OfferAttributeKeys).filter(getOnlyColumnAttuributes).map((attibuteName: string) => {
            return {
                name: attibuteName,
                label: attibuteName.toUpperCase(),
@@ -47,34 +54,19 @@ const ListOfferView: React.FC = () => {
                }
            }
         });
-        const options = {
-            filterType: 'checkbox',
-        };
-        console.log(columns);
-        return(
-            /*
-                <React.Fragment>
-                    <h2>Twoje oferty</h2>
-                    <ul>
-                        {offers.map((offer: Offer) => (
-                            <OfferCard  key={offer.id} offer={offer}/>
-                        ))}
-                    </ul>
 
-                    <AddNewOfferForm />
-                </React.Fragment>
-             */
-            <MUIDataTable
+        console.log(columns);
+
+        // @ts-ignore
+        return(
+            <OffersTable
                 title={"Oferty"}
                 data={offers}
                 columns={columns}
             />
-
-            /* <div>In progress</div> */
         );
     }
 }
-
 
 //export default connect(mapStateToProps, mapDispatchToProps)(ListOfferView);
 export default ListOfferView;
