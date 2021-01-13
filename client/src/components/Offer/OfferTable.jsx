@@ -1,32 +1,27 @@
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
 import React from "react";
 import MUIDataTable from "mui-datatables";
-
-const options = {
-    caseSensitive: true,
-    filter: true,
-    filterType: "dropdown",
-    responsive: "standard",
-    expandableRows: true,
-    expandableRowsOnClick: true,
-    isRowExpandable: (dataIndex, expandedRows) => {
-        return !(expandedRows.data.length > 4 && expandedRows.data.filter((d) => d.dataIndex === dataIndex).length === 0);
-    },
-    renderExpandableRow: (rowData, rowMeta) => {
-        const colSpan = rowData.length + 1;
-        return (
-            <TableRow>
-                <TableCell colSpan={colSpan}>
-                    Custom expandable row option. Data: {JSON.stringify(rowData)}
-                </TableCell>
-            </TableRow>
-        );
-    },
-    rowsExpanded: [0, 1],
-};
+import OfferListExpandedRow from "./OfferListExpandedRow";
 
 const OffersTable = ({title, data, columns}) => {
+    const options = {
+        caseSensitive: true,
+        filter: true,
+        filterType: "dropdown",
+        responsive: "standard",
+        expandableRows: true,
+        expandableRowsOnClick: true,
+        isRowExpandable: (dataIndex, expandedRows) => {
+            return !(expandedRows.data.length > 4 && expandedRows.data.filter((d) => d.dataIndex === dataIndex).length === 0);
+        },
+        renderExpandableRow: (rowData, rowMeta) => {
+            const colSpan = rowData.length + 1;
+            const id = rowData[0];
+            const filteredFullRow = data.filter((row) => row.id === id);
+            return (
+                <OfferListExpandedRow key={id} colSpan={colSpan} data={filteredFullRow} />
+            );
+        },
+    };
     // @ts-ignore
     return(
         <MUIDataTable

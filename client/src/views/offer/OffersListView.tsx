@@ -55,8 +55,6 @@ const ListOfferView: React.FC = () => {
            }
         });
 
-        console.log(columns);
-
         // @ts-ignore
         return(
             <OffersTable
