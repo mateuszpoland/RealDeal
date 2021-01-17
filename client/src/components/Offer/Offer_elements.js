@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import TableRow from "@material-ui/core/TableRow";
 
 export const GoToOfferDetailsButton = styled.span`
   width: 150px;
@@ -16,3 +17,9 @@ export const GoToOfferDetailsButton = styled.span`
     transform: scale(0.9);
   }
 `
+
+export const ExpandedRowContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+

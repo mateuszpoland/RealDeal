@@ -1,18 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {Offer, OfferAttributeKeys} from "../../models/Offer";
-import { fetchOffers } from "../../components/service/fetcher/offer/Fetcher";
-// try useSelector and useDispatch Redux hooks instead of custom fetcher.
 import {connect, useDispatch, useSelector} from "react-redux";
-import { Link, Route } from "react-router-dom";
-import { AddNewOfferForm } from '../../components/form/offer/AddNewOfferForm';
 import {AppState} from "../../reducer";
-import {Dispatch} from "redux";
 import {fetchAllOffers} from "../../actions/offer";
-import OfferCard from "../../components/Offer/OfferCard";
-import MUIDataTable from "mui-datatables";
-import Collapse from '@material-ui/core/Collapse';
-import TableRow from "@material-ui/core/TableRow";
-import TableCell from "@material-ui/core/TableCell";
 import OffersTable from "../../components/Offer/OfferTable";
 
 type FetchingStatus = {

@@ -31,7 +31,7 @@ https://www.simform.com/tips-building-scalable-web-applications/#tip1
 
 Wykorzystuje tu najlepsze praktyki architektury frontendowej do SPA.
 Do zarządzania stanem użyję Reduxa z libkami:
-- Redix Saga
+- Redux thunk
 - Immutable.js
 
 https://www.simform.com/tips-building-scalable-web-applications/#tip1

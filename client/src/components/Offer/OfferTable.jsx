@@ -1,6 +1,6 @@
 import React from "react";
 import MUIDataTable from "mui-datatables";
-import OfferListExpandedRow from "./OfferListExpandedRow";
+import { OfferListExpandedRowContents } from "./OfferListExpandedRowContents";
 
 const OffersTable = ({title, data, columns}) => {
     const options = {
@@ -18,7 +18,7 @@ const OffersTable = ({title, data, columns}) => {
             const id = rowData[0];
             const filteredFullRow = data.filter((row) => row.id === id);
             return (
-                <OfferListExpandedRow key={id} colSpan={colSpan} data={filteredFullRow} />
+                <OfferListExpandedRowContents key={id} colSpan={colSpan} data={filteredFullRow} />
             );
         },
     };
