@@ -57,6 +57,8 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
+      args:
+        - WITH_XDEBUG=true
     restart: on-failure
     volumes:
       - './server:/usr/src/app:rw'

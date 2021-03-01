@@ -173,6 +173,11 @@ class Offer implements OfferState
     private $client;
 
     /**
+     * @ORM\OneToMany(targetEntity="OfferPhoto", mappedBy="offer", cascade={'all'})
+     */
+    private $offerPhotos;
+
+    /**
      * @ORM\ManyToMany(targetEntity="RealDeal\SalesManagement\Domain\Client\Client", inversedBy="prospectiveProperties")
      * @ORM\JoinTable(name="prospective_clients",
      *     joinColumns={@ORM\JoinColumn(name="offer_id", referencedColumnName="id")},
@@ -189,6 +194,7 @@ class Offer implements OfferState
     public function __construct()
     {
         $this->prospectiveClients = new ArrayCollection();
+        $this->offerPhotos = new ArrayCollection();
     }
 
     public function getId(): int
@@ -259,6 +265,21 @@ class Offer implements OfferState
             $client->removeProspectiveProperty($this);
             $this->prospectiveClients->remove($client);
             $client->removeProspectiveProperty($this);
+        }
+    }
+
+    public function addPhoto(OfferPhoto $photo): void
+    {
+        if(!$this->offerPhotos->contains($photo)) {
+            $this->offerPhotos->add($photo);
+            $photo->setOffer($this);
+        }
+    }
+
+    public function removePhoto(OfferPhoto $photo): void
+    {
+        if($this->offerPhotos->contains($photo)) {
+            $this->offerPhotos->remove($photo);
         }
     }
 

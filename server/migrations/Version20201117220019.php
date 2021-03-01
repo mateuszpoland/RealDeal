@@ -19,6 +19,7 @@ final class Version20201117220019 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
+
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE advertising (id INT NOT NULL, offer_id INT DEFAULT NULL, unique_identifier VARCHAR(255) NOT NULL, title VARCHAR(255) NOT NULL, description VARCHAR(255) NOT NULL, type VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_50219E786BD2BEA0 (unique_identifier), INDEX IDX_50219E7853C674EE (offer_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE client (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) NOT NULL, second_name VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL, stage VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');

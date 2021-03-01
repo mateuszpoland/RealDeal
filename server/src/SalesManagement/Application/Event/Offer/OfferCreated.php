@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\Event\Offer;
 
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 class OfferCreated
 {
     private int $offerId;
@@ -17,6 +19,7 @@ class OfferCreated
     private string $offeringType;
     private string $propertyType;
     private \DateTime $availableFrom;
+    private UploadedFile $attachedFile;
 
     public function __construct
     (

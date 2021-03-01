@@ -29,7 +29,8 @@ export const fetchAllOffers = () => {
 
 
 /**
- * fetch single offer object
+ * fetch single offer object - from elasticsearch
+ * consider doing it using mysql if speed is an issue
  * use if there is no object in array in redux store
  */
 export const fetchSingleOffer = (id: string) => {

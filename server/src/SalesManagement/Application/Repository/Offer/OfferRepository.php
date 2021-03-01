@@ -17,9 +17,17 @@ class OfferRepository implements ServiceEntityRepositoryInterface
         $this->em = $em;
     }
 
-    public function findById(): Offer
+    public function findById(int $id): Offer
     {
-       throw new Exception('Not implemented yet');
+       $qb = $this->em->createQueryBuilder();
+       $qb->select('o')
+           ->from('RealDeal\SalesManagement\Domain\Offer\Offer', 'o')
+           ->where(
+                $qb->expr()->eq('o.id', ':id')
+           );
+       $qb->setParameter('id', $id);
+
+       return $qb->getQuery()->getResult();
     }
 
     public function findAllByIds(array $ids): array
@@ -37,7 +45,9 @@ class OfferRepository implements ServiceEntityRepositoryInterface
 
     public function save(Offer $offer): void
     {
-       $this->em->persist($offer);
+       if(!$this->em->contains($offer)) {
+           $this->em->persist($offer);
+       }
        $this->em->flush();
     }
 

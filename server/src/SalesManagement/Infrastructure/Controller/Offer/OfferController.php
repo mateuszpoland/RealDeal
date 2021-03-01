@@ -4,32 +4,37 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Infrastructure\Controller\Offer;
 
 use Exception;
-use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
+use Gedmo\Sluggable\Util\Urlizer;
+use RealDeal\SalesManagement\Application\Command\Offer\CreateOfferCommand;
 use RealDeal\SalesManagement\Application\DomainService\Offer\Validator\CreateNewOfferInputValidator;
 use RealDeal\SalesManagement\Application\Query\GetAllOffersQuery;
 use RealDeal\SalesManagement\Application\Query\GetSingleOfferQuery;
 use RealDeal\Shared\Infrastructure\ApiResponseBuilder;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class OfferController
 {
-
     private MessageBusInterface $commandBus;
     private GetAllOffersQuery $getAllOffersQuery;
     private GetSingleOfferQuery $getSingleOffer;
     private ApiResponseBuilder $responseBuilder;
+    private Container $serviceContainer;
 
     public function __construct(
+        Container $container,
         MessageBusInterface $commandBus,
         ApiResponseBuilder $responseBuilder,
         GetAllOffersQuery $getAllOffersQuery,
         GetSingleOfferQuery $getSingleOfferQuery
     )
     {
+        $this->serviceContainer = $container;
         $this->commandBus = $commandBus;
         $this->getAllOffersQuery = $getAllOffersQuery;
         $this->getSingleOffer = $getSingleOfferQuery;
@@ -38,13 +43,22 @@ class OfferController
 
     public function addOfferAction(Request $request)
     {
-        $data = json_decode($request->getContent(), true);
+        /** @var UploadedFile $photos */
+        $photos = $request->files->get('photos');
+        $originalFileName = pathinfo($photos->getClientOriginalName(), PATHINFO_FILENAME);
+        $photos->move(
+            $this->serviceContainer->getParameter('kernel.project_dir') . '/public/uploads',
+            Urlizer::urlize(uniqid('_photo', true) . $originalFileName  . '.' . $photos->guessExtension())
+        );
+        $data = json_decode($request->request->all()['request'], true);
         $validator = new CreateNewOfferInputValidator();
         $violations = $validator->validate($data);
 
         if(0 !== count($violations)) {
             return $this->returnSerializedViolationsResponse($violations);
         }
+
+        $data = $photos ? array_merge(['photos' => $photos], $data) : $data;
 
         try {
             $command = new CreateOfferCommand(
@@ -58,7 +72,8 @@ class OfferController
                 $data['market_type'],
                 $data['offering_type'],
                 $data['property_type'],
-                $data['available_from']
+                $data['available_from'],
+                $data['photos'] ?? null
             );
 
             $this->commandBus->dispatch($command);

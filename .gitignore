@@ -3,3 +3,4 @@ __pycache__
 node_modules
 data
 server/vendor
+server/src/SalesManagement/Infrastructure/Resources/TempStorage/offer_files

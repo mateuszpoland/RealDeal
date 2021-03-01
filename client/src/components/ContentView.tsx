@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import ListOfferView from "../views/offer/OffersListView";
 import {ClientsListView} from "../views/client/ClientsListView";
 import {OfferView} from "../views/offer/OfferView";
+import MainDashboard from "../views/dashboard/MainDashboard";
 
 const Index = () => {
-    return <h2>Witaj, Mateusz</h2>
+    return <MainDashboard />
 }
 
 /* display contents*/

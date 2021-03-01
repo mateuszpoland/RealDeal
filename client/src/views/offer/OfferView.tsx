@@ -13,6 +13,7 @@ export const OfferView: React.FC<RouteInfo> =  ({match}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        console.log('trying to fetch single offer');
         dispatch(fetchSingleOffer(match.params.id))
     }, [dispatch]);
 

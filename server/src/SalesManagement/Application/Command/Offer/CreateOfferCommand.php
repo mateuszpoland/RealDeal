@@ -1,9 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace RealDeal\SalesManagement\Application\Command;
+namespace RealDeal\SalesManagement\Application\Command\Offer;
 
 use RealDeal\Shared\Application\CommandInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class CreateOfferCommand implements CommandInterface
 {
@@ -18,6 +19,7 @@ class CreateOfferCommand implements CommandInterface
     private string $offeringType;
     private string $propertyType;
     private \DateTime $availableFrom;
+    private ?UploadedFile $uploadedFile;
 
     public function __construct(
         string $name,
@@ -30,7 +32,8 @@ class CreateOfferCommand implements CommandInterface
         string $propertyMarketType,
         string $offeringType,
         string $propertyType,
-        string $availableFrom
+        string $availableFrom,
+        ?UploadedFile $uploadedFile
     )
     {
         $this->name = $name;
@@ -44,6 +47,7 @@ class CreateOfferCommand implements CommandInterface
         $this->offeringType = $offeringType;
         $this->propertyType = $propertyType;
         $this->availableFrom = new \DateTime($availableFrom);
+        $this->uploadedFile = $uploadedFile;
     }
 
     public function __toString(): string
@@ -104,5 +108,18 @@ class CreateOfferCommand implements CommandInterface
     public function getNumberOfRooms(): int
     {
         return $this->numberOfRooms;
+    }
+
+    public function addFilesToUpload(UploadedFile $uploadedFile)
+    {
+        $this->uploadedFile = $uploadedFile;
+    }
+
+    /**
+     * @return UploadedFile|null
+     */
+    public function getUploadedFile(): ?UploadedFile
+    {
+        return $this->uploadedFile;
     }
 }

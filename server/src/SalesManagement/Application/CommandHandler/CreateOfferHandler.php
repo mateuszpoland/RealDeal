@@ -3,7 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\CommandHandler;
 
-use RealDeal\SalesManagement\Application\Command\CreateOfferCommand;
+use RealDeal\SalesManagement\Application\Command\Offer\CreateOfferCommand;
+use RealDeal\SalesManagement\Application\Command\Offer\UploadOfferPhotoCommand;
 use RealDeal\SalesManagement\Application\DomainService\Offer\Factory\OfferFactory;
 use RealDeal\SalesManagement\Application\Event\Offer\OfferCreated;
 use RealDeal\SalesManagement\Application\Repository\Client\ClientRepository;
@@ -72,10 +73,14 @@ class CreateOfferHandler implements MessageHandlerInterface
             $command->getPropertyMarketType(),
             $command->getOfferingType(),
             $command->getPropertyType(),
-            $command->getAvailableFrom()
+            $command->getAvailableFrom(),
         );
 
         $this->commandBus->dispatch($event);
+
+        if(!null === $command->getUploadedFile()) {
+            $this->commandBus->dispatch(new UploadOfferPhotoCommand($offer->getId(), $command->getUploadedFile()));
+        }
     }
 
     private function getClientFromRepository(int $clientId): ?Client

@@ -101,7 +101,14 @@ services:
         tags:
             -
                 name: messenger.message_handler
-                handles: RealDeal\SalesManagement\Application\Command\CreateOfferCommand
+                handles: RealDeal\SalesManagement\Application\Command\Offer\CreateOfferCommand
+
+    SalesManagement.CommandHandler.UploadOfferPhotos:
+        class: RealDeal\SalesManagement\Application\CommandHandler\UploadOfferPhotoHandler
+        tags:
+            -
+                name: messenger.message_handler
+                handles: RealDeal\SalesManagement\Application\Command\Offer\UploadOfferPhotoCommand
 
     SalesManagement.CommandHandler.CreateNewClient:
         class: RealDeal\SalesManagement\Application\CommandHandler\Client\CreateClientCommandHandler
@@ -155,6 +162,7 @@ services:
     SalesManagement.OfferController:
         class: RealDeal\SalesManagement\Infrastructure\Controller\Offer\OfferController
         arguments:
+            - '@service_container'
             - '@messenger.bus.default'
             - '@RealDeal.Api.ResponseBuilder'
             - '@SalesManagement.Query.GetAllOffersQuery'
@@ -190,6 +198,16 @@ services:
             - '@SalesManagement.Query.Filter.GetClientFiltersQuery'
         public: true
         tags: [ 'controller.service_arguments' ]
+
+    #### PAYMENTS #####
+    UserManagement.PaymentProcessingController:
+        class: RealDeal\UserManagement\Infrastructure\PaymentProcessing\Controller\PaymentProcessingController
+        arguments:
+            - '@messenger.bus.default'
+            - '@RealDeal.Api.ResponseBuilder'
+        public: true
+        tags: ['controller.service_arguments']
+
 
     ## normalizers
     realdeal.salesmanagement.normalizer.client:

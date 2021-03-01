@@ -18,7 +18,7 @@ export const OfferListExpandedRowContents = (props: {colSpan: any, data: any}) =
             icon: <EditIcon/>,
             actionName: 'edit_offer',
             clickActionHandler: () => {
-                const offerId = data[0].id
+                const offerId = data[0].doc_id
                 //const offerId = data
                 history.push(`/offers/${offerId}`);
             },
