@@ -41,10 +41,9 @@ class ClientController
                 $data['stage']
             );
             $this->commandBus->dispatch($command);
-            return new JsonResponse(['name' => $command->getName()], Response::HTTP_CREATED);
+            return new JsonResponse([], Response::HTTP_CREATED);
         } catch (\Exception $exception){
-            $violations[] = $exception->getMessage();
-            return new JsonResponse(json_encode($violations), Response::HTTP_BAD_REQUEST);
+            return new JsonResponse($exception->getMessage(), Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
 

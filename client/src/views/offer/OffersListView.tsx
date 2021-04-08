@@ -56,5 +56,4 @@ const ListOfferView: React.FC = () => {
     }
 }
 
-//export default connect(mapStateToProps, mapDispatchToProps)(ListOfferView);
 export default ListOfferView;

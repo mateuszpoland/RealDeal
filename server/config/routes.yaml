@@ -58,6 +58,7 @@ salesManagement.Filter.getClientFilters:
 
 ## Payments routes
 userManagement.Payments.buyAccount:
-  methods: ['POST']
+  methods: ['GET']
   path: user/account/buy_account
+  controller: UserManagement.PaymentProcessingController::buyAccountAction
 

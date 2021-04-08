@@ -68,5 +68,4 @@ class CreateClientCommand implements CommandInterface
     {
         return get_class($this);
     }
-
 }

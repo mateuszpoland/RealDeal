@@ -1,10 +1,9 @@
 parameters:
 
 services:
-    # default configuration for services in *this* file
     _defaults:
-        autowire: false      # Automatically injects dependencies in your services.
-        autoconfigure: false # Automatically registers your services as commands, event subscribers, etc.
+        autowire: false
+        autoconfigure: false
         public: false
 
     RealDeal\:
@@ -138,6 +137,14 @@ services:
         tags:
             - name: messenger.message_handler
               handles: RealDeal\SalesManagement\Application\Command\Filter\CreateNewClientLooksForPropertyFilterCommand
+
+    app.command_handler.somehandler:
+        class: App\Application\CommandHandler\SomeCommandHandler
+        arguments:
+            - '@messenger.bus.default'
+        tags:
+            - name: messenger.message_handler
+              handles: App\Application\Command\SomeCommand
 
     #event handlers
     SalesManagement.EventHandler.OfferCreated:

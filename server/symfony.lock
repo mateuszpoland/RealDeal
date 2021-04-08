@@ -16,6 +16,9 @@
     "behat/transliterator": {
         "version": "v1.3.0"
     },
+    "braintree/braintree_php": {
+        "version": "5.5.0"
+    },
     "brick/math": {
         "version": "0.9.1"
     },
@@ -101,11 +104,20 @@
     "elasticsearch/elasticsearch": {
         "version": "v6.7.2"
     },
+    "ezimuel/guzzlestreams": {
+        "version": "3.0.1"
+    },
+    "ezimuel/ringphp": {
+        "version": "1.1.2"
+    },
     "fakerphp/faker": {
         "version": "v1.10.1"
     },
     "fig/link-util": {
         "version": "1.1.1"
+    },
+    "friendsofphp/proxy-manager-lts": {
+        "version": "v1.0.3"
     },
     "gedmo/doctrine-extensions": {
         "version": "v3.0.0"
@@ -251,6 +263,9 @@
             "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
         }
     },
+    "symfony/amqp-messenger": {
+        "version": "v5.1.11"
+    },
     "symfony/asset": {
         "version": "v5.1.8"
     },
@@ -283,6 +298,9 @@
     },
     "symfony/doctrine-bridge": {
         "version": "v5.1.8"
+    },
+    "symfony/doctrine-messenger": {
+        "version": "v5.1.11"
     },
     "symfony/dotenv": {
         "version": "v5.1.8"
@@ -355,6 +373,18 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/messenger": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "e9a414b113ceadbf4e52abe37bf8f1b443f06ccb"
+        },
+        "files": [
+            "config/packages/messenger.yaml"
+        ]
+    },
     "symfony/polyfill-intl-grapheme": {
         "version": "v1.20.0"
     },
@@ -376,6 +406,9 @@
     "symfony/property-info": {
         "version": "v5.1.8"
     },
+    "symfony/redis-messenger": {
+        "version": "v5.1.11"
+    },
     "symfony/routing": {
         "version": "5.1",
         "recipe": {
@@ -390,8 +423,23 @@
             "config/routes.yaml"
         ]
     },
+    "symfony/security-bundle": {
+        "version": "5.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.1",
+            "ref": "0a4bae19389d3b9cba1ca0102e3b2bccea724603"
+        },
+        "files": [
+            "config/packages/security.yaml"
+        ]
+    },
     "symfony/security-core": {
         "version": "v5.1.8"
+    },
+    "symfony/security-csrf": {
+        "version": "v5.1.11"
     },
     "symfony/security-guard": {
         "version": "v5.1.8"
@@ -410,6 +458,52 @@
     },
     "symfony/string": {
         "version": "v5.1.8"
+    },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "2ad9d2545bce8ca1a863e50e92141f0b9d87ffcd"
+        },
+        "files": [
+            "config/packages/translation.yaml",
+            "translations/.gitignore"
+        ]
+    },
+    "symfony/translation-contracts": {
+        "version": "v2.3.0"
+    },
+    "symfony/twig-bridge": {
+        "version": "v5.1.11"
+    },
+    "symfony/twig-bundle": {
+        "version": "5.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "5.0",
+            "ref": "fab9149bbaa4d5eca054ed93f9e1b66cc500895d"
+        },
+        "files": [
+            "config/packages/test/twig.yaml",
+            "config/packages/twig.yaml",
+            "templates/base.html.twig"
+        ]
+    },
+    "symfony/validator": {
+        "version": "4.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.3",
+            "ref": "d902da3e4952f18d3bf05aab29512eb61cabd869"
+        },
+        "files": [
+            "config/packages/test/validator.yaml",
+            "config/packages/validator.yaml"
+        ]
     },
     "symfony/var-dumper": {
         "version": "v5.1.8"
@@ -431,6 +525,9 @@
             "version": "1.0",
             "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
         }
+    },
+    "twig/twig": {
+        "version": "v3.3.0"
     },
     "webimpress/safe-writer": {
         "version": "2.1.0"
