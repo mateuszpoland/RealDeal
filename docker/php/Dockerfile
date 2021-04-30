@@ -1,4 +1,6 @@
-FROM php:7.4-fpm
+FROM composer:2.0 as composer
+
+FROM php:8.0-fpm
 
 RUN docker-php-ext-install pdo_mysql
 
@@ -8,20 +10,22 @@ RUN apt-get update && \
     apt-get install -y \
     libzip-dev
 
+## install php extensions in docker
+## https://github.com/mlocati/docker-php-extension-installer
+ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
+RUN chmod +x /usr/local/bin/install-php-extensions && sync && \
+    install-php-extensions amqp && \
+    install-php-extensions xdebug
+
 RUN docker-php-ext-install zip
 RUN docker-php-ext-enable apcu
 RUN docker-php-ext-install opcache
 
-RUN yes | pecl install xdebug \
-    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
-    && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
-RUN curl -sS https://getcomposer.org/installer | tee composer-setup.php \
-    && php composer-setup.php --filename=composer \
-    && php -r "unlink('composer-setup.php');" \
-    && mv composer /usr/local/bin/composer
+ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
 WORKDIR /usr/src/app
 

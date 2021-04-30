@@ -69,7 +69,35 @@
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/MachinaSprzedazy-Webinar.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/landing.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/components/Navbar/Navbar.elements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/components/Navbar/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/components/Signup/Signup.elements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/components/Signup/Signup.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/components/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/globalStyles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/landing/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Landing_Page/tut.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/nginx/default.conf" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/default.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/php/Dockerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -410,8 +438,18 @@
       <workItem from="1618775614957" duration="684000" />
       <workItem from="1618861506970" duration="1050000" />
       <workItem from="1619028622840" duration="2658000" />
-      <workItem from="1619113052506" duration="749000" />
+      <workItem from="1619113052506" duration="2207000" />
+      <workItem from="1619156478080" duration="290000" />
+      <workItem from="1619773562648" duration="1086000" />
     </task>
+    <task id="LOCAL-00001" summary="COMEBACK">
+      <created>1619114399078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619114399078</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +467,15 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="COMEBACK" />
+    <option name="LAST_COMMIT_MESSAGE" value="COMEBACK" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="434" y="285" key="#Notifications" timestamp="1619114437495">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="434" y="285" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1619114437495" />
     <state x="320" y="74" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611870517999">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -466,11 +512,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="422" y="158" width="852" height="591" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1617460593417" />
-    <state x="422" y="167" width="852" height="541" key="find.popup/0.23.1440.824@0.23.1440.824" timestamp="1610824370745" />
-    <state x="385" y="197" width="670" height="681" key="search.everywhere.popup" timestamp="1618506380722">
+    <state x="385" y="197" width="670" height="681" key="search.everywhere.popup" timestamp="1619774546585">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="385" y="197" width="670" height="681" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1618506380722" />
+    <state x="385" y="197" width="670" height="681" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1619774546585" />
     <state x="385" y="203" width="670" height="623" key="search.everywhere.popup/0.23.1440.824@0.23.1440.824" timestamp="1611531258182" />
   </component>
   <component name="XDebuggerManager">
