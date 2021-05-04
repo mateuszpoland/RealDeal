@@ -14,10 +14,6 @@ services:
             - '../src/Kernel.php'
             - '../src/Tests/'
 
-    RealDeal\Controller\:
-        resource: '../src/Controller/'
-        tags: ['controller.service_arguments']
-
     ### Shared ###
 
     realdeal.encoder.json:

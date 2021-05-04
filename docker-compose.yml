@@ -6,7 +6,9 @@ services:
     stdin_open: true
     volumes:
       - './client:/app:rw'
-    build: ./client
+    build:
+      context: .
+      dockerfile: docker/client_dev/Dockerfile
     ports:
       - '3000:3000'
 
