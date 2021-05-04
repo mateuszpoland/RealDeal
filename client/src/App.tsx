@@ -8,7 +8,9 @@ import FitnessCenter from '@material-ui/icons/FitnessCenter';
 import {HTML5Backend}  from 'react-dnd-html5-backend';
 import {DashBoardLayout} from "./layouts/DashboardLayout";
 import {DndProvider} from "react-dnd";
-
+import {useSelector} from "react-redux";
+import {AppState} from "./reducer";
+import {RegisterPage} from "./layouts/RegisterPage/RegisterPage";
 
 export type navLink = {
     text: string,
@@ -17,6 +19,11 @@ export type navLink = {
 }
 
 const App: React.FC = () => {
+    // just for tests
+    const isLogged = false;
+    const [isUserLoggedIn, userData] = useSelector(
+        (state: AppState) => [state.user.isUserLoggedIn, state.user.userData]
+    )
     const [open, setOpen] = React.useState(false);
     const sidebarNavLinks: navLink[] = [
         {
@@ -44,11 +51,16 @@ const App: React.FC = () => {
     // @ts-ignore
     return (
         <Router>
-            <DndProvider backend={HTML5Backend}>
-                <DashBoardLayout
-                    navigation={sidebarNavLinks}
-                />
-            </DndProvider>
+            {isLogged
+                ?
+                <DndProvider backend={HTML5Backend}>
+                    <DashBoardLayout
+                        navigation={sidebarNavLinks}
+                    />
+                </DndProvider>
+                :
+                <RegisterPage />
+            }
         </Router>
   );
 }

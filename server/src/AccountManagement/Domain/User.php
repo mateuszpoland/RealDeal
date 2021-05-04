@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace RealDeal\UserManagement\Domain;
+namespace RealDeal\AccountManagement\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass="RealDeal\UserManagement\Application\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="RealDeal\AccountManagement\Domain\Repository\UserRepository")
  * @ORM\Table(name="users")
  */
 class User implements UserInterface
@@ -67,6 +67,7 @@ class User implements UserInterface
 
     public function getPassword(): string
     {
+        
     }
 
     public function getSalt()
