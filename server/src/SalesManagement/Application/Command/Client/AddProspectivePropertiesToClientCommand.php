@@ -26,6 +26,4 @@ class AddProspectivePropertiesToClientCommand
     {
         return $this->propertiesIds;
     }
-
-
 }

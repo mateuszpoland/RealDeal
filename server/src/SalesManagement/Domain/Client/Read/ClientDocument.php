@@ -4,51 +4,28 @@ declare(strict_types=1);
 namespace RealDeal\SalesManagement\Domain\Client\Read;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use ONGR\ElasticsearchBundle\Annotation as ES;
 
-/**
- * @ES\Index(alias="clients")
- */
+
 class ClientDocument
 {
-    /**
-     * @ES\Id()
-     */
+
     private $id;
 
-    /**
-     * @ES\Property(type="text", name="client_id")
-     */
     private int $clientId;
 
-    /**
-     * @ES\Property(type="text", name="name")
-     */
     private string $name;
 
-    /**
-     * @ES\Property(type="text", name="secondName")
-     */
+
     private string $secondName;
 
-    /**
-     * @ES\Property(type="text", name="email")
-     */
+
     private string $email;
 
-    /**
-     * @ES\Property(type="text", name="stage")
-     */
+
     private string $stage;
 
-    /**
-     * @ES\Embedded(class="RealDeal\SalesManagement\Domain\Client\Read\EmbeddedPropertyObject")
-     */
     private ArrayCollection $ownedProperties;
 
-    /**
-     * @ES\Embedded(class="RealDeal\SalesManagement\Domain\Client\Read\EmbeddedPropertyObject")
-     */
     private ArrayCollection $prospectiveProperties;
 
     public function __construct()

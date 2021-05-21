@@ -3,75 +3,33 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Domain\Offer\Read;
 
-use ONGR\ElasticsearchBundle\Annotation as ES;
-
-/**
- * @ES\Index(alias="offers", default=true)
- */
 class OfferDocument
 {
-    /**
-     * @ES\Id()
-     */
+
     private $id;
 
-    /**
-     * @ES\Property(type="integer", name="persisted_id")
-     */
     private int $persistedId;
-    /**
-     * @ES\Property(type="text", name="property_name", analyzer="simple_analyzer")
-     */
+
     private string $name;
 
-     /**
-     * @ES\Property(type="float", name="total_price.value")
-     */
     private float $totalPriceValue;
 
-    /**
-     * @ES\Property(type="float", name="footage.value")
-     */
     private float $footage;
 
-    /**
-     * @ES\Property(type="integer", name="rooms_number")
-     */
     private $numberOfRooms;
 
-    /**
-     * @ES\Property(type="integer", name="client_id")
-     */
     private int $ownerId;
 
-    /**
-     * @ES\Property(type="text", name="property_contract_type")
-     */
     private string $propertyContractType;
 
-    /**
-     * @ES\Property(type="text", name="property_legal_status")
-     */
     private string $propertyLegalStatus;
 
-    /**
-     * @ES\Property(type="text", name="property_market_type")
-     */
     private string $propertyMarketType;
 
-    /**
-     * @ES\Property(type="text", name="property_type")
-     */
     private $propertyType;
 
-    /**
-     * @ES\Property(type="text", name="offering_type")
-     */
     private string $propertyOfferingType;
 
-    /**
-     * @ES\Property(type="date", name="available_from")
-     */
     private \DateTime $offerAvailableFrom;
 
 

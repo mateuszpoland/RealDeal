@@ -5,5 +5,7 @@ export interface UserState {
 
 interface LoggedInUserData {
     userId: number,
+    //userRealm: string, : reprezentacja tenanta
+    userName: string,
     token: string
 }

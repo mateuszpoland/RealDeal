@@ -17,7 +17,7 @@ abstract class StringFilterValue implements ElasticFilterInterface
         ];
     }
 
-    public function __unserialize(array $parameters): self
+    public function unserialize(array $parameters): self
     {
         $this->filterValue = $parameters['value'];
         $this->elasticFieldName = $parameters['fieldName'];

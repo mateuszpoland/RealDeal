@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  #tylko na devie korzystam z developerskiego servera Reacta @todo - wrzucić tu Storybooka
+  ui:
+    container_name: ui
+    stdin_open: true
+    volumes:
+      - './client:/app:rw'
+    build:
+      context: .
+      dockerfile: docker/client_dev/Dockerfile
+    networks:
+      - realdeal
+    ports:
+      - '3000:3000'
+
+  nginx:
+    depends_on:
+      - ui
+      - php

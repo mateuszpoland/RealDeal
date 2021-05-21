@@ -14,7 +14,7 @@ abstract class ArrayFilterValue implements ElasticFilterInterface
         return ['value' => $this->filterValue];
     }
 
-    public function __unserialize(array $parameters): self
+    public function unserialize(array $parameters): self
     {
         if(!isset($parameters['value']) || !is_array($parameters['value'])) {
             throw new \InvalidArgumentException('Parameters for an array filter should be array.');

@@ -6,59 +6,65 @@
 
 ##### Offers Routes
 
+## get all offers
 salesManagement.getAllOffers:
   methods: ['GET']
-  path: offers/all
+  path: v1/offers
   controller: SalesManagement.OfferController::getAllOffersAction
 
 salesManagement.addOffer:
   methods: ['POST']
-  path: offers/add
+  path: v1/offers
   controller: SalesManagement.OfferController::addOfferAction
 
 salesManagement.getSingleOffer:
   methods: ['GET']
-  path: offers/{id}
+  path: v1/offers/{id}
   controller: SalesManagement.OfferController::getSingleOfferAction
 
 ##### Client routes
 
 salesManagement.addClient:
   methods: ['POST']
-  path: clients/add
+  path: v1/clients
   controller: SalesManagement.ClientController::addClientAction
 
 salesManagement.addProspectiveProperties:
   methods: ['POST']
-  path: clients/{clientId}/prospectiveProperties/add
+  path: v1/clients/{clientId}/prospectiveProperties
   controller: SalesManagement.ClientController::addProspectivePropertyToClientAction
 
 salesManagement.getClient:
   methods: ['GET']
-  path: clients/{id}
+  path: v1/clients/{id}
   controller: SalesManagement.ClientController::getClientAction
 
 ##### OfferMatches routes #####
 salesManagement.ClientMatches.get:
   methods: ['GET']
-  path: clients/{clientId}/propertyMatches
+  path: v1/clients/{clientId}/propertyMatches
   controller: SalesManagement.OfferMatchController::getPropertyMatchesForClient
 
 ### Filtering routes
-
 salesManagement.Filter.addPropertySearchToClient:
   methods: ['POST']
-  path: filters/client/add/{clientId}
+  path: v1/client/{clientId}/filters
   controller: SalesManagement.FilterController::addPropertySearchToClientAction
 
 salesManagement.Filter.getClientFilters:
   methods: ['GET']
-  path: filters/client/{clientId}
+  path: v1/client/{clientId}/filters
   controller: SalesManagement.FilterController::getClientFiltersAction
 
 ## Payments routes
 userManagement.Payments.buyAccount:
   methods: ['GET']
-  path: user/account/buy_account
+  path: v1/user/account/buy_account
   controller: UserManagement.PaymentProcessingController::buyAccountAction
+
+## Security
+accountManagement.userRegistration:
+  methods: ['POST']
+  path: v1/user/signup
+  controller: AccountManagement.UserRegistrationController:registerAccountAction
 

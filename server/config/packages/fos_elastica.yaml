@@ -1,0 +1,12 @@
+# Read the documentation: https://github.com/FriendsOfSymfony/FOSElasticaBundle/blob/master/doc/setup.md
+fos_elastica:
+    serializer:
+        serializer: realdeal.serializer
+    clients:
+        default: { url: '%env(ELASTICSEARCH_URL)%' }
+    indexes:
+        clients:
+            index_name: clients_%kernel.environment%
+        offers:
+            index_name: offers_%kernel.environment%
+

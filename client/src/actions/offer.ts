@@ -6,7 +6,7 @@ import {
 } from '../action_types/offer_action_types';
 import {Offer} from "../models/Offer";
 import {Dispatch} from "redux";
-import {fetchOffers, fetchSingleOfferObject} from "../components/service/fetcher/offer/Fetcher";
+import {fetchOffers, fetchSingleOfferObject} from "../service/fetcher/offer/Fetcher";
 import store from "../store";
 
 const handleErrors = (dispatch: Dispatch, error: Error) => {

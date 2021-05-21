@@ -56,6 +56,7 @@ const App: React.FC = () => {
                 <DndProvider backend={HTML5Backend}>
                     <DashBoardLayout
                         navigation={sidebarNavLinks}
+                        //user={userData}
                     />
                 </DndProvider>
                 :

@@ -4,7 +4,7 @@ security:
         users_in_memory: { memory: null }
         app_user_provider:
             entity:
-                class: RealDeal\UserAuthentication\Domain\User
+                class: RealDeal\AccountManagement\Domain\User
                 property: email
     firewalls:
         dev:
@@ -14,6 +14,11 @@ security:
             anonymous: true
             lazy: true
             provider: users_in_memory
+        #api_admin:
+        #    pattern: ^/admin(*.)
+        #    security: true
+
+
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication

@@ -15,7 +15,7 @@ class BoolFilterValuesBetween extends ArrayFilterValue
         $to = $this->filterValue['to'];
 
         return [
-            BoolQuery::MUST   => new RangeQuery(
+            BoolQuery::MUST  => new RangeQuery(
                 $this->elasticFieldName,
                 [
                     'gte' => $from,

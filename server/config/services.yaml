@@ -134,14 +134,6 @@ services:
             - name: messenger.message_handler
               handles: RealDeal\SalesManagement\Application\Command\Filter\CreateNewClientLooksForPropertyFilterCommand
 
-    app.command_handler.somehandler:
-        class: App\Application\CommandHandler\SomeCommandHandler
-        arguments:
-            - '@messenger.bus.default'
-        tags:
-            - name: messenger.message_handler
-              handles: App\Application\Command\SomeCommand
-
     #event handlers
     SalesManagement.EventHandler.OfferCreated:
         class: RealDeal\SalesManagement\Application\EventHandler\Offer\OfferCreatedHandler
@@ -211,6 +203,12 @@ services:
         public: true
         tags: ['controller.service_arguments']
 
+    #### SECURITY, User Handling ####
+
+    AccountManagement.UserRegistrationController:
+        class: RealDeal\AccountManagement\UI\UserRegistrationController
+        public: true
+        tags: ['controller.service_arguments']
 
     ## normalizers
     realdeal.salesmanagement.normalizer.client:

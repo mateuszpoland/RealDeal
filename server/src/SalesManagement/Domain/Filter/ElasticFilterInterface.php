@@ -15,5 +15,5 @@ interface ElasticFilterInterface
      * ]
      */
     public function __serialize(): array;
-    public function __unserialize(array $parameters): self;
+    public function unserialize(array $parameters): self;
 }

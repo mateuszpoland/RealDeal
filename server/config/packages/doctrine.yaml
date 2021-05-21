@@ -1,7 +1,7 @@
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-        server_version: '5.7'
+        server_version: '8'
         dbname: real_deal
         user: root
         password: passwd
@@ -16,9 +16,9 @@ doctrine:
                 type: annotation
                 dir: '%kernel.project_dir%/src/SalesManagement/Domain/'
                 prefix: 'RealDeal\SalesManagement'
-            #ContractManagement:
-            #    is_bundle: false
-            #    type: annotation
-            #    dir: '%kernel.project_dir%/src/ContractManagement/Domain/'
-            #    prefix: 'RealDeal\ContractManagement'
+            AccountManagement:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/AccountManagement/Domain/'
+                prefix: 'RealDeal\AccountManagement'
 

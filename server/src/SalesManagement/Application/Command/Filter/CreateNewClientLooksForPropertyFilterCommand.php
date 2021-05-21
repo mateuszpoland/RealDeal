@@ -5,7 +5,7 @@ namespace RealDeal\SalesManagement\Application\Command\Filter;
 
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces\FilterEnabledInterface;
 
-class CreateNewClientLooksForPropertyFilterCommand
+final class CreateNewClientLooksForPropertyFilterCommand
 {
     private int $clientId;
     private array $filters;

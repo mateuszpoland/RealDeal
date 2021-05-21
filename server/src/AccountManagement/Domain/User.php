@@ -16,20 +16,30 @@ class User implements UserInterface
 
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue()
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
+
+    /**
+     * @ORM\Column(type="string", unique=false)
+     */
+    private string $firstName;
+
+    /**
+     * @ORM\Column(type="string", unique=false)
+     */
+    private string $lastName;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      */
-    private $email;
+    private string $email;
 
     /**
      * @ORM\Column(type="json")
      */
-    private $roles;
+    private string $roles;
 
     /**
      * @return mixed
@@ -37,6 +47,26 @@ class User implements UserInterface
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getFirstName(): string
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
+
+    public function setFirstName(string $firstName): void
+    {
+        $this->firstName = $firstName;
+    }
+
+    public function setLastName(string $lastName): void
+    {
+        $this->lastName = $lastName;
     }
 
     public function getEmail(): ?string
@@ -67,14 +97,14 @@ class User implements UserInterface
 
     public function getPassword(): string
     {
-        
+
     }
 
     public function getSalt()
     {
     }
 
-    public function getUsername()
+    public function getUsername(): string
     {
        return (string) $this->email;
     }

@@ -173,7 +173,7 @@ class Offer implements OfferState
     private $client;
 
     /**
-     * @ORM\OneToMany(targetEntity="OfferPhoto", mappedBy="offer", cascade={'all'})
+     * @ORM\OneToMany(targetEntity="OfferPhoto", mappedBy="offer", cascade={"persist"})
      */
     private $offerPhotos;
 

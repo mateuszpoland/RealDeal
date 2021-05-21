@@ -60,7 +60,7 @@ class OfferPhoto
 
     /**
      * @var string
-     * @ORM\Column(type="string", columnDefinition="ENUM('MAIN_PHOTO', 'SIDE_PHOTO')")
+     * @ORM\Column(type="string")
      */
     private $photoRole;
 
