@@ -1,7 +1,7 @@
 import {
     GET_CLIENT_AUTH_TOKEN,
     NO_CLIENT_TOKEN
-} from "../../action_types/payments/action_types";
+} from "../../_action_types/payments/action_types";
 import {Dispatch} from "redux";
 import {brainTreeAuthTokenResponse} from "../../models/payments/brainTreeAuthTokenResponse";
 

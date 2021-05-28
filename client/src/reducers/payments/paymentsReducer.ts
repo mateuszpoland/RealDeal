@@ -1,5 +1,5 @@
 import {AnyAction} from "redux";
-import {GET_CLIENT_AUTH_TOKEN} from "../../action_types/payments/action_types";
+import {GET_CLIENT_AUTH_TOKEN} from "../../_action_types/payments/action_types";
 import {brainTreeAuthTokenResponse} from "../../models/payments/brainTreeAuthTokenResponse";
 
 interface paymentProcessState {

@@ -1,13 +1,18 @@
-import React from 'react';
-import {AppBarTop} from "../../components/AppBarTop";
+import { React, useEffect } from 'react';
 import SignIn from "./SignIn";
 import { Route, Switch } from "react-router-dom";
 import Register from "./Register";
 
-export const RegisterPage: React.FC = () => {
+const Account = () => {
+
+    useEffect(() => {
+        //if(accountService.userValue) {
+        //    history.push('/');
+        //}
+    }, []);
+
     return (
         <div>
-            <AppBarTop handleSidebarToggle={() => false}/>
             <Switch>
                 <Route path="/signin" exact component={SignIn} />
                 <Route path="/register" exact component={Register} />
@@ -15,3 +20,6 @@ export const RegisterPage: React.FC = () => {
         </div>
     );
 }
+
+export { Account };
+

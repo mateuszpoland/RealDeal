@@ -17,6 +17,10 @@ security:
         #api_admin:
         #    pattern: ^/admin(*.)
         #    security: true
+        api_v1:
+            pattern: ^/v1/(*.)
+            provider: app_user_provider
+
 
 
 

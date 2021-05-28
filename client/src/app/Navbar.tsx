@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import clsx from 'clsx';
-import { createStyles, makeStyles, useTheme, Theme } from '@material-ui/core/styles';
-import { DrawerSettings } from './DashboardSettings';
+import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { DrawerSettings } from '../components/DashboardSettings';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -40,7 +40,7 @@ export interface AppBarTopInterface {
     handleSidebarToggle: clickCallbackFunction
 }
 
-export const AppBarTop: React.FC<AppBarTopInterface> = (
+export const Navbar: React.FC<AppBarTopInterface> = (
     {
         handleSidebarToggle
     }

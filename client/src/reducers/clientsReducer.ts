@@ -1,5 +1,5 @@
 import {AnyAction} from "redux";
-import {ADD_NEW_CLIENT, DELETE_CLIENT, LOAD_CLIENTS} from "../action_types/client_action_types";
+import {ADD_NEW_CLIENT, DELETE_CLIENT, LOAD_CLIENTS} from "../_action_types/client_action_types";
 import {AsyncFetchedDataState} from "../models/state/AsyncFetchedDataState";
 import {Client} from "../models/Client";
 

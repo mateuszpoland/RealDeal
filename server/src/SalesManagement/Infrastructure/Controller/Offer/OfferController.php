@@ -45,11 +45,13 @@ class OfferController
     {
         /** @var UploadedFile $photos */
         $photos = $request->files->get('photos');
-        $originalFileName = pathinfo($photos->getClientOriginalName(), PATHINFO_FILENAME);
-        $photos->move(
-            $this->serviceContainer->getParameter('kernel.project_dir') . '/public/uploads',
-            Urlizer::urlize(uniqid('_photo', true) . $originalFileName  . '.' . $photos->guessExtension())
-        );
+        if($photos) {
+            $originalFileName = pathinfo($photos->getClientOriginalName(), PATHINFO_FILENAME);
+            $photos->move(
+                $this->serviceContainer->getParameter('kernel.project_dir') . '/public/uploads',
+                Urlizer::urlize(uniqid('_photo', true) . $originalFileName  . '.' . $photos->guessExtension())
+            );
+        }
         $data = json_decode($request->request->all()['request'], true);
         $validator = new CreateNewOfferInputValidator();
         $violations = $validator->validate($data);

@@ -1,5 +1,5 @@
 import {AnyAction} from "redux";
-import {UserState} from "../../models/state/UserState";
+import {UserState} from "../models/state/UserState";
 
 const initialUserState: UserState = {
     isUserLoggedIn: false,

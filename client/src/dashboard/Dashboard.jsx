@@ -1,15 +1,10 @@
 import React, {useState} from 'react';
-import { AppBarTop } from "../components/AppBarTop";
-import {Sidebar} from "../components/Sidebar";
+import { Navbar } from "../app/Navbar";
+import {Sidebar} from "./Sidebar";
 import { createStyles,  makeStyles, useTheme, Theme } from '@material-ui/core/styles';
-import {navLink} from "../App";
-import {ContentView} from "../components/ContentView";
+import {ContentView} from "./ContentView";
 
-type DashboardComponentsList = {
-    navigation: navLink[]
-}
-
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
             display: 'flex',
@@ -29,27 +24,14 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-export const DashBoardLayout: React.FC<DashboardComponentsList> = (
-    {
-        navigation,
-    }
-) => {
-    const handleSidebarToggle = () => {
-        setSidebarOpen(!isSidebarOpen);
-        console.log('changing state: ' + isSidebarOpen);
-    }
+export const Dashboard = () => {
 
-    const [isSidebarOpen, setSidebarOpen] = useState(false);
     const classes = useStyles();
     /* parent component holding configuration for sidebar, appbar and so on */
     return(
         <div className={classes.root}>
-            <AppBarTop
-                handleSidebarToggle={handleSidebarToggle}
-            />
             <Sidebar
-                navLinks={navigation}
-                isSidebarOpen={isSidebarOpen}
+                isSidebarOpen={true}
             />
             <main className={classes.content}>
                 <div className={classes.toolbar}/>

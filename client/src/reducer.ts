@@ -4,7 +4,7 @@ import {AnyAction, combineReducers} from "redux";
 import { offers } from "./reducers/offersReducer";
 import { clients } from "./reducers/clientsReducer";
 import { payments } from "./reducers/payments/paymentsReducer";
-import { user } from "./reducers/account_management/user.reducer";
+import { user } from "./reducers/user.reducer";
 import {AsyncFetchedDataState} from "./models/state/AsyncFetchedDataState";
 import {UserState} from "./models/state/UserState";
 import {Client} from "./models/Client";

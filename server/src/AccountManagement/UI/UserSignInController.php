@@ -8,7 +8,12 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UserSignInController
 {
-    public function logInAction(): JsonResponse
+    public function authenticateAction(): JsonResponse
+    {
+
+    }
+
+    public function refreshToken(): JsonResponse
     {
 
     }

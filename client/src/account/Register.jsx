@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -36,6 +36,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const Register = () => {
     const classes = useStyles();
+
+    const submitRegisterForm = (e) => {
+        e.preventDefault();
+        console.log('form submitted');
+    }
 
     return (
         <Container component="main" maxWidth="xs">
@@ -108,6 +113,7 @@ export const Register = () => {
                         variant="contained"
                         color="primary"
                         className={classes.submit}
+                        onClick={submitRegisterForm}
                     >
                         Sign Up
                     </Button>

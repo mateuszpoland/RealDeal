@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {BraintreeClient} from "../../components/payments/braintreeClient";
+import {BraintreeClient} from "../components/payments/braintreeClient";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchClientToken} from "../../actions/payments/payments";
-import {AppState} from "../../reducer";
-import {BraintreePaymentForm} from "../payments/BraintreePaymentForm";
+import {fetchClientToken} from "../actions/payments/payments";
+import {AppState} from "../reducer";
+import {BraintreePaymentForm} from "../views/payments/BraintreePaymentForm";
 
 export const MainDashboard = () => {
     const [paymentProcessingError, setPaymentProcessingError] = useState(null);

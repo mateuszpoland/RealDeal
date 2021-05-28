@@ -1,4 +1,4 @@
-import config from '../../config/api.config.json'
+import config from '../config/api.config.json'
 
 const login = (email, password) => {
     const apiEndpoint = config.API_URL + '/'

@@ -7,12 +7,9 @@ namespace RealDeal\SalesManagement\Domain\Client\Read;
 
 class EmbeddedPropertyObject
 {
-
     private $id;
 
-
     private $name;
-
 
     private float $price;
 

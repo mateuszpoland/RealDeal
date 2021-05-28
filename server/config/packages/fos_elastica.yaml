@@ -5,8 +5,32 @@ fos_elastica:
     clients:
         default: { url: '%env(ELASTICSEARCH_URL)%' }
     indexes:
-        clients:
-            index_name: clients_%kernel.environment%
-        offers:
-            index_name: offers_%kernel.environment%
+        sales_management:
+            index_name: sales_management_%kernel.environment%
+            types:
+                offers:
+                    persistence:
+                        driver: orm
+                        model: RealDeal\SalesManagement\Domain\Offer\Offer
+                        provider: ~
+                        finder: ~
+                    properties:
+                        identifier: ~
+                        name: ~
+                        propertyType: ~
+                        offeringType: ~
+                customers:
+                    persistence:
+                        driver: orm
+                        model: RealDeal\SalesManagement\Domain\Client\Client
+                        provider: ~
+                        finder: ~
+                    properties:
+                        id: ~
+                        name: ~
+                        secondName: ~
+                        email: ~
+                        stage: ~
+                        ownedProperties: ~
+
 

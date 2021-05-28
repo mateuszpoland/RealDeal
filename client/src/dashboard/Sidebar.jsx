@@ -8,12 +8,14 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import {navLink} from "../App";
-import { ListItemText } from "@material-ui/core";
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import BusinessCenterRoundedIcon from "@material-ui/icons/BusinessCenterRounded";
+import PermContactCalendarRoundedIcon from "@material-ui/icons/PermContactCalendarRounded";
+import FitnessCenter from "@material-ui/icons/FitnessCenter";
 
 const drawerWidth = 180;
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
             display: 'flex',
@@ -62,21 +64,35 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 );
 
-type SidebarProps = {
-    navLinks: navLink[],
-    isSidebarOpen: boolean
-}
+export const Sidebar = ({isSidebarOpen}) => {
+    // instead of isSidebarOpen as a dependency, use RxJS and use toggling on message
 
-type navBarState = {
-    isOpen: boolean
-}
-export const Sidebar: React.FC<SidebarProps> = (
-    {
-        navLinks,
-        isSidebarOpen
-    }) => {
+
     const classes = useStyles();
     const theme = useTheme();
+
+    const navLinks = [
+        {
+            text: 'Home',
+            path: '/',
+            icon: <HomeRoundedIcon />
+        },
+        {
+            text: 'Lista Ofert',
+            path: '/offers',
+            icon: <BusinessCenterRoundedIcon />
+        },
+        {
+            text: 'Klienci',
+            path: '/clients',
+            icon: <PermContactCalendarRoundedIcon />
+        },
+        {
+            text: 'Sprzedaż',
+            path: '/sell',
+            icon: <FitnessCenter/>
+        }
+    ]
 
     useEffect((() => {
         console.log('inside sidebar: ' + isSidebarOpen);
@@ -99,7 +115,7 @@ export const Sidebar: React.FC<SidebarProps> = (
                 }}
             >
                 <Divider />
-                <div className={classes.toolbar}></div>
+                <div className={classes.toolbar}/>
                 <List>
                     {navLinks.map((navLink, index) => (
                         <ListItem button key={index}>
