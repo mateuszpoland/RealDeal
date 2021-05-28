@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Offer, OfferAttributeKeys} from "../models/Offer";
 import {connect, useDispatch, useSelector} from "react-redux";
 import {AppState} from "../reducer";
-import {fetchAllOffers} from "../actions/offer";
+import {fetchAllOffers} from "../actions/offer.actions";
 import OffersTable from "../components/Offer/OfferTable";
 
 type FetchingStatus = {

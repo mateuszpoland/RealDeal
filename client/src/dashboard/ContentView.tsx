@@ -10,7 +10,6 @@ export const ContentView = () => {
     return(
         <Switch>
             <Switch>
-                {/*<Route path="/" exact component={MainDashboard} />*/}
                 <Route path='/offers' exact component={ListOfferView} />
                 <Route path='/clients' exact component={ClientsListView} />
                 <Route path="/offers/:id" exact component={OfferView} />

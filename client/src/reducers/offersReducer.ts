@@ -4,7 +4,7 @@ import {
     FETCHING_OFFERS, FETCHING_SINGLE_OFFER,
     LOAD_OFFERS_FAILURE,
     LOAD_OFFERS_SUCCESS
-} from "../_action_types/offer_action_types";
+} from "../_action_types/offers.action_types";
 import {AsyncFetchedDataState} from "../models/state/AsyncFetchedDataState";
 import {Offer} from "../models/Offer";
 

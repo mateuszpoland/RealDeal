@@ -3,7 +3,7 @@ import {
     ADD_NEW_OFFER,
     DELETE_OFFER,
     LOAD_OFFERS_SUCCESS, LOAD_OFFERS_FAILURE, FETCHING_SINGLE_OFFER
-} from '../_action_types/offer_action_types';
+} from '../_action_types/offers.action_types';
 import {Offer} from "../models/Offer";
 import {Dispatch} from "redux";
 import {fetchOffers, fetchSingleOfferObject} from "../service/fetcher/offer/Fetcher";

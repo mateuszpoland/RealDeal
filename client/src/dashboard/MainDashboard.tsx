@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {BraintreeClient} from "../components/payments/braintreeClient";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchClientToken} from "../actions/payments/payments";
+import {fetchClientToken} from "../actions/payments/payments.actions";
 import {AppState} from "../reducer";
 import {BraintreePaymentForm} from "../views/payments/BraintreePaymentForm";
 

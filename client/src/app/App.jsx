@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import '../App.css';
 import {HTML5Backend}  from 'react-dnd-html5-backend';
 import {Dashboard} from "../dashboard/Dashboard";
 import {DndProvider} from "react-dnd";
 import {useDispatch, useSelector} from "react-redux";
 
-
-import {Account} from "../account/Index";
 import {history} from "../_helpers/history";
 import {Navbar} from "./Navbar";
 import {PrivateRoute} from "../components/PrivateRoute";
@@ -37,6 +35,7 @@ const App = () => {
                     <PrivateRoute exact path="/" component={Dashboard} />
                     <Route path="/signin" component={SignIn} />
                     <Route path="/signup" component={Register} />
+                    <Redirect from="*" to="/" />
                 </Switch>
             </Router>
         </DndProvider>

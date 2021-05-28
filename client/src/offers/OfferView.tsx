@@ -2,7 +2,7 @@ import {RouteComponentProps} from "react-router";
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { AppState } from "../reducer";
-import {fetchSingleOffer} from "../actions/offer";
+import {fetchSingleOffer} from "../actions/offer.actions";
 
 export interface RouteInfo extends RouteComponentProps<{ id: string }> {}
 

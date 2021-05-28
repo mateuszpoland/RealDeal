@@ -45,7 +45,7 @@ export const SignIn = () => {
                     <LockOutlinedIcon />
                 </Avatar>
                 <Typography component="h1" variant="h5">
-                    Sign in
+                    Zaloguj się
                 </Typography>
                 <form className={classes.form} noValidate>
                     <TextField
@@ -72,7 +72,7 @@ export const SignIn = () => {
                     />
                     <FormControlLabel
                         control={<Checkbox value="remember" color="primary" />}
-                        label="Remember me"
+                        label="Zapamiętaj"
                     />
                     <Button
                         type="submit"
@@ -81,7 +81,7 @@ export const SignIn = () => {
                         color="primary"
                         className={classes.submit}
                     >
-                        Sign In
+                        Zaloguj
                     </Button>
                     <Grid container>
                         <Grid item xs>
@@ -90,7 +90,7 @@ export const SignIn = () => {
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/register" variant="body2">
+                            <Link href="/signup" variant="body2">
                                 {"Nie masz jeszcze konta? Zapisz się"}
                             </Link>
                         </Grid>
