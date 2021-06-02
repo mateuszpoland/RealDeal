@@ -69,6 +69,7 @@ class ClientController
     public function getClientAction(int $id): Response
     {
         $query = $this->getSingleClient->byId($id);
+
         return $this->responseBuilder->buildApiSingleResultSerializedResponse($query->execute());
     }
 

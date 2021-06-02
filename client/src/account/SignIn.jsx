@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "./Copyright";
+import * as Yup from 'yup';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -35,7 +36,19 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const SignIn = () => {
+    const initialValues = {
+        username: '',
+        password: ''
+    };
+
+    const validationSchema = Yup.object().shape({
+       username: Yup.string().email('')
+    });
     const classes = useStyles();
+
+    const onSubmit = () => {
+
+    }
 
     return (
         <Container component="main" maxWidth="xs">

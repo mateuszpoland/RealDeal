@@ -63,8 +63,18 @@ userManagement.Payments.buyAccount:
   controller: UserManagement.PaymentProcessingController::buyAccountAction
 
 ## Security
+accountManagement.jwtCheck:
+  path: v1/user/signin_check
+  methods: ['POST']
+
 accountManagement.userRegistration:
   methods: ['POST']
   path: v1/user/signup
   controller: AccountManagement.UserRegistrationController:registerAccountAction
+
+#accountManagement.signin:
+#  methods: ['POST']
+#  path: v1/user/signin
+#  controller: AccountManagement.UserSignInController::authenticateAction
+
 

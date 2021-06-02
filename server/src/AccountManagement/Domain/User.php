@@ -5,9 +5,10 @@ namespace RealDeal\AccountManagement\Domain;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="RealDeal\AccountManagement\Domain\Repository\UserRepository")
+ * @ORM\Entity()
  * @ORM\Table(name="users")
  */
 class User implements UserInterface
@@ -32,18 +33,62 @@ class User implements UserInterface
     private string $lastName;
 
     /**
+     * @ORM\Column(type="string", length=25, unique=true)
+     */
+    private string $username;
+
+    /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Unique()
      */
     private string $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="string", unique=true)
      */
-    private string $roles;
+    private string $password;
 
     /**
-     * @return mixed
+     * @ORM\Column(type="boolean")
      */
+    private bool $isActive;
+
+    /**
+     * @ORM\Column(type="array")
+     */
+    private array $roles;
+
+    private function __construct()
+    {
+    }
+
+    public static function createNew(
+        string $firstName,
+        string $lastName,
+        string $userName,
+        string $password,
+        string $email
+    ): self
+    {
+        $user = new self();
+        $user->username = $userName;
+        $user->firstName = $firstName;
+        $user->lastName = $lastName;
+        $user->password = $password;
+        $user->email = $email;
+        $user->isActive = true;
+        $user->roles = ['ROLE_USER'];
+
+        return $user;
+    }
+
+    public function asAdmin(User $user): User
+    {
+        $user->roles = array_merge($user->getRoles(), ['ROLE_ADMIN']);
+
+        return $user;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -95,9 +140,14 @@ class User implements UserInterface
         return $this;
     }
 
+    public function setPassword(string $password): void
+    {
+        $this->password = $password;
+    }
+
     public function getPassword(): string
     {
-
+        return $this->password;
     }
 
     public function getSalt()
@@ -106,12 +156,18 @@ class User implements UserInterface
 
     public function getUsername(): string
     {
-       return (string) $this->email;
+       return $this->username;
     }
 
-    public function eraseCredentials()
+    public function eraseCredentials(): void
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return $this->isActive;
     }
 }

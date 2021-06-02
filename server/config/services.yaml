@@ -63,6 +63,13 @@ services:
         arguments:
             - '@doctrine.orm.entity_manager'
 
+    AccountManagement.Repository.User:
+        class: RealDeal\AccountManagement\Domain\Repository\UserRepository
+        arguments:
+            - '@doctrine.orm.entity_manager'
+        tags: [ 'doctrine.repository_service' ]
+
+
     ## queries ##
     SalesManagement.Query.GetAllOffersQuery:
         class: RealDeal\SalesManagement\Application\Query\GetAllOffersQuery
@@ -207,6 +214,9 @@ services:
 
     AccountManagement.UserRegistrationController:
         class: RealDeal\AccountManagement\UI\UserRegistrationController
+        arguments:
+            - '@security.user_password_encoder.generic'
+            - '@AccountManagement.Repository.User'
         public: true
         tags: ['controller.service_arguments']
 
