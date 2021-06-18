@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Offer;
+namespace RealDeal\SalesManagement\Application\Serializer\Normalizer\Offer;
 
 use RealDeal\SalesManagement\Domain\Offer\Offer;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -18,12 +18,13 @@ class OfferNormalizer implements NormalizerInterface
 
     public function normalize($object, string $format = null, array $context = [])
     {
-        $data = [
+        return [
             'id' => $object->getId(),
-            'name' => $object->getName()
+            'identifier' => $object->getIdentifier(),
+            'name' => $object->getName(),
+            'totalPrice' => $object->getTotalPrice(),
+            'property_type' => $object->getPropertyType(),
         ];
-
-        return $data;
     }
 
     public function supportsNormalization($data, string $format = null)

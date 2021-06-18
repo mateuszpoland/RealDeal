@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace RealDeal\SalesManagement\Application\Query;
 
-use ONGR\ElasticsearchDSL\Query\MatchAllQuery;
-use ONGR\ElasticsearchDSL\Search;
+//use ONGR\ElasticsearchDSL\Query\MatchAllQuery;
+//use ONGR\ElasticsearchDSL\Search;
 use RealDeal\SalesManagement\Domain\Offer\Read\OfferDocument;
 
 class GetAllOffersQuery

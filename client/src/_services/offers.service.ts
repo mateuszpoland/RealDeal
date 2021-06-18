@@ -1,10 +1,16 @@
 import { OfferRequestData } from '../models/Offer';
+import * as config from '../config/api.config.json';
+import {authHeader} from "./api.service";
 
-const API_ENDPOINT_FETCH_ALL_OFFERS = 'http://localhost/offers/all';
-const API_ENDPOINT_FETCH_SINGLE_OFFER = 'http://localhost/offers/';
+const headers = {}
 
 export const fetchOffers = async (): Promise<any> => {
-    const response = await fetch(API_ENDPOINT_FETCH_ALL_OFFERS);
+    const response = await fetch(
+        `${config.API_URL}offers`, {
+            method: 'GET',
+            headers: headerBag()
+        }
+    );
     if(!response.ok) {
         throw new Error(response.statusText);
     }
@@ -13,9 +19,17 @@ export const fetchOffers = async (): Promise<any> => {
 
 export const fetchSingleOfferObject = async (request: OfferRequestData) => {
     const id = request.doc_id;
-    const response =  await fetch(API_ENDPOINT_FETCH_SINGLE_OFFER + id);
+    const response =  await fetch(`${config.API_URL}offers/${id}`, {
+        method: 'GET',
+        headers: headerBag()
+    });
     if(!response.ok) {
         throw new Error(response.statusText);
     }
+
     return await response.json();
+}
+
+const headerBag = () => {
+    return { ...authHeader(), ...headers}
 }

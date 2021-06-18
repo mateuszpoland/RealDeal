@@ -67,14 +67,13 @@ accountManagement.jwtCheck:
   path: v1/user/signin_check
   methods: ['POST']
 
+gesdinet_jwt_refresh_token:
+  path: v1/token/refresh
+  controller: gesdinet.jwtrefreshtoken::refresh
+
 accountManagement.userRegistration:
   methods: ['POST']
   path: v1/user/signup
   controller: AccountManagement.UserRegistrationController:registerAccountAction
-
-#accountManagement.signin:
-#  methods: ['POST']
-#  path: v1/user/signin
-#  controller: AccountManagement.UserSignInController::authenticateAction
 
 

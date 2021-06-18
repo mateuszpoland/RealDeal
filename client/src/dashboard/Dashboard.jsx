@@ -25,11 +25,16 @@ const useStyles = makeStyles((theme) =>
 );
 
 export const Dashboard = () => {
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
+
+    const handleSidebarToggle = () => {
+        setSidebarOpen(!isSidebarOpen);
+    }
 
     const classes = useStyles();
-    /* parent component holding configuration for sidebar, appbar and so on */
     return(
         <div className={classes.root}>
+            <Navbar handleSidebarToggle={handleSidebarToggle} />
             <Sidebar
                 isSidebarOpen={true}
             />

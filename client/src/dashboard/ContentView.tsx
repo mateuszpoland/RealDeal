@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import ListOfferView from "../offers/OffersListView";
 import {ClientsListView} from "../clients/ClientsListView";
 import {OfferView} from "../offers/OfferView";
@@ -13,6 +13,7 @@ export const ContentView = () => {
                 <Route path='/offers' exact component={ListOfferView} />
                 <Route path='/clients' exact component={ClientsListView} />
                 <Route path="/offers/:id" exact component={OfferView} />
+                <Redirect from="*" to="/" />
             </Switch>
         </Switch>
     );

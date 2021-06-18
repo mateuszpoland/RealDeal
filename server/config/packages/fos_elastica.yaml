@@ -3,22 +3,14 @@ fos_elastica:
     serializer:
         serializer: realdeal.serializer
     clients:
-        default: { url: '%env(ELASTICSEARCH_URL)%' }
+        default:
+            url: '%env(ELASTICSEARCH_URL)%'
+            username: elastic
+            password: changeme
     indexes:
         sales_management:
             index_name: sales_management_%kernel.environment%
             types:
-                offers:
-                    persistence:
-                        driver: orm
-                        model: RealDeal\SalesManagement\Domain\Offer\Offer
-                        provider: ~
-                        finder: ~
-                    properties:
-                        identifier: ~
-                        name: ~
-                        propertyType: ~
-                        offeringType: ~
                 customers:
                     persistence:
                         driver: orm
@@ -32,5 +24,18 @@ fos_elastica:
                         email: ~
                         stage: ~
                         ownedProperties: ~
+                offers:
+                    persistence:
+                        driver: orm
+                        model: RealDeal\SalesManagement\Domain\Offer\Offer
+                        provider: ~
+                        finder: ~
+                    properties:
+                        id: ~
+                        identifier: ~
+                        name: ~
+                        propertyType: ~
+                        offeringType: ~
+
 
 

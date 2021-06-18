@@ -6,9 +6,7 @@ import {
 } from '../_action_types/offers.action_types';
 import {Offer} from "../models/Offer";
 import {Dispatch} from "redux";
-import {fetchOffers, fetchSingleOfferObject} from "../_services/fetcher";
-
-import store from "../store";
+import {fetchOffers, fetchSingleOfferObject} from "../_services/offers.service";
 
 const handleErrors = (dispatch: Dispatch, error: Error) => {
     dispatch(loadOffersFailure(error));

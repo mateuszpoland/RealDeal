@@ -283,6 +283,11 @@ class Offer implements OfferState
         }
     }
 
+    public function getTotalPrice(): Price
+    {
+        return $this->totalPrice;
+    }
+
     public function getIdentifier(): UniqueOfferIdentifier
     {
         return $this->identifier;
@@ -306,5 +311,10 @@ class Offer implements OfferState
     public function getPropertyContractType(): PropertyContractType
     {
         return $this->propertyContractType;
+    }
+
+    public function getPropertyType(): PropertyType
+    {
+        return $this->propertyType;
     }
 }

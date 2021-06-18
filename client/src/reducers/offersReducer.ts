@@ -1,4 +1,4 @@
-import {AnyAction} from "redux";
+    import {AnyAction} from "redux";
 import {
     ADD_NEW_OFFER,
     FETCHING_OFFERS, FETCHING_SINGLE_OFFER,

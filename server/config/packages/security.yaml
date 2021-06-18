@@ -5,7 +5,7 @@ security:
         user_provider:
             entity:
                 class: RealDeal\AccountManagement\Domain\User
-                property: username
+                property: email
 
     encoders:
         RealDeal\AccountManagement\Domain\User:
@@ -31,6 +31,11 @@ security:
             stateless: true
             anonymous: true
 
+        refresh_token:
+            pattern: ^/v1/token/refresh
+            stateless: true
+            anonymous: true
+
         api:
             pattern: ^/v1/
             stateless: true
@@ -51,4 +56,5 @@ security:
     access_control:
         - { path: ^/v1/user/signin, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/v1/user/signup, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/v1/token/refresh, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/v1/, roles: IS_AUTHENTICATED_FULLY }
