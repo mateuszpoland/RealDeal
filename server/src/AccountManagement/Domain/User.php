@@ -66,8 +66,8 @@ class User implements UserInterface
         string $firstName,
         string $lastName,
         string $userName,
-        string $password,
-        string $email
+        string $email,
+        string $password
     ): self
     {
         $user = new self();

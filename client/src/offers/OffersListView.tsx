@@ -5,21 +5,12 @@ import {AppState} from "../reducer";
 import {fetchAllOffers} from "../actions/offer.actions";
 import OffersTable from "../components/Offer/OfferTable";
 
-type FetchingStatus = {
-    isLoading: boolean
-}
-
-interface OfferQuery {
-    term?: null
-}
-
 const ListOfferView: React.FC = () => {
     console.log('inside list offers');
     //derive state form useSelector hook
     const [offers, isListLoading] = useSelector((state: AppState) => [state.offers.data, state.offers.loading]);
     const dispatch = useDispatch();
-    //state
-    const [offerQuery, setOfferQuery] = useState<OfferQuery>({term: null});
+
 
     // fetch Offers
     useEffect(() => {

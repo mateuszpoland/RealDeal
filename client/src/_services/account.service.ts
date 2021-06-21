@@ -14,9 +14,7 @@ export const login = (username: string, password: string) => {
 let refreshTokenTimeout;
 
 export const startRefreshTokenTimer = (token) => {
-    console.log('got token to decode', token);
-    //const decoded = JSON.parse(window.atob(token.split('.')[1]));
-    const decoded = JSON.parse(atob(token.split('.')[1]));
+    const decoded = JSON.parse(window.atob(token.split('.')[1]));
     const expiration = new Date(decoded.exp * 1000)
     // timeout on 1 minute before token expiration
     const timeout = expiration.getTime() - Date.now() - (60 * 1000);
@@ -30,7 +28,7 @@ const stopRefreshTokenTimeout = () => {
 
 export const refreshToken = () => {
     const refreshToken = localStorage.getItem('refresh_token');
-    fetch(`${config.API_URL}/token/refresh`)
+    fetch(`${config.API_URL}token/refresh`)
         .then((resp) => checkResponse(resp))
         .then((data) => {
             startRefreshTokenTimer(data.token)

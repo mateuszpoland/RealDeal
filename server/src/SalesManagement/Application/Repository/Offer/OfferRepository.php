@@ -42,6 +42,21 @@ class OfferRepository implements ServiceEntityRepositoryInterface
         return $qb->getQuery()->getResult();
     }
 
+    public function findAllForUser(int $userId)
+    {
+        $qb = $this->em->createQueryBuilder();
+        $qb->select('o')
+            ->from('RealDeal\SalesManagement\Domain\Offer\Offer', 'o')
+            ->where(
+                $qb->expr()->in('o.user', ':userId')
+            );
+        $qb->setParameter('userId', $userId);
+
+        $res = $qb->getQuery()->getResult();
+
+        return $res;
+    }
+
     public function save(Offer $offer): void
     {
        if(!$this->em->contains($offer)) {

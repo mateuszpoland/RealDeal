@@ -9,12 +9,11 @@ import {MainDashboard} from "./MainDashboard";
 export const ContentView = () => {
     return(
         <Switch>
-            <Switch>
-                <Route path='/offers' exact component={ListOfferView} />
-                <Route path='/clients' exact component={ClientsListView} />
-                <Route path="/offers/:id" exact component={OfferView} />
-                <Redirect from="*" to="/" />
-            </Switch>
+            <Route path='/' component={MainDashboard} />
+            <Route path='/offers' component={ListOfferView} />
+            <Route path='/clients' exact component={ClientsListView} />
+            <Route path="/offers/:id" exact component={OfferView} />
+            <Redirect from="*" to="/" />
         </Switch>
     );
 }

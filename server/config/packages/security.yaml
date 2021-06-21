@@ -25,17 +25,14 @@ security:
                 check_path: /v1/user/signin_check
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
-
         register:
             pattern: ^/v1/user/signup
             stateless: true
             anonymous: true
-
         refresh_token:
             pattern: ^/v1/token/refresh
             stateless: true
             anonymous: true
-
         api:
             pattern: ^/v1/
             stateless: true

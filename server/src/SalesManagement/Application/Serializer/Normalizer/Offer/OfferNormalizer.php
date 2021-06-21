@@ -22,8 +22,9 @@ class OfferNormalizer implements NormalizerInterface
             'id' => $object->getId(),
             'identifier' => $object->getIdentifier(),
             'name' => $object->getName(),
-            'totalPrice' => $object->getTotalPrice(),
-            'property_type' => $object->getPropertyType(),
+            'user' => $object->getUser()->getId(),
+            'totalPrice' => (string)$object->getTotalPrice(),
+            'property_type' => (string)$object->getPropertyType(),
         ];
     }
 

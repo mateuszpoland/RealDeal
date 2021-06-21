@@ -5,6 +5,7 @@ namespace RealDeal\SalesManagement\Domain\Offer;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use RealDeal\AccountManagement\Domain\User;
 use RealDeal\SalesManagement\Domain\Client\Client;
 use RealDeal\SalesManagement\Domain\Offer\ValueObject\Price;
 use Doctrine\ORM\Mapping as ORM;
@@ -40,6 +41,12 @@ class Offer implements OfferState
      * @ORM\Column(type="string", length=280)
      */
     private $name;
+
+    /**
+     * @ORM\OneToOne(targetEntity="RealDeal\AccountManagement\Domain\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * @var PropertyType
@@ -202,9 +209,11 @@ class Offer implements OfferState
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
+    public function getUser(): User
+    {
+        return $this->user;
+    }
+
     public function getName(): string
     {
         return $this->name;
@@ -212,6 +221,7 @@ class Offer implements OfferState
 
     public function publishNewOffer(
         string $name,
+        User $user,
         float $totalPrice,
         float $footage,
         int $numberOfRooms,
@@ -225,7 +235,8 @@ class Offer implements OfferState
     ): void
     {
         $this->name = $name;
-        $this->identifier = new UniqueOfferIdentifier();
+        $this->identifier = UniqueOfferIdentifier::create();
+        $this->user = $user;
         $this->totalPrice = new Price($totalPrice);
         $this->footage = $footage;
         $this->numberOfRooms = new RoomsNumber($numberOfRooms);
@@ -288,7 +299,7 @@ class Offer implements OfferState
         return $this->totalPrice;
     }
 
-    public function getIdentifier(): UniqueOfferIdentifier
+    public function getIdentifier(): string
     {
         return $this->identifier;
     }

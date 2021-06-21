@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-  #tylko na devie korzystam z developerskiego servera Reacta @todo - wrzucić tu Storybooka
   ui:
     container_name: ui
     stdin_open: true
@@ -19,3 +18,5 @@ services:
     depends_on:
       - ui
       - php
+
+

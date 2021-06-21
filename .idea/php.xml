@@ -140,6 +140,14 @@
       <path value="$PROJECT_DIR$/server/vendor/gedmo/doctrine-extensions" />
       <path value="$PROJECT_DIR$/server/vendor/stof/doctrine-extensions-bundle" />
       <path value="$PROJECT_DIR$/server/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/server/vendor/lexik/jwt-authentication-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/server/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/server/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/server/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/server/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/server/vendor/gesdinet/jwt-refresh-token-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.4" />

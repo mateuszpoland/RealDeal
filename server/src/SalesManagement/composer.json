@@ -1,0 +1,15 @@
+{
+  "name": "realdeal/sales-management",
+  "type": "module",
+  "description": "Module for managing offers and clients inside the system",
+  "keywords": ["relevant","tags","go","here"],
+  "homepage": "https://realdeal.pl",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mateusz Kowalewski",
+      "email": "mateuszpoland6@gmail.com",
+      "role": "Developer"
+    }
+  ]
+}

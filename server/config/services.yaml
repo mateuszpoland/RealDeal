@@ -27,6 +27,7 @@ services:
         arguments:
             -
                 - '@realdeal.salesmanagement.normalizer.client'
+                - '@realdeal.salesmanagement.normalizer.offer'
                 - '@realdeal.salesmanagement.normalizer.offer_search'
                 - '@serializer.normalizer.object'
             -
@@ -66,7 +67,7 @@ services:
     AccountManagement.Repository.User:
         class: RealDeal\AccountManagement\Domain\Repository\UserRepository
         arguments:
-            - '@doctrine.orm.entity_manager'
+            - '@doctrine'
         tags: [ 'doctrine.repository_service' ]
 
 
@@ -100,6 +101,7 @@ services:
             - '@SalesManagement.Client.ClientRepository'
             - '@messenger.bus.default'
             - '@service_container'
+            - '@Symfony\Component\Security\Core\Security'
         tags:
             -
                 name: messenger.message_handler
@@ -167,8 +169,8 @@ services:
             - '@service_container'
             - '@messenger.bus.default'
             - '@RealDeal.Api.ResponseBuilder'
-            - '@SalesManagement.Query.GetAllOffersQuery'
-            - '@SalesManagement.Query.GetSingleOfferQuery'
+            - '@SalesManagement.Offer.OfferRepository'
+            - '@Symfony\Component\Security\Core\Security'
         public: true
         tags: ['controller.service_arguments']
 
@@ -227,6 +229,14 @@ services:
             - '@router.default'
         tags:
             - { name: 'serializer.normalizer' }
+
+    realdeal.salesmanagement.normalizer.offer:
+        class: RealDeal\SalesManagement\Application\Serializer\Normalizer\Offer\OfferNormalizer
+        arguments:
+            - '@router.default'
+        tags:
+            - { name: 'serializer.normalizer' }
+
 
     realdeal.salesmanagement.normalizer.offer_search:
         class: RealDeal\SalesManagement\Infrastructure\Serializer\Normalizer\Filter\OfferSearchNormalizer

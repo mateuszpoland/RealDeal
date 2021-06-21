@@ -13,6 +13,7 @@ use RealDeal\SalesManagement\Domain\Client\Client;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Messenger\Handler\MessageHandlerInterface;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Security\Core\Security;
 
 class CreateOfferHandler implements MessageHandlerInterface
 {
@@ -21,13 +22,15 @@ class CreateOfferHandler implements MessageHandlerInterface
     private OfferFactory $offerFactory;
     private Container $container;
     private MessageBusInterface $commandBus;
+    private Security $security;
 
     public function __construct(
         OfferFactory $offerFactory,
         OfferRepository $offerRepository,
         ClientRepository $clientRepository,
         MessageBusInterface $commandBus,
-        $container
+        $container,
+        Security $security
     )
     {
         $this->container = $container;
@@ -35,6 +38,7 @@ class CreateOfferHandler implements MessageHandlerInterface
         $this->offerFactory = $offerFactory;
         $this->offerRepository = $offerRepository;
         $this->commandBus = $commandBus;
+        $this->security = $security;
     }
 
     public function __invoke(CreateOfferCommand $command)
@@ -47,6 +51,7 @@ class CreateOfferHandler implements MessageHandlerInterface
 
         $offer->publishNewOffer(
             $command->getName(),
+            $this->security->getUser(),
             $command->getTotalPrice(),
             $command->getFootage(),
             $command->getNumberOfRooms(),

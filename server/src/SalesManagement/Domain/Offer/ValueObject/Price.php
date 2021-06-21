@@ -73,21 +73,20 @@ class Price implements FilterEnabledInterface
         ]);
     }
 
-    public function serialize()
+    public function serialize(): string
     {
-        return serialize([
+        return json_encode([
             'amount' => $this->amount,
             'currency' =>$this->currency
-        ]);
+        ], JSON_THROW_ON_ERROR);
     }
 
-    public function unserialize($serialized)
+    public function unserialize(string $serialized): self
     {
-        // construct array out of a string
-        $unserialized = unserialize($serialized);
+        $decoded = json_decode($serialized, true);
+        $obj = new self($decoded['amount'], $decoded['currency']);
 
-        $this->amount = $unserialized['amount'];
-        $this->currency = $unserialized['currency'];
+        return $obj;
     }
 
     public function getAmount(): float

@@ -25,6 +25,13 @@ class ApiResponseBuilder
         return $response;
     }
 
+    public function buildApiResponse(array $objects): Response
+    {
+        $normalized = $this->normalizeResultsFromDb($objects);
+
+        return $this->returnJsonResponse($normalized, Response::HTTP_OK);
+    }
+
     public function buildApiSingleResultSerializedResponse($object): Response
     {
         $serialized = $this->serializer
@@ -33,5 +40,27 @@ class ApiResponseBuilder
                 'json'
             );
         return new Response($serialized, Response::HTTP_OK, ['Content-Type' => 'application/json']);
+    }
+
+    private function normalizeResultsFromDb(array $objects): array
+    {
+        $normalized = [];
+        foreach ($objects as $object) {
+            $normalized[] = $this->serializer
+                ->normalize(
+                    $object,
+                    'json'
+                );
+        }
+
+        return $normalized;
+    }
+
+    private function returnJsonResponse(array $normalized, int $httpStatus): JsonResponse
+    {
+        return new JsonResponse(
+            $normalized,
+            $httpStatus
+        );
     }
 }

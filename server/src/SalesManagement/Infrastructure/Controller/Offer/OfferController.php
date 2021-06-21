@@ -5,40 +5,44 @@ namespace RealDeal\SalesManagement\Infrastructure\Controller\Offer;
 
 use Exception;
 use Gedmo\Sluggable\Util\Urlizer;
+use PHPUnit\Util\Json;
 use RealDeal\SalesManagement\Application\Command\Offer\CreateOfferCommand;
 use RealDeal\SalesManagement\Application\DomainService\Offer\Validator\CreateNewOfferInputValidator;
 use RealDeal\SalesManagement\Application\Query\GetAllOffersQuery;
 use RealDeal\SalesManagement\Application\Query\GetSingleOfferQuery;
+use RealDeal\SalesManagement\Application\Repository\Offer\OfferRepository;
+use RealDeal\SalesManagement\Domain\Offer\Offer;
 use RealDeal\Shared\Infrastructure\ApiResponseBuilder;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Messenger\MessageBusInterface;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Component\Validator\ConstraintViolationListInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class OfferController
 {
     private MessageBusInterface $commandBus;
-    private GetAllOffersQuery $getAllOffersQuery;
-    private GetSingleOfferQuery $getSingleOffer;
+    private OfferRepository $offerRepository;
     private ApiResponseBuilder $responseBuilder;
     private Container $serviceContainer;
+    private Security $security;
 
     public function __construct(
         Container $container,
         MessageBusInterface $commandBus,
         ApiResponseBuilder $responseBuilder,
-        GetAllOffersQuery $getAllOffersQuery,
-        GetSingleOfferQuery $getSingleOfferQuery
+        OfferRepository $offerRepository,
+        Security $security
     )
     {
         $this->serviceContainer = $container;
         $this->commandBus = $commandBus;
-        $this->getAllOffersQuery = $getAllOffersQuery;
-        $this->getSingleOffer = $getSingleOfferQuery;
+        $this->offerRepository = $offerRepository;
         $this->responseBuilder = $responseBuilder;
+        $this->security = $security;
     }
 
     public function addOfferAction(Request $request)
@@ -86,9 +90,16 @@ class OfferController
         }
     }
 
-    public function getAllOffersAction(): JsonResponse
+    public function getAllOffersAction(): Response
     {
-        return $this->responseBuilder->buildElasticResponse($this->getAllOffersQuery->execute());
+        $user = $this->security->getUser();
+        return $this->responseBuilder->buildApiResponse($this->offerRepository->findAllForUser($user->getId()));
+        /*
+        return new JsonResponse(
+            $this->offerRepository->findAllForUser($user->getId()),
+            Response::HTTP_OK
+        ); */
+        #return $this->responseBuilder->buildElasticResponse($this->offersRepository->getOffersFilteredForUser());
     }
 
     public function getSingleOfferAction(string $id): JsonResponse
