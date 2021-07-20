@@ -2,11 +2,19 @@ FROM node:alpine as client-build-stage
 
 WORKDIR /app
 
-COPY ../../client/package*.json .
+COPY ./client/package*.json ./
 
-RUN npm install --legacy-peer-deps
+RUN yarn install
 
-COPY ../../client .
+COPY ./client .
+
+RUN rm -rf node_modules
+
+RUN yarn add history@4.10.1
+RUN yarn global add eslint
+RUN yarn add babel-eslint -D
+
+RUN yarn add react-scripts
 
 RUN npm run build
 

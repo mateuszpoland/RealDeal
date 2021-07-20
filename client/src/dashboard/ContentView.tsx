@@ -8,12 +8,12 @@ import {MainDashboard} from "./MainDashboard";
 /* display contents*/
 export const ContentView = () => {
     return(
-        <Switch>
-            <Route path='/' component={MainDashboard} />
+        <div>
+            <Route path='/' exact component={MainDashboard} />
             <Route path='/offers' component={ListOfferView} />
             <Route path='/clients' exact component={ClientsListView} />
             <Route path="/offers/:id" exact component={OfferView} />
             <Redirect from="*" to="/" />
-        </Switch>
+        </div>
     );
 }

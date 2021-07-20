@@ -1,0 +1,87 @@
+POST http://api.realdeal.pl/v1/user/signup
+Content-Type: application/json
+
+{
+  "username": "mateuszpoland",
+  "firstname": "Mateusz",
+  "lastname": "Kowalewski",
+  "email": "mateuszpoland6@gmail.com",
+  "password": "Magik123"
+}
+
+<> 2021-07-19T203319.201.json
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-14T225950.200.json
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-14T225346.500.html
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki1232"
+}
+
+<> 2021-07-14T225331.401.json
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-14T225210.500.html
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-14T224853.500.html
+
+###
+
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "email": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-14T224831.400.json
+
+###
+

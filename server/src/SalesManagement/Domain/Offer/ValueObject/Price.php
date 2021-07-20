@@ -67,7 +67,7 @@ class Price implements FilterEnabledInterface
 
     public function getFilterableValue(): ElasticFilterInterface
     {
-        return (new BoolFilterMustNotBeGreaterThan())->__unserialize([
+        return (new BoolFilterMustNotBeGreaterThan())->unserialize([
             'value' => $this->amount,
             'fieldName' => $this->getElasticFieldName()
         ]);

@@ -182,6 +182,9 @@
             "config/packages/lexik_jwt_authentication.yaml"
         ]
     },
+    "monolog/monolog": {
+        "version": "2.2.0"
+    },
     "myclabs/deep-copy": {
         "version": "1.10.2"
     },

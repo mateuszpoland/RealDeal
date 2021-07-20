@@ -1,14 +1,15 @@
-FROM node:latest
+FROM node:16-alpine3.11
 
 WORKDIR /app
 
-COPY ../../client/package.json .
+COPY ./client .
 
-RUN npm install --legacy-peer-deps
+RUN yarn install
 
-COPY ../../client .
+RUN yarn global add react-scripts
+
+RUN yarn global add typescript
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
-
+CMD ["yarn", "start"]

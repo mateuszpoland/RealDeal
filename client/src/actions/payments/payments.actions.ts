@@ -5,7 +5,7 @@ import {
 import {Dispatch} from "redux";
 import {brainTreeAuthTokenResponse} from "../../models/payments/brainTreeAuthTokenResponse";
 
-const API_ENDPOINT_FETCH_BRAINTREE_CLIENT_TOKEN = 'http://localhost/user/account/buy_account';
+const API_ENDPOINT_FETCH_BRAINTREE_CLIENT_TOKEN = 'http://api.realdeal.pl/user/account/buy_account';
 
 export const fetchClientToken = () => {
     return async(dispatch: Dispatch) => {

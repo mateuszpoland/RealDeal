@@ -26,3 +26,4 @@ export const fetchSingleOfferObject = async (request: OfferRequestData) => {
 const headerBag = () => {
     return { ...headers }
 }
+

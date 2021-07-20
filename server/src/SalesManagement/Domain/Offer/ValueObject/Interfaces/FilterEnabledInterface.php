@@ -5,7 +5,7 @@ namespace RealDeal\SalesManagement\Domain\Offer\ValueObject\Interfaces;
 
 use RealDeal\SalesManagement\Domain\Filter\ElasticFilterInterface;
 
-interface FilterEnabledInterface extends \Serializable
+interface FilterEnabledInterface
 {
     /**
      * Alias is being used as a key in registry

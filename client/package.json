@@ -30,33 +30,32 @@
     "@types/react-tap-event-plugin": "^0.0.30",
     "@types/react-virtualized": "^9.21.10",
     "@types/redux-logger": "^3.0.8",
+    "@typescript-eslint/parser": "^4.28.4",
     "antd": "^4.3.5",
     "axios": "^0.21.1",
     "braintree-web": "^3.73.1",
     "braintree-web-drop-in": "^1.26.1",
     "braintree-web-drop-in-react": "^1.2.1",
-    "chart.js": "^2.9.4",
+    "eslint-config-react-app": "^6.0.0",
     "formik": "^2.2.9",
-    "history": "^5.0.0",
+    "history": "4.10.1",
     "immutable": "^4.0.0-rc.12",
     "mui-datatables": "^3.7.4",
-    "react": "^16.13.1",
+    "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
-    "react-chartjs-2": "^2.11.1",
     "react-dnd": "^11.1.3",
     "react-dnd-html5-backend": "^11.1.3",
-    "react-dom": "^16.13.1",
+    "react-dom": "^17.0.1",
     "react-hook-form": "^7.8.1",
     "react-is": "^17.0.1",
     "react-modal": "^3.12.1",
     "react-query": "^2.17.2",
     "react-redux": "^7.2.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "5.2.0",
     "react-virtualized": "^9.22.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-saga": "^1.1.3",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
     "typescript": "^4.2.4",
@@ -69,7 +68,17 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app"
+    ],
+    "rules": {},
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ]
+      }
+    ]
   },
   "browserslist": {
     "production": [

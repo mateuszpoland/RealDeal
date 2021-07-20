@@ -1,0 +1,316 @@
+{
+  "type": "https:\/\/tools.ietf.org\/html\/rfc2616#section-10",
+  "title": "An error occurred",
+  "status": 400,
+  "detail": "The key \"username\" must be provided.",
+  "class": "Symfony\\Component\\HttpKernel\\Exception\\BadRequestHttpException",
+  "trace": [
+    {
+      "namespace": "",
+      "short_class": "",
+      "class": "",
+      "type": "",
+      "function": "",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/security-http\/Firewall\/UsernamePasswordJsonAuthenticationListener.php",
+      "line": 105,
+      "args": []
+    },
+    {
+      "namespace": "Symfony\\Component\\Security\\Http\\Firewall",
+      "short_class": "UsernamePasswordJsonAuthenticationListener",
+      "class": "Symfony\\Component\\Security\\Http\\Firewall\\UsernamePasswordJsonAuthenticationListener",
+      "type": "->",
+      "function": "authenticate",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/security-bundle\/Debug\/WrappedLazyListener.php",
+      "line": 48,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Bundle\\SecurityBundle\\Debug",
+      "short_class": "WrappedLazyListener",
+      "class": "Symfony\\Bundle\\SecurityBundle\\Debug\\WrappedLazyListener",
+      "type": "->",
+      "function": "authenticate",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/security-http\/Firewall\/AbstractListener.php",
+      "line": 27,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\Security\\Http\\Firewall",
+      "short_class": "AbstractListener",
+      "class": "Symfony\\Component\\Security\\Http\\Firewall\\AbstractListener",
+      "type": "->",
+      "function": "__invoke",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/security-bundle\/Debug\/TraceableFirewallListener.php",
+      "line": 62,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Bundle\\SecurityBundle\\Debug",
+      "short_class": "TraceableFirewallListener",
+      "class": "Symfony\\Bundle\\SecurityBundle\\Debug\\TraceableFirewallListener",
+      "type": "->",
+      "function": "callListeners",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/security-http\/Firewall.php",
+      "line": 84,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ],
+        [
+          "object",
+          "Generator"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\Security\\Http",
+      "short_class": "Firewall",
+      "class": "Symfony\\Component\\Security\\Http\\Firewall",
+      "type": "->",
+      "function": "onKernelRequest",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/event-dispatcher\/Debug\/WrappedListener.php",
+      "line": 117,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ],
+        [
+          "string",
+          "kernel.request"
+        ],
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Debug\\TraceableEventDispatcher"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\EventDispatcher\\Debug",
+      "short_class": "WrappedListener",
+      "class": "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener",
+      "type": "->",
+      "function": "__invoke",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/event-dispatcher\/EventDispatcher.php",
+      "line": 230,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ],
+        [
+          "string",
+          "kernel.request"
+        ],
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Debug\\TraceableEventDispatcher"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\EventDispatcher",
+      "short_class": "EventDispatcher",
+      "class": "Symfony\\Component\\EventDispatcher\\EventDispatcher",
+      "type": "->",
+      "function": "callListeners",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/event-dispatcher\/EventDispatcher.php",
+      "line": 59,
+      "args": [
+        [
+          "array",
+          [
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ],
+            [
+              "object",
+              "Symfony\\Component\\EventDispatcher\\Debug\\WrappedListener"
+            ]
+          ]
+        ],
+        [
+          "string",
+          "kernel.request"
+        ],
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\EventDispatcher",
+      "short_class": "EventDispatcher",
+      "class": "Symfony\\Component\\EventDispatcher\\EventDispatcher",
+      "type": "->",
+      "function": "dispatch",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/event-dispatcher\/Debug\/TraceableEventDispatcher.php",
+      "line": 151,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ],
+        [
+          "string",
+          "kernel.request"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\EventDispatcher\\Debug",
+      "short_class": "TraceableEventDispatcher",
+      "class": "Symfony\\Component\\EventDispatcher\\Debug\\TraceableEventDispatcher",
+      "type": "->",
+      "function": "dispatch",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/http-kernel\/HttpKernel.php",
+      "line": 133,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpKernel\\Event\\RequestEvent"
+        ],
+        [
+          "string",
+          "kernel.request"
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "HttpKernel",
+      "class": "Symfony\\Component\\HttpKernel\\HttpKernel",
+      "type": "->",
+      "function": "handleRaw",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/http-kernel\/HttpKernel.php",
+      "line": 79,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpFoundation\\Request"
+        ],
+        [
+          "integer",
+          1
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "HttpKernel",
+      "class": "Symfony\\Component\\HttpKernel\\HttpKernel",
+      "type": "->",
+      "function": "handle",
+      "file": "\/usr\/src\/app\/vendor\/symfony\/http-kernel\/Kernel.php",
+      "line": 195,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpFoundation\\Request"
+        ],
+        [
+          "integer",
+          1
+        ],
+        [
+          "boolean",
+          true
+        ]
+      ]
+    },
+    {
+      "namespace": "Symfony\\Component\\HttpKernel",
+      "short_class": "Kernel",
+      "class": "Symfony\\Component\\HttpKernel\\Kernel",
+      "type": "->",
+      "function": "handle",
+      "file": "\/usr\/src\/app\/public\/index.php",
+      "line": 28,
+      "args": [
+        [
+          "object",
+          "Symfony\\Component\\HttpFoundation\\Request"
+        ]
+      ]
+    }
+  ]
+}

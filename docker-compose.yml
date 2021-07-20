@@ -35,6 +35,7 @@ services:
       - 443:443
     depends_on:
       - php
+      - ui
 
   certbot:
     image: certbot/certbot
@@ -95,6 +96,21 @@ services:
           hard: -1
       ports:
         - '9200:9200'
+  
+  ui:
+    container_name: ui
+    stdin_open: true
+    tty: true
+    volumes:
+      - './client:/app:rw' # make sure you have all node modules installed locally b4 you bind ,as container will throw error
+    build:
+      context: .
+      dockerfile: docker/client_dev/Dockerfile
+    networks:
+      - realdeal
+    ports:
+      - '3000:3000'
+      
 
 networks:
   #default:
