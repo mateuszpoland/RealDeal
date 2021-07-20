@@ -14,7 +14,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "./Copyright";
 import * as Yup from 'yup';
-import {login, logout} from '../actions/user.actions';
+import {Login, Logout} from '../actions/user.actions';
 import { useDispatch, useSelector} from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import FormTextInput from "../components/FormTextInput";
@@ -49,14 +49,14 @@ export const SignIn = () => {
     const { handleSubmit } = methods;
 
     useEffect(() => {
-        dispatch(logout())
+        dispatch(Logout())
     }, []);
 
     const classes = useStyles();
 
     const submitHandler = (data, e) => {
         const from  = window.location.state || "/";
-        dispatch(login(data.email, data.password, from));
+        dispatch(Login(data.email, data.password, from));
         history.push(from);
     }
 

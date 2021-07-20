@@ -1,9 +1,10 @@
 import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT} from "../_action_types/user.action_types";
 import {Dispatch} from "redux";
-import {history} from "../_helpers/history";
 import * as userService from '../_services/account.service';
+import { useHistory } from "react-router-dom";
 
-export const login = (username: string, password: string, from) => {
+export const Login = (username: string, password: string, from:string) => {
+    let history = useHistory();
     return (dispatch: Dispatch) => {
         dispatch(request())
 
@@ -20,7 +21,7 @@ export const login = (username: string, password: string, from) => {
     }
 }
 
-export const logout = () => {
+export const Logout = () => {
     userService.logout();
     return { type: LOGOUT };
 }
