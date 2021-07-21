@@ -6,9 +6,10 @@ COPY ./client .
 
 RUN yarn install
 
-RUN yarn global add react-scripts
-
-RUN yarn global add typescript
+RUN yarn add history@4.10.1
+RUN yarn add eslint --save-dev
+RUN yarn add babel-eslint -D
+RUN yarn add typescript
 
 EXPOSE 3000
 

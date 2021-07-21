@@ -8,6 +8,7 @@
 /public/uploads
 /var/
 vendor
+/client/node_modules
 ###< symfony/framework-bundle ###
 
 ###> phpunit/phpunit ###

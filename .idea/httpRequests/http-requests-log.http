@@ -9,6 +9,21 @@ Content-Type: application/json
   "password": "Magik123"
 }
 
+<> 2021-07-21T224454.201.json
+
+###
+
+POST http://api.realdeal.pl/v1/user/signup
+Content-Type: application/json
+
+{
+  "username": "mateuszpoland",
+  "firstname": "Mateusz",
+  "lastname": "Kowalewski",
+  "email": "mateuszpoland6@gmail.com",
+  "password": "Magik123"
+}
+
 <> 2021-07-19T203319.201.json
 
 ###

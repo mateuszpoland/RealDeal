@@ -49,15 +49,16 @@ export const SignIn = () => {
     const { handleSubmit } = methods;
 
     useEffect(() => {
-        dispatch(Logout())
+        //dispatch(Logout())
     }, []);
 
     const classes = useStyles();
 
     const submitHandler = (data, e) => {
         const from  = window.location.state || "/";
-        dispatch(Login(data.email, data.password, from));
+        dispatch(Login(data.email, data.password));
         history.push(from);
+        window.location.reload()
     }
 
     const validationSchema = Yup.object().shape({

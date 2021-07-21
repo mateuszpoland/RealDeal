@@ -68,35 +68,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6f66a660-d307-44e9-81bb-93eef223412f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6f66a660-d307-44e9-81bb-93eef223412f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_helpers/history.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_helpers/history.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_services/offers.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/offers.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/payments/payments.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/payments/payments.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/DragAndDrop/DraggableItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/DragAndDrop/DraggableItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/dashboard/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/account/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/account/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/actions/user.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/user.actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/client_dev/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/client_dev/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.env" beforeDir="false" afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/composer-setup.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20210530181524.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20210531175320.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20210531184804.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/migrations/Version20210619210351.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Advertising/OlxAdvertising.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Advertising/OlxAdvertising.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Interfaces/FilterEnabledInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Interfaces/FilterEnabledInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/SalesManagement/Domain/Offer/ValueObject/Price.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google-cloud-sdk-348.0.0-linux-x86_64.tar.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -329,8 +309,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210719_0003" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210721_0001" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ethereum_Payments_App" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -549,7 +529,8 @@
       <workItem from="1626204809851" duration="1060000" />
       <workItem from="1626205890400" duration="6508000" />
       <workItem from="1626299798509" duration="1233000" />
-      <workItem from="1626714443446" duration="10368000" />
+      <workItem from="1626714443446" duration="10791000" />
+      <workItem from="1626803679286" duration="10345000" />
     </task>
     <task id="LOCAL-00001" summary="COMEBACK">
       <created>1619114399078</created>

@@ -11,12 +11,11 @@ COPY ./client .
 RUN rm -rf node_modules
 
 RUN yarn add history@4.10.1
-RUN yarn global add eslint
+RUN yarn add eslint --save-dev
 RUN yarn add babel-eslint -D
-
 RUN yarn add react-scripts
 
-RUN npm run build
+RUN yarn run build
 
 FROM nginx:latest
 
