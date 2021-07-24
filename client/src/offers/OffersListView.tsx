@@ -6,7 +6,6 @@ import {fetchAllOffers} from "../actions/offer.actions";
 import OffersTable from "../components/Offer/OfferTable";
 
 const ListOfferView: React.FC = () => {
-    console.log('inside list offers');
     //derive state form useSelector hook
     const [offers, isListLoading] = useSelector((state: AppState) => [state.offers.data, state.offers.loading]);
     const dispatch = useDispatch();

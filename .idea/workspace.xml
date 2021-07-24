@@ -70,13 +70,12 @@
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/_services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/account/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/account/SignIn.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/actions/user.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/user.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/client_dev/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/client_dev/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/nginx/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/nginx/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/google-cloud-sdk-348.0.0-linux-x86_64.tar.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/offers/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/offers/OffersListView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,11 +112,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/docker/nginx/Dockerfile" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/client/src/_services/offers.service.ts" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/package.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/app/App.jsx" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/_helpers/history.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/client/src/offers/OffersListView.tsx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/offers/OffersListView.tsx" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/_helpers/history.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/client/src/app/App.jsx" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -309,7 +308,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210721_0001" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210724_0001" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ethereum_Payments_App" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -331,8 +330,11 @@
       <recent name="$PROJECT_DIR$/client/src/app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="HTTP Request.rest-api#2">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" filter_connections="FILTER" server_name="realdeal" session_id="PHPSTORM">
@@ -340,6 +342,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api#2" />
         <item itemvalue="HTTP Request.rest-api#1" />
       </list>
     </recent_temporary>
@@ -530,7 +533,8 @@
       <workItem from="1626205890400" duration="6508000" />
       <workItem from="1626299798509" duration="1233000" />
       <workItem from="1626714443446" duration="10791000" />
-      <workItem from="1626803679286" duration="10345000" />
+      <workItem from="1626803679286" duration="11114000" />
+      <workItem from="1627149950016" duration="2568000" />
     </task>
     <task id="LOCAL-00001" summary="COMEBACK">
       <created>1619114399078</created>

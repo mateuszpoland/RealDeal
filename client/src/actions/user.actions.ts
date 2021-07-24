@@ -6,7 +6,7 @@ export const Login = (username: string, password: string) => {
     return (dispatch: Dispatch) => {
         dispatch(request())
 
-        userService.login(username, password)
+        userService.Login(username, password)
             .then(resp => {
                 const token = resp.token;
                 const refreshToken = resp.refresh_token;
@@ -18,7 +18,7 @@ export const Login = (username: string, password: string) => {
 }
 
 export const Logout = () => {
-    userService.logout();
+    userService.Logout();
     return { type: LOGOUT };
 }
 

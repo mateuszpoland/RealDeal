@@ -1,3 +1,15 @@
+POST http://api.realdeal.pl/v1/user/signin_check
+Content-Type: application/json
+
+{
+    "username": "mateuszpoland6@gmail.com",
+    "password": "Kolesniki123"
+}
+
+<> 2021-07-24T204551.401.json
+
+###
+
 POST http://api.realdeal.pl/v1/user/signup
 Content-Type: application/json
 

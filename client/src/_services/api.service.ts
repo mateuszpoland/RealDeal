@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as config from '../config/api.config.json';
-import {logout} from "./account.service";
+import {Logout} from "./account.service";
 
 export const authHeader = () => {
     let token = localStorage.getItem('token');
@@ -60,7 +60,7 @@ export const checkResponse = async (resp: Response) => {
     const respJson = await resp.json();
     if(!resp.ok) {
         if(resp.status == 401) {
-            logout();
+            Logout();
             window.location.reload();
         }
         const error = (respJson && respJson.message) || resp.statusText;

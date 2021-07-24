@@ -4,6 +4,7 @@ import ListOfferView from "../offers/OffersListView";
 import {ClientsListView} from "../clients/ClientsListView";
 import {OfferView} from "../offers/OfferView";
 import {MainDashboard} from "./MainDashboard";
+import { withRouter } from "react-router-dom";
 
 /* display contents*/
 export const ContentView = () => {
