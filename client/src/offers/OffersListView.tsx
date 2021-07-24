@@ -10,7 +10,6 @@ const ListOfferView: React.FC = () => {
     const [offers, isListLoading] = useSelector((state: AppState) => [state.offers.data, state.offers.loading]);
     const dispatch = useDispatch();
 
-
     // fetch Offers
     useEffect(() => {
         dispatch(fetchAllOffers())

@@ -68,13 +68,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9c1054c-7613-4bc8-bd10-9d8024aee984" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/_services/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/account.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/_services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/_services/api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/account/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/account/SignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/user.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/user.actions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/app/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/dashboard/ContentView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/ContentView.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/dashboard/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/Dashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/dashboard/MainDashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/dashboard/MainDashboard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/offers/OffersListView.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/offers/OffersListView.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +308,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.google.cloudcode.ide_session_index" value="20210724_0001" />
+    <property name="com.google.cloudcode.ide_session_index" value="20210724_0003" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ethereum_Payments_App" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -534,7 +534,7 @@
       <workItem from="1626299798509" duration="1233000" />
       <workItem from="1626714443446" duration="10791000" />
       <workItem from="1626803679286" duration="11114000" />
-      <workItem from="1627149950016" duration="2568000" />
+      <workItem from="1627149950016" duration="10153000" />
     </task>
     <task id="LOCAL-00001" summary="COMEBACK">
       <created>1619114399078</created>

@@ -13,11 +13,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Copyright from "./Copyright";
 import * as Yup from 'yup';
-import {Login, Logout} from '../actions/user.actions';
+import {Login} from '../actions/user.actions';
 import { useDispatch, useSelector} from "react-redux";
 import { useForm, FormProvider } from "react-hook-form";
 import FormTextInput from "../components/FormTextInput";
-import {useHistory} from "react-router-dom";
 import {LoggedOutNavbar} from "./LoggedOutNavbar";
 
 import { withRouter } from "react-router-dom";
@@ -42,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const SignIn = ({ history }) => {
+const SignIn = ({ history }) => {
     //const history = useHistory();
     const signingIn = useSelector(state => state.user.isSigningIn);
     const dispatch = useDispatch();

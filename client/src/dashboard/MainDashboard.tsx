@@ -38,7 +38,7 @@ export const MainDashboard = () => {
     }
 
     return(
-        <React.Fragment>
+        <div>
             <div>Witaj, user. Kup konto:</div>
             <button onClick={initalizePayment}>KUP KONTO</button>
             {dropInVisible == true &&
@@ -47,7 +47,7 @@ export const MainDashboard = () => {
                     amount={100}
                 />
             }
-        </React.Fragment>
+        </div>
     );
 }
 

@@ -4,7 +4,6 @@ import {api, checkResponse} from "./api.service";
 export const Login = (username: string, password: string) => {
     return api.post(JSON.stringify({username, password}), 'user/signin_check')
         .then((resp) => {
-            console.log('Rattattat');
             localStorage.setItem('token', resp.data.token);
             localStorage.setItem('refresh_token', resp.data.refresh_token);
 

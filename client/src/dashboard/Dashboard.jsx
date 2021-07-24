@@ -36,12 +36,14 @@ export const Dashboard = () => {
         <div className={classes.root}>
             <Navbar handleSidebarToggle={handleSidebarToggle} />
             <Sidebar
-                isSidebarOpen={true}
+                isSidebarOpen={isSidebarOpen}
             />
-            <main className={classes.content}>
+            <div className={classes.content}>
                 <div className={classes.toolbar}/>
-                <ContentView />
-            </main>
+                <div>
+                    <ContentView/>
+                </div>
+            </div>
         </div>
     );
 }
